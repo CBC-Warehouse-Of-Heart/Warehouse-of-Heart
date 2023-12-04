@@ -16,7 +16,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      serif: ["var(--lora-font-family)", "Merriweather", "serif"],
+      sans: ["var(--ibm-plex-sans-thai-looped-font)", "Inter", "sans-serif"],
+      serif: ["var(--lora-font)", "Merriweather", "serif"],
     },
     extend: {
       colors: {

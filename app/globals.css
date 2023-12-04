@@ -2,13 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background: radial-gradient(
-    80.99% 50% at 50% 50%,
-    #aa5656 0%,
-    #ce9a87 51.04%,
-    #f2deb9 100%
-  );
+* {
+  font-family: var(--ibm-plex-sans-thai-looped-font);
 }
 
 @layer base {
@@ -20,7 +15,7 @@ body {
       #f2deb9 100%
     );
     --background-secondary: radial-gradient(
-      125.94% 49.83% at 50% 50.17%,
+      125.94% 49.83% at 50% 50%,
       #aac4c0 7.47%,
       #cfd1b2 53.3%,
       #f2deb9 100%,
@@ -55,36 +50,6 @@ body {
     --ring: 0 0% 100%;
 
     --radius: 1rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
   }
 }
 
