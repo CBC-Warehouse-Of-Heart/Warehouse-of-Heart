@@ -2,9 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background: radial-gradient(
+    80.99% 50% at 50% 50%,
+    #aa5656 0%,
+    #ce9a87 51.04%,
+    #f2deb9 100%
+  );
+}
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: radial-gradient(
+      80.99% 50% at 50% 50%,
+      #aa5656 0%,
+      #ce9a87 51.04%,
+      #f2deb9 100%
+    );
+    --background-secondary: radial-gradient(
+      125.94% 49.83% at 50% 50.17%,
+      #aac4c0 7.47%,
+      #cfd1b2 53.3%,
+      #f2deb9 100%,
+      #f2deb9 100%
+    );
+
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -30,7 +52,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 0 0% 100%;
 
     --radius: 1rem;
   }
