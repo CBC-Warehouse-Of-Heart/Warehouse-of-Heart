@@ -1,3 +1,5 @@
+// Interactive game layout here
+
 export default function RootLayout({
   children,
 }: {
