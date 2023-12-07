@@ -1,3 +1,4 @@
+import Heart from "@/components/background/heart";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -6,6 +7,7 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
+      <Heart />
       <div className="flex h-screen flex-col items-center justify-center">
         <div className="container mb-[150px] mt-[200px] px-10 text-center">
           <p className="text-xl leading-normal text-[#F8F8F7] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
