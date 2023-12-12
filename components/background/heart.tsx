@@ -28,7 +28,7 @@ const Heart: React.FC<Props> = (props) => {
           width="489"
           height="460"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feBlend
