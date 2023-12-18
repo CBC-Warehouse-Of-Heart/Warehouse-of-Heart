@@ -9,7 +9,6 @@ const Layout = ({ children }: PropsWithChildren<{}>) => {
     background: 'radial-gradient(circle, rgba(170,196,192,1) 0%, rgba(207,209,178,1) 50%, rgba(242,222,185,1) 100%)'
   }}
   className="min-h-screen w-full m-0 p-0">{children}
-  <Footer />
   </div>;
 };
 

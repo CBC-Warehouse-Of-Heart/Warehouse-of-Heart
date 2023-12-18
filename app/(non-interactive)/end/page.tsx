@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/ui/footer";
 import Image from "next/image";
 
 export default function End() {
@@ -35,7 +36,7 @@ export default function End() {
         </div>
 
         {/* second session */}
-        <div className="mb-[146px] mt-[32px] flex flex-col items-center justify-center text-center">
+        <div className="mt-[32px] flex flex-col items-center justify-center text-center">
           <p className="font-serif font-[18px]">Learn more about us...</p>
           <Image
             className="mb-[32px] mt-[32px] rounded-[20px]"
@@ -81,6 +82,7 @@ export default function End() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
