@@ -18,6 +18,7 @@ module.exports = {
     fontFamily: {
       sans: ["var(--ibm-plex-sans-thai-looped-font)", "Inter", "sans-serif"],
       serif: ["var(--lora-font)", "Merriweather", "serif"],
+      cursive: ["var(--nothing-you-could-do-font)", "Nothing You Could Do", "cursive"]
     },
     extend: {
       colors: {

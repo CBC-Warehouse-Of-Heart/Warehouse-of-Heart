@@ -1,9 +1,18 @@
+"use client";
 // Interactive game layout here
+import { useState } from "react";
+import AppContext from "../../components/AppContext";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <div className={"h-full w-full bg-red-500"}>{children}</div>;
+  const [session, setSession] = useState();
+
+  return (
+    <AppContext.Provider value={{ session, setSession }}>
+      <div className={"h-full w-full bg-[#998060]"}>{children}</div>
+    </AppContext.Provider>
+  );
 }
