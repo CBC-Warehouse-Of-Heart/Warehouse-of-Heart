@@ -5,7 +5,7 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-      <Link href="/">
+      <Link href="/3-2">
         <Image
           src="/images/bg_3-1.webp"
           alt="Description"
