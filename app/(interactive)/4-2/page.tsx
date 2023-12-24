@@ -11,11 +11,11 @@ const Page = (props: Props) => {
 
   function getSvgPathFromStroke(stroke: any) {
     if (!stroke.length) return "";
+    // reduce the size of svg by divisor
+    const divisor = 1.41;
     const d = stroke.reduce(
       (acc: any[], [x0, y0]: any, i: number, arr: string | any[]) => {
         const [x1, y1] = arr[(i + 1) % arr.length];
-        // reduce the size of svg by divisor
-        var divisor = 1.41;
         acc.push(
           x0 / divisor,
           y0 / divisor,
@@ -24,13 +24,13 @@ const Page = (props: Props) => {
         );
         return acc;
       },
-      ["M", ...stroke[0], "Q"],
+      ["M", stroke[0][0] / divisor, stroke[0][1] / divisor, "Q"],
     );
     d.push("Z");
     return d.join(" ");
   }
 
-  const renderedStrokes = strokes.map((stroke, index) => {
+  const renderedStrokes = strokes.map((stroke: any, index: any) => {
     const pathData = getSvgPathFromStroke(
       getStroke(stroke, {
         size: 8,
