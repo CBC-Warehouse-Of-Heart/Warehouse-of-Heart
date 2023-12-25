@@ -15,7 +15,7 @@ const Page = (props: Props) => {
             แล้วกลับมาที่นี่ได้ทุกเมื่อ <br /> ที่เธอต้องการ :-)
           </p>
         </div>
-        <Link href="/end">
+        <Link href="/1-5">
           <Button size="lg" className=" h-[50px]">
             <p className="text-2xl font-semibold">ถัดไป</p>
           </Button>
