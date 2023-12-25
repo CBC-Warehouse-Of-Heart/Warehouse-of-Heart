@@ -36,22 +36,6 @@ const Slider = React.forwardRef<
         <SliderPrimitive.Track className="relative h-4 w-full grow overflow-hidden rounded-full bg-woh-white">
           <SliderPrimitive.Range className="absolute h-full bg-purple-slider" />
         </SliderPrimitive.Track>
-        {/* <SliderPrimitive.Thumb
-          className="block h-7 w-7 rounded-full bg-light-purple-slider ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-          style={{ boxShadow: "0 4px 10px 5px rgba(0, 0, 0, 0.2)" }}
-        >
-          <div className="bottom-[20px] text-lg font-bold text-white"
-          // style={{ backgroundImage: 'url("/img/value_box.png")', backgroundSize: 'cover' }}
-          style={{
-            backgroundImage: "url('/img/value_box.png')",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-         >
-          {value}
-          </div>
-        </SliderPrimitive.Thumb> */}
-
         <SliderPrimitive.Thumb
           className="block h-7 w-7 rounded-full bg-light-purple-slider ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
           style={{
@@ -63,15 +47,15 @@ const Slider = React.forwardRef<
             className="text-lg font-bold text-white"
             style={{
               position: "absolute",
-              top: "-40px",
+              top: "-45px",
               left: "50%",
               transform: "translateX(-50%)",
               backgroundImage: "url('/img/value_box.png')",
-              backgroundSize: "100% 100%",
+              backgroundSize: "100% 103%",
               backgroundRepeat: "no-repeat",
               margin: "0 auto",
               padding: "5px",
-              width: "60px",
+              width: "50px",
             }}
           >
             {value}
