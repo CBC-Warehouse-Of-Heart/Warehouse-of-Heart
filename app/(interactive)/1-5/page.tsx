@@ -6,7 +6,7 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-      <Link href="/">
+      <Link href="/2-1">
         <Heart />
         <div className="flex h-screen flex-col items-center justify-center">
           <div className="container mb-[220px] mt-[244px] px-10 text-center ">
