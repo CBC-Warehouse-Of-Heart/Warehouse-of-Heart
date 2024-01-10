@@ -1,0 +1,19 @@
+#score-1:hover path {
+  stroke: #c41c11;
+}
+
+#score-2:hover path {
+  stroke: #f1812f;
+}
+
+#score-3:hover path {
+  stroke: #f7d210;
+}
+
+#score-4:hover path {
+  stroke: #91d936;
+}
+
+#score-5:hover path {
+  stroke: #3fc411;
+}
