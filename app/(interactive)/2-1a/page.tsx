@@ -1,11 +1,8 @@
 "use client";
-// import { Slider } from "@mui/material";
+import NextButton from "@/components/ui/nextButton";
 import { Slider } from "@/components/ui/slider";
-
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 export default function Page2_1a() {
-  const router = useRouter();
-  
   return (
     <div className="flex h-screen flex-col items-center justify-center">
       <div className="text-center text-xl">
@@ -20,7 +17,9 @@ export default function Page2_1a() {
         />
       </div>
       <div className="mt-56 text-center text-sm">
-        <p>กดที่หน้าจอเพื่อไปต่อ</p>
+        <Link href="/3-1">
+          <NextButton />
+        </Link>
       </div>
     </div>
   );

@@ -1,10 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
 export default function Footer() {
-  const router = useRouter();
-
-  //const playAudio = () => {
-
   return (
     <div className="bottom-0 left-0 right-0 h-[146px] bg-brown text-center">
       <div className="mt-10 text-white">
