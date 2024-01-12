@@ -1,4 +1,3 @@
-"use client";
 import NextButton from "@/components/ui/nextButton";
 import Link from "next/link";
 export default function Page2_1() {

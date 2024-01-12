@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import NextButton from "@/components/ui/nextButton";
 import { Slider } from "@/components/ui/slider";
 import Link from "next/link";

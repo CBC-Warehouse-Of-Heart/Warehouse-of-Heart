@@ -15,17 +15,20 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    backgroundSize: {
+      '100-102': '100% 102%',
+    },
     fontFamily: {
       sans: ["var(--ibm-plex-sans-thai-looped-font)", "Inter", "sans-serif"],
       serif: ["var(--lora-font)", "Merriweather", "serif"],
     },
     extend: {
       colors: {
-        'brown': '#675D51',
-        'gray': '#D9D9D9',
-        'woh-white': '#F8F8F7',
-        'pink-brown-slider': '#AA5656',
-        'light-pink-brown-slider': '#B78481',
+        brown: "#675D51",
+        gray: "#D9D9D9",
+        "woh-white": "#F8F8F7",
+        "pink-brown-slider": "#AA5656",
+        "light-pink-brown-slider": "#B78481",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -81,6 +84,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        "value-box": "url('/img/value_box.png')",
       },
     },
   },

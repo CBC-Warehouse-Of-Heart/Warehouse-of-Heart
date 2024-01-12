@@ -45,21 +45,10 @@ const Slider = React.forwardRef<
             }}
           >
             <div
-              className="text-lg text-white"
-              style={{
-                position: "absolute",
-                top: "-45px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                backgroundImage: "url('/img/value_box.png')",
-                backgroundSize: "100% 103%",
-                backgroundRepeat: "no-repeat",
-                margin: "0 auto",
-                padding: "5px",
-                width: "50px",
-              }}
+              className="bg-value-box background-size-100-102 absolute -top-[45px] left-[60%] m-auto 
+              w-[50px] -translate-x-1/2 bg-cover bg-no-repeat text-lg text-white"
             >
-              <p className="mb-1 font-serif">{value}</p>
+              <p className="mb-4 mr-2 mt-0 font-serif">{value}</p>
             </div>
           </SliderPrimitive.Thumb>
         </SliderPrimitive.Root>
