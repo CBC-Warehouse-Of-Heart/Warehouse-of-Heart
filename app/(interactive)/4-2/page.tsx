@@ -47,15 +47,7 @@ const Page = (props: Props) => {
       <div className="fixed top-[140px] flex items-center space-x-[16px] text-center">
         <svg
           id="svg"
-          style={{
-            touchAction: "none",
-            position: "relative",
-            width: 235,
-            height: 112,
-            borderRadius: 10,
-            opacity: 0.8,
-            backgroundColor: "#F8F8F7",
-          }}
+          className="relative h-[112px] w-[235px] touch-none rounded-[10px] bg-[#F8F8F7] opacity-80"
         >
           {renderedStrokes}
         </svg>
