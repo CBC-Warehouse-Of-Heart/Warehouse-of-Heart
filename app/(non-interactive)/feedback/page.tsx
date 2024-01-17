@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import "./styles.css";
 import SubmittedPage from "./submittedPage";
@@ -12,12 +13,12 @@ const Page = (props: Props) => {
   const [comment, setComment] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const router = useRouter();
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (isSubmitting) return;
     if (rating === 0 && comment === "") {
-      setSubmitted(true);
+      router.push("/end");
       return;
     }
     setIsSubmitting(true);
