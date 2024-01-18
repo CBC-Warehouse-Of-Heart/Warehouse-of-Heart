@@ -12,7 +12,7 @@ export default function RootLayout({
 
   return (
     <AppContext.Provider value={{ session, setSession }}>
-      <div className={"h-full w-full bg-[#998060]"}>{children}</div>
+      <div className={"absolute h-full w-full bg-[#998060]"}>{children}</div>
     </AppContext.Provider>
   );
 }
