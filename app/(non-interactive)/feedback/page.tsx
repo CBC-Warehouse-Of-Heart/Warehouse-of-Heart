@@ -16,13 +16,16 @@ const Page = (props: Props) => {
   const router = useRouter();
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     if (isSubmitting) return;
-    if (rating === 0 && comment === "") {
+    if (rating === 0 && comment.trim() === "") {
       router.push("/end");
       return;
     }
+
     setIsSubmitting(true);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api/feedback`, {
+
+    fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api/feedback`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
