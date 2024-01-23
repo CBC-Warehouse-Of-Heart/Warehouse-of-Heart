@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import NextButton from "@/components/ui/nextButton";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -27,9 +27,7 @@ export default function SubmittedPage(props: Props): JSX.Element {
           </p>
         </div>
         <Link href="/end" className="z-10">
-          <Button size="lg" className=" z-10 h-[50px]">
-            <p className="text-2xl font-semibold">ถัดไป</p>
-          </Button>
+          <NextButton />
         </Link>
       </div>
     </>

@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import NextButton from "@/components/ui/nextButton";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
@@ -13,12 +14,13 @@ const Page = (props: Props) => {
   const [comment, setComment] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isEmpty = rating === 0 && comment.trim() === "";
   const router = useRouter();
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (isSubmitting) return;
-    if (rating === 0 && comment.trim() === "") {
+    if (isEmpty) {
       router.push("/end");
       return;
     }
@@ -52,7 +54,7 @@ const Page = (props: Props) => {
         className="fixed"
       />
       <form
-        action={process.env.NEXT_PUBLIC_WEB_URL + "/end"}
+        action={process.env.NEXT_PUBLIC_WEB_URL + "/feedback"}
         method="post"
         onSubmit={handleSubmit}
       >
@@ -327,16 +329,10 @@ const Page = (props: Props) => {
               }}
             ></textarea>
           </div>
-          <div className="z-10 mt-[20px] text-center">
-            <Button
-              size="sm"
-              className=" h-[50px] w-[282px]"
-              type="submit"
-              disabled={isSubmitting}
-            >
-              <p className="text-2xl font-semibold">ส่งคำตอบ</p>
-            </Button>{" "}
-          </div>
+          <NextButton
+            label={isEmpty ? "ถัดไป" : "ส่งคำตอบ"}
+            disabled={isSubmitting}
+          />
         </div>
       </form>
     </>
