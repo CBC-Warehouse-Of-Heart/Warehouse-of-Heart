@@ -1,5 +1,5 @@
 import Heart from "@/components/background/heart";
-import { Button } from "@/components/ui/button";
+import NextButton from "@/components/ui/nextButton";
 import Link from "next/link";
 
 type Props = {};
@@ -9,16 +9,16 @@ const Page = (props: Props) => {
     <>
       <Heart />
       <div className="flex h-screen flex-col items-center justify-center">
-        <div className="container mb-[150px] mt-[200px] px-10 text-center">
-          <p className="text-xl leading-normal text-[#F8F8F7] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
+        <div className="container z-10 mb-[150px] mt-[200px] px-10 text-center">
+          <p className="text-base leading-normal text-[#F8F8F7]">
             ไม่เป็นไรเลยนะถ้าเธอยังไม่พร้อม <br /> วันนี้พักผ่อนสักหน่อย <br />
-            แล้วกลับมาที่นี่ได้ทุกเมื่อ <br /> ที่เธอต้องการ :-)
+            แล้วกลับมาที่นี่ได้ทุกเมื่อ <br /> ที่เธอต้องการ :-) <br />
+            <br />
+            <br />
           </p>
         </div>
-        <Link href="/1-5">
-          <Button size="lg" className=" h-[50px]">
-            <p className="text-2xl font-semibold">ถัดไป</p>
-          </Button>
+        <Link href="/end">
+          <NextButton />
         </Link>
       </div>
     </>
