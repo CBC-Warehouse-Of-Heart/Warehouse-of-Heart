@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 // import { Slider } from "@mui/material";
 import { Slider } from "@/components/ui/slider";
-import { useToBlob } from "@hugocxl/react-to-image";
+import { useToBlob, useToPng } from "@hugocxl/react-to-image";
 
 export default function Page2_1a() {
   const handleShare = async (data: Blob) => {
@@ -30,29 +30,39 @@ export default function Page2_1a() {
     },
     onError: (error) => console.log("Error", error),
   });
-
+  const [_2, download, refDownload] = useToPng<HTMLDivElement>({
+    quality: 0.8,
+    onSuccess: (data) => {
+      const link = document.createElement("a");
+      link.download = "my-image-name.jpeg";
+      link.href = data;
+      link.click();
+    },
+  });
   return (
-    <div
-      className="flex h-screen flex-col items-center justify-center"
-      ref={ref}
-    >
-      <div className="mb-5 text-center text-xl">
-        <p className="text-white">ถ้าให้คะแนนสำหรับวันนี้ คงจะได้...</p>
-        <Slider
-          onValueChange={(newValue) => console.log(newValue)}
-          className="mt-20"
-          defaultValue={[1]}
-          min={1}
-          max={10}
-          step={1}
-        />
+    <div className="" ref={refDownload}>
+      <div
+        className="flex h-screen flex-col items-center justify-center"
+        ref={ref}
+      >
+        <div className="mb-5 text-center text-xl">
+          <p className="text-white">ถ้าให้คะแนนสำหรับวันนี้ คงจะได้...</p>
+          <Slider
+            onValueChange={(newValue) => console.log(newValue)}
+            className="mt-20"
+            defaultValue={[1]}
+            min={1}
+            max={10}
+            step={1}
+          />
+        </div>
+        <Button onClick={convert} className="mb-5" size={"lg"}>
+          Share
+        </Button>
+        <Button onClick={download} size={"lg"}>
+          Download
+        </Button>
       </div>
-      <Button onClick={convert} className="mb-5" size={"lg"}>
-        Share
-      </Button>
-      {/* <Button onClick={convert} size={"lg"}>
-        Download
-      </Button> */}
     </div>
   );
 }
