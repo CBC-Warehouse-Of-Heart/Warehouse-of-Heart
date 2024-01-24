@@ -25,8 +25,8 @@ export default function RootLayout({
             fill="none"
             stroke="#F8F8F7"
             strokeWidth="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="lucide lucide-volume-2"
           >
             <polygon
