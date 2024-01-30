@@ -64,7 +64,7 @@ const Page = (props: Props) => {
     toPng(wordsRef.current, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "WOH-my-words-to-me.png";
+        link.download = "warehouseofheart.png";
         link.href = dataUrl;
         link.click();
       })
