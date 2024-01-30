@@ -4,18 +4,25 @@ import { create } from "zustand";
 type StickerState = {
   stickerId: number;
   stickerPath: string;
+  stickerBgPath: string;
 };
 
 type StickerAction = {
   updateSticker: (stickerId: StickerState["stickerId"]) => void;
 };
 
-export const useStickerStore = create<StickerState & StickerAction>((set) => ({
+const initialState: StickerState = {
   stickerId: 1,
-  stickerPath: "",
-  updateSticker: (stickerId) =>
+  stickerPath: "/img/sticker/notSelect.png",
+  stickerBgPath: "/img/bg/4-16.png",
+};
+
+export const useStickerStore = create<StickerState & StickerAction>((set) => ({
+  ...initialState,
+  updateSticker: (stickerId: number) =>
     set(() => ({
       stickerId: stickerId,
-      stickerPath: stickerItems.find((i) => i.id === stickerId).path,
+      stickerPath: stickerItems.find((i) => i.id === stickerId)?.path,
+      stickerBgPath: stickerItems.find((i) => i.id === stickerId)?.bgPath,
     })),
 }));

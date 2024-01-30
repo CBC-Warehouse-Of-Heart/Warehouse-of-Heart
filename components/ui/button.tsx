@@ -20,10 +20,13 @@ const buttonVariants = cva(
         ready: "bg-[#272018] text-[#FFFFFF]",
         notSure: "border-[2px] border-[#272018] text-[#272018]",
         next: "bg-[#F8F8F7]",
+        cancel_4_17: "border-[2px] border-[#B78181] text-[#B78181] text-sm",
+        next_4_17: "bg-[#B78181] text-[#FFFFFF] text-sm",
       },
       size: {
         default: "h-auto text-xl sm:text-5xl px-6 py-3 sm:py-5",
         xs: "h-8 rounded-[100px] w-28",
+        xs_4_17: "h-8 rounded-[10px] w-[74px]",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         xl: "h-12 rounded-md w-28",

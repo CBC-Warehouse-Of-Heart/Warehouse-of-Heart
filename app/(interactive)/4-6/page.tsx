@@ -135,7 +135,7 @@ const Page = (props: Props) => {
         </div>
 
         <Link href="/4-7">
-          <NextButton></NextButton>
+          <NextButton trigger={true} />
         </Link>
       </div>
     </>

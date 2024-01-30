@@ -1,22 +1,24 @@
 "use client";
+import ConfirmPopup from "@/components/ui/confirmPopup";
+import DownloadImageAlert from "@/components/ui/downloadImageAlert";
 import NextButton from "@/components/ui/nextButton";
 import { useNameStorkeStore } from "@/stores/NameStroke.store";
 import { useShareYourselfWordsStore } from "@/stores/ShareYourselfWords.store";
 import { useStickerStore } from "@/stores/sticker.store";
 import { toPng } from "html-to-image";
 import Image from "next/image";
-import Link from "next/link";
 import { getStroke } from "perfect-freehand";
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 
 type Props = {};
 
 const Page = (props: Props) => {
   const words = useShareYourselfWordsStore((state) => state.words);
-  const stickerId = useStickerStore((state) => state.stickerId);
-  const stickerPath = useStickerStore((state) => state.stickerPath);
+  const stickerBgPath = useStickerStore((state) => state.stickerBgPath);
   const wordsRef = useRef<HTMLDivElement>(null);
   const nameStorke = useNameStorkeStore((state) => state.nameStorke);
+  const [popup, setPopup] = useState<boolean>(false);
+  const [downloadAlert, setDownloadAlert] = useState<boolean>(false);
 
   function getSvgPathFromStroke(stroke: number[][]) {
     if (!stroke.length) return "";
@@ -55,11 +57,14 @@ const Page = (props: Props) => {
     if (wordsRef.current === null) {
       return;
     }
-
+    setDownloadAlert(true);
+    window.setTimeout(() => {
+      setDownloadAlert(false);
+    }, 3000);
     toPng(wordsRef.current, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "my-words-to-me.png";
+        link.download = "WOH-my-words-to-me.png";
         link.href = dataUrl;
         link.click();
       })
@@ -69,35 +74,34 @@ const Page = (props: Props) => {
   }, [wordsRef]);
 
   return (
-    <div className="flex h-full w-full flex-col items-center">
-      <div className="mb-24"></div>
-      <div ref={wordsRef}>
-        <div className="flex h-[480px] w-[284px] flex-col items-start gap-6 rounded-xl bg-[#F3F3F0] px-6 pb-4 pt-6">
+    <div className="absolute flex h-full w-full flex-col items-center overflow-hidden">
+      <div
+        className="absolute flex h-full w-full flex-col items-center overflow-hidden"
+        ref={wordsRef}
+      >
+        <Image
+          src={stickerBgPath}
+          alt="Background"
+          className="z-0 object-cover"
+          fill={true}
+          priority={true}
+        />
+        <div className="z-1 absolute mr-8 mt-56 flex h-[480px] w-[284px] flex-col items-start rounded-xl">
           <div className="flex">
-            <p className="text[#1E1B20] font-cursive text-lg">ถีง</p>
+            <p className="font-cursive text-lg text-[#1E1B20]">ถึง</p>
             <svg id="svg" className="relative h-[30px] w-[63px] touch-none">
               {renderedStrokes}
             </svg>
           </div>
-          <div className="text[#1E1B20] w-[294px] overflow-auto break-words text-base">
-            {words}
-          </div>
-          <div className="mt-auto flex items-center self-end">
-            {stickerId > 1 && (
-              <Image
-                src={stickerPath}
-                width={64}
-                height={64}
-                alt="Selected Sticker"
-              />
-            )}
+          <div className="mt-1 overflow-hidden break-words text-base text-[#1E1B20]">
+            <p>{words}</p>
           </div>
         </div>
       </div>
 
       <div
         onClick={onButtonClick}
-        className="mt-6 flex h-11 w-11 items-center justify-center gap-2.5 rounded-full bg-[#FFF]"
+        className="z-1 absolute bottom-40 flex h-11 w-11 items-center justify-center gap-2.5 rounded-full bg-[#FFF]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -121,11 +125,13 @@ const Page = (props: Props) => {
         </svg>
       </div>
 
-      <div className="mt-6">
-        <Link href="/4-18">
-          <NextButton></NextButton>
-        </Link>
+      <DownloadImageAlert trigger={downloadAlert} />
+
+      <div className="z-1 absolute bottom-16" onClick={() => setPopup(true)}>
+        <NextButton trigger={true} />
       </div>
+
+      <ConfirmPopup trigger={popup} setTrigger={setPopup} />
     </div>
   );
 };
