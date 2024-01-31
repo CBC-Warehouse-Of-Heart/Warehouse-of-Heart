@@ -1,7 +1,11 @@
 import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_Thai_Looped, Lora } from "next/font/google";
+import {
+  IBM_Plex_Sans_Thai_Looped,
+  Lora,
+  Nothing_You_Could_Do,
+} from "next/font/google";
 import "../globals.css";
 
 const ibmPlexSansThaiLooped = IBM_Plex_Sans_Thai_Looped({
@@ -14,6 +18,12 @@ const lora = Lora({
   weight: ["400", "500", "600", "700"],
   variable: "--lora-font",
   subsets: ["latin"],
+});
+
+const nothingYouCouldDo = Nothing_You_Could_Do({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--nothing-you-could-do-font",
 });
 
 export const metadata: Metadata = {
@@ -38,6 +48,7 @@ export default function RootLayout({
         className={cn(
           lora.variable,
           ibmPlexSansThaiLooped.variable,
+          nothingYouCouldDo.variable,
           "h-screen w-screen ",
         )}
       >
