@@ -1,19 +1,20 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import NextButton from "@/components/ui/nextButton";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import "./styles.css";
-import SubmittedPage from "./submittedPage";
 
 type Props = {};
 
 const Page = (props: Props) => {
+  const t = useTranslations("Feedback");
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [submissionStatus, setSubmissionStatus] = useState<
-    "NOT_SUBMITTED" | "SUBMITTING" | "SUBMITTED" | "SUBMIT_FAILED"
+    "NOT_SUBMITTED" | "SUBMITTING" | "SUBMIT_FAILED"
   >("NOT_SUBMITTED");
   const isEmpty = rating === 0 && comment.trim() === "";
   const router = useRouter();
@@ -40,28 +41,23 @@ const Page = (props: Props) => {
       }),
     }).then((res) => res.json());
 
-    if (res.success) setSubmissionStatus("SUBMITTED");
+    if (res.success) router.push("/feedback-submitted");
     else setSubmissionStatus("SUBMIT_FAILED");
   };
 
-  if (submissionStatus === "SUBMITTED") {
-    return <SubmittedPage />;
-  }
   return (
     <>
       <Image
         src="/bg/feedback.png"
         alt="Description"
         layout="fill"
-        objectFit="cover"
+        objectFit="contain"
         className="fixed"
       />
       <form method="post" onSubmit={handleSubmit}>
         <div className="mx-auto flex h-screen w-[390px]  flex-col items-center justify-start">
           <div className="z-10 mt-[130px] text-center">
-            <p className="text-base text-woh-white">
-              บอกความรู้สึกของคุณที่มีต่อกิจกรรมนี้สิ
-            </p>
+            <p className="text-base text-woh-white">{t("rating")}</p>
           </div>
           <div className="z-10 mt-6 flex w-full justify-between px-14">
             <Button
@@ -311,18 +307,18 @@ const Page = (props: Props) => {
             </Button>
           </div>
           <div className="z-10 mt-[10px] flex w-full justify-between px-14 text-center">
-            <p className="text-xs text-woh-white">ไม่พอใจเลย</p>
-            <p className="text-xs text-woh-white">แฮปปี้สุด ๆ</p>
+            <p className="text-xs text-woh-white">{t("worst")}</p>
+            <p className="text-xs text-woh-white">{t("best")}</p>
           </div>
           <div className="z-10 mt-[17px] h-[1px] w-[282px] border border-woh-white"></div>
           <div className="z-10 mt-[26px] text-center ">
             <label className="text-base text-woh-white" htmlFor="feedback-text">
-              มีอะไรอยากบอก/แนะนำเราเพิ่มมั้ย
+              {t("comment")}
             </label>
             <textarea
               id="feedback-text"
               className="z-10 mt-5 h-[120px] w-[282px] rounded-sm bg-woh-white p-4 "
-              placeholder="โปรดพิมพ์คำตอบของคุณ"
+              placeholder={t("commentPlaceholder")}
               onChange={(e) => {
                 setComment(e.target.value);
               }}
@@ -330,11 +326,11 @@ const Page = (props: Props) => {
           </div>
           {submissionStatus === "SUBMIT_FAILED" && (
             <div className="z-10 mt-3 text-center">
-              <p className="text-sm text-red-400">กรุณาลองใหม่อีกครั้ง</p>
+              <p className="text-sm text-red-400">{t("error")}</p>
             </div>
           )}
           <NextButton
-            label={isEmpty ? "ถัดไป" : "ส่งคำตอบ"}
+            label={isEmpty ? t("next") : t("submit")}
             disabled={submissionStatus === "SUBMITTING"}
           />
         </div>

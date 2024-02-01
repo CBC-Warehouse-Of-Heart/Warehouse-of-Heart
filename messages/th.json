@@ -7,5 +7,19 @@
     "welcomeTo": "ยินดีต้อนรับเข้าสู่",
     "warehouseOfHeart": "\"Warehouse of Heart\"",
     "thankYouForVisiting": "ขอบคุณที่เข้ามาหาเราในวันนี้นะ :-)"
+  },
+  "Feedback": {
+    "rating": "บอกความรู้สึกของคุณที่มีต่อกิจกรรมนี้สิ",
+    "worst": "ไม่พอใจเลย",
+    "best": "แฮปปี้สุด ๆ",
+    "comment": "มีอะไรอยากบอก/แนะนำเราเพิ่มมั้ย",
+    "commentPlaceholder": "โปรดพิมพ์คำตอบของคุณ",
+    "error": "กรุณาลองใหม่อีกครั้ง",
+    "next": "ถัดไป",
+    "submit": "ส่งคำตอบ"
+  },
+  "SubmittedPage": {
+    "received": "เราได้รับ Feedback จากคุณแล้ว",
+    "next": "ถัดไป"
   }
 }
