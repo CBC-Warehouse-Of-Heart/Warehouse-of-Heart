@@ -5,7 +5,7 @@ type Props = {};
 
 const Page = (props: Props) => {
   return (
-    <div className="bg-1-1 absolute flex h-full w-full flex-col items-center bg-cover bg-no-repeat text-center text-base leading-[32px]">
+    <div className="absolute flex h-full w-full flex-col items-center bg-1-1 bg-cover bg-no-repeat text-center text-base leading-[32px]">
       <p className="mt-60 font-bold text-[#1E1B20]">เกี่ยวกับงาน</p>
       <p className="mt-3 text-[#1E1B20]">
         เรื่องราวการเดินทางเข้าสู่ห้องเก็บของใจ
