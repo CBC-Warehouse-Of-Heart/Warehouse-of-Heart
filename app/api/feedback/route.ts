@@ -6,7 +6,10 @@ export async function POST(req: NextRequest) {
     const data = await req.json();
 
     if ((data.rating < 0 || data.rating > 5) && data.comment.trim() === "") {
-      throw new Error("Invalid input");
+      return NextResponse.json(
+        { success: false, message: "Invalid Input" },
+        { status: 400 },
+      );
     }
 
     const result = await addFeedback({

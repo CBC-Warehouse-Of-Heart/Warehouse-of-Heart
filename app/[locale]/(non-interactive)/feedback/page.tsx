@@ -12,22 +12,24 @@ type Props = {};
 const Page = (props: Props) => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState<
+    "NOT_SUBMITTED" | "SUBMITTING" | "SUBMITTED" | "SUBMIT_FAILED"
+  >("NOT_SUBMITTED");
   const isEmpty = rating === 0 && comment.trim() === "";
   const router = useRouter();
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (isSubmitting) return;
+    if (submissionStatus === "SUBMITTING") return;
     if (isEmpty) {
       router.push("/end");
       return;
     }
 
-    setIsSubmitting(true);
+    setSubmissionStatus("SUBMITTING");
 
-    fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api/feedback`, {
+    const res = await fetch("/api/feedback", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,28 +38,25 @@ const Page = (props: Props) => {
         rating,
         comment,
       }),
-    });
+    }).then((res) => res.json());
 
-    setSubmitted(true);
-    setIsSubmitting(false);
+    if (res.success) setSubmissionStatus("SUBMITTED");
+    else setSubmissionStatus("SUBMIT_FAILED");
   };
-  if (submitted) {
+
+  if (submissionStatus === "SUBMITTED") {
     return <SubmittedPage />;
   }
   return (
     <>
       <Image
-        src="/img/feedback.webp"
+        src="/bg/feedback.png"
         alt="Description"
         layout="fill"
         objectFit="cover"
         className="fixed"
       />
-      <form
-        action={process.env.NEXT_PUBLIC_WEB_URL + "/feedback"}
-        method="post"
-        onSubmit={handleSubmit}
-      >
+      <form method="post" onSubmit={handleSubmit}>
         <div className="mx-auto flex h-screen w-[390px]  flex-col items-center justify-start">
           <div className="z-10 mt-[130px] text-center">
             <p className="text-base text-woh-white">
@@ -69,7 +68,7 @@ const Page = (props: Props) => {
               size="sm"
               id="rating-1"
               className={`h-[32px] w-[40px] rounded p-0 hover:bg-woh-white ${
-                rating === 1 || rating === 0 ? "bg-woh-white" : "bg-gray"
+                rating < 2 ? "bg-woh-white" : "bg-gray"
               }`}
               onClick={(e) => {
                 e.preventDefault();
@@ -85,39 +84,39 @@ const Page = (props: Props) => {
               >
                 <path
                   d="M12.5132 22.2121C18.1777 22.2121 22.7697 17.8706 22.7697 12.5151C22.7697 7.15966 18.1777 2.81818 12.5132 2.81818C6.84879 2.81818 2.25684 7.15966 2.25684 12.5151C2.25684 17.8706 6.84879 22.2121 12.5132 22.2121Z"
-                  stroke={rating === 1 || rating === 0 ? "#C41C11" : "#C5C5C5"}
+                  stroke={rating < 2 ? "#C41C11" : "#C5C5C5"}
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M15.5898 9.60606H15.6001"
-                  stroke={rating === 1 || rating === 0 ? "#C41C11" : "#C5C5C5"}
+                  stroke={rating < 2 ? "#C41C11" : "#C5C5C5"}
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M9.43555 9.60606H9.4458"
-                  stroke={rating === 1 || rating === 0 ? "#C41C11" : "#C5C5C5"}
+                  stroke={rating < 2 ? "#C41C11" : "#C5C5C5"}
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
                 <path
                   d="M8.41016 16.3699C13.0255 12.0603 16.6153 16.3699 16.6153 16.3699"
-                  stroke={rating === 1 || rating === 0 ? "#C41C11" : "#C5C5C5"}
+                  stroke={rating < 2 ? "#C41C11" : "#C5C5C5"}
                   strokeWidth="2"
                   strokeLinecap="round"
                 />
                 <path
                   d="M14.6787 7.319C15.6962 8.29672 16.3397 8.43216 17.6623 8.02995"
-                  stroke={rating === 1 || rating === 0 ? "#C41C11" : "#C5C5C5"}
+                  stroke={rating < 2 ? "#C41C11" : "#C5C5C5"}
                   strokeLinecap="round"
                 />
                 <path
                   d="M7.36328 8.03918C8.75202 8.43604 9.38537 8.26327 10.3422 7.31081"
-                  stroke={rating === 1 || rating === 0 ? "#C41C11" : "#C5C5C5"}
+                  stroke={rating < 2 ? "#C41C11" : "#C5C5C5"}
                   strokeLinecap="round"
                 />
               </svg>
@@ -329,9 +328,14 @@ const Page = (props: Props) => {
               }}
             ></textarea>
           </div>
+          {submissionStatus === "SUBMIT_FAILED" && (
+            <div className="z-10 mt-3 text-center">
+              <p className="text-sm text-red-400">กรุณาลองใหม่อีกครั้ง</p>
+            </div>
+          )}
           <NextButton
             label={isEmpty ? "ถัดไป" : "ส่งคำตอบ"}
-            disabled={isSubmitting}
+            disabled={submissionStatus === "SUBMITTING"}
           />
         </div>
       </form>

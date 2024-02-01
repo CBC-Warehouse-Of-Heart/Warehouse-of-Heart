@@ -1,4 +1,4 @@
-export type TFeedback = {
+export type Feedback = {
   comment: string;
   rating: number;
 };
