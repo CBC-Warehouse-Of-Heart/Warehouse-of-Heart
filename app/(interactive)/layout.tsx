@@ -20,9 +20,9 @@ export default function RootLayout({
             viewBox="0 0 24 24"
             fill="none"
             stroke="#B5B5B5"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="lucide lucide-volume-2"
           >
             <polygon
@@ -41,9 +41,9 @@ export default function RootLayout({
             viewBox="0 0 24 24"
             fill="none"
             stroke="#B5B5B5"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="lucide lucide-volume-x"
           >
             <polygon

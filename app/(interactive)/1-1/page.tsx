@@ -1,4 +1,3 @@
-import Heart from "@/components/background/heart";
 import NextButton from "@/components/ui/nextButton";
 import Link from "next/link";
 
@@ -6,29 +5,36 @@ type Props = {};
 
 const Page = (props: Props) => {
   return (
-    <>
-      <Heart />
-      <div className="flex h-full w-full flex-col items-center justify-center">
-        <div className="z-10 flex flex-col items-center space-y-1 text-center text-base leading-relaxed text-[#F8F8F7]">
-          <p>
-            สวัสดี
-            <br />
-            <br />
-            ยินดีต้อนรับเข้าสู่
-          </p>
-          <p className="font-serif font-bold">“Warehouse of Heart”</p>
-          <p>
-            ขอบคุณที่เข้ามาหาเราในวันนี้นะ :-)
-            <br />
-            <br />
-            <br />
-          </p>
-        </div>
+    <div className="bg-1-1 absolute flex h-full w-full flex-col items-center bg-cover bg-no-repeat text-center text-base leading-[32px]">
+      <p className="mt-60 font-bold text-[#1E1B20]">เกี่ยวกับงาน</p>
+      <p className="mt-3 text-[#1E1B20]">
+        เรื่องราวการเดินทางเข้าสู่ห้องเก็บของใจ
+        <br />
+        ที่ผู้เล่นจะได้ทบทวนเรื่องราวในชีวิตของตัวเอง
+        <br />
+        ทั้งเรื่องที่ให้ความรู้สึกเชิงบวกและเชิงลบ
+        <br />
+        ในลักษณะของการตอบคำถาม เพื่อให้เกิด
+        <br />
+        self-awareness ซึ่งจะเกิดผ่าน Interactive
+        <br />
+        Experience ระหว่างผู้เล่นและเว็บไซต์
+      </p>
+      <p className="mt-8 font-bold text-[#A65554]">คำเตือน:</p>
+      <p className="mt-2 text-[#A65554]">
+        อาจมีคำถามที่กระทบต่อความรู้สึก
+        <br />
+        หากเกิดความไม่สบายใจ
+        <br />
+        แนะนำให้พักจากการเล่นทันที
+      </p>
+
+      <div className="absolute bottom-48">
         <Link href="/1-2">
-          <NextButton />
+          <NextButton trigger={true} />
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
