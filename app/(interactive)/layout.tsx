@@ -12,7 +12,10 @@ export default function RootLayout({
 
   return (
     <AppContext.Provider value={{ session, setSession }}>
-      <div className={"absolute h-full w-full bg-[#998060]"}>{children}</div>
+      {/* <div className={"absolute h-full w-full bg-[#998060]"}>{children}</div> */}
+     <div className="flex justify-center h-screen overflow-hidden bg-secondary-white">
+     {children}
+      </div> 
     </AppContext.Provider>
   );
 }

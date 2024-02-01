@@ -1,12 +1,13 @@
-'use client'
-import React from 'react'
-import { useRouter } from "next/navigation";
-export default function page() {
-  const router = useRouter()
+"use client";
+import NextButton from "@/components/ui/nextButton";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+export default function Page() {
   return (
-    <div onClick={() => router.push('/4-6')} className="ml-[87px] mt-[232px]">
-      <p>มีทั้งเรื่องที่อยากให้เกิดขึ้น</p>
-      <p className="mt-3 text-center">เรื่องที่ไม่อยากให้เกิดขึ้น...</p>
+    <Link href="/4-6">
+    <div className="mx-auto min-w-[430px] min-h-screen bg-4-5 bg-cover bg-no-repeat">
     </div>
-  )
+    </Link>
+  );
 }

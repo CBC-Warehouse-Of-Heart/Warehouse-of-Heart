@@ -78,6 +78,17 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        '4-1': "url('/img/4-1.png')",
+        '4-2': "url('/img/4-2.png')",
+        '4-3': "url('/img/4-3.png')",
+        '4-5': "url('/img/4-5.png')",
+        'white-radial': "url('/img/white-radial.png')"
+      }
+    },
+    colors: {
+      'white': '#F8F8F7',
+      'secondary-white': "#F3F3F0",
     },
   },
   variants: {

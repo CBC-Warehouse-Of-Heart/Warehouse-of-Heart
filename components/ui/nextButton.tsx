@@ -2,12 +2,12 @@ import { Button } from "./button";
 
 const NextButton = () => {
   return (
-    <div className="fixed left-1/2 top-3/4 -translate-x-1/2 transform">
+    <div className="fixed left-1/2 -translate-x-1/2 transform">
       <Button className="relative" variant="next" size="xs">
         <p className="fixed left-1/2 -translate-x-1/2 transform text-base font-semibold text-[#6C1F1F]">
           ถัดไป
         </p>
-        <div className="absolute right-1">
+        {/* <div className="absolute right-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -23,7 +23,7 @@ const NextButton = () => {
               stroke-linejoin="round"
             />
           </svg>
-        </div>
+        </div> */}
       </Button>
     </div>
   );
