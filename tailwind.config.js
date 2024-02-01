@@ -83,6 +83,10 @@ module.exports = {
         '4-2': "url('/img/4-2.png')",
         '4-3': "url('/img/4-3.png')",
         '4-5': "url('/img/4-5.png')",
+        'book-1': "url('/img/book-1.png')",
+        'book-2': "url('/img/book-2.png')",
+        'book-3': "url('/img/book-3.png')",
+        'book-4': "url('/img/book-4.png')",
         'white-radial': "url('/img/white-radial.png')"
       }
     },

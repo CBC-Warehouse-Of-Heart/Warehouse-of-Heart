@@ -1,5 +1,6 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { getStroke } from "perfect-freehand";
 import { useContext } from "react";
@@ -44,14 +45,25 @@ const Page = (props: Props) => {
   });
 
   return (
-    <div className="flex justify-center items-center mx-auto min-w-[430px] bg-4-5 bg-cover bg-no-repeat">
-      <div className="">
-        <svg id="svg" className="relative object-contain touch-none scale-[0.4]">
-          
+    <div className="bg-4-5 mx-auto min-w-[430px] min-h-screen bg-cover bg-no-repeat">
+      <div className="flex justify-center mt-[320px]">
+        <svg
+          id="svg"
+          className="relative scale-[0.4] touch-none object-contain"
+        >
           {renderedStrokes}
         </svg>
       </div>
-      
+      <div className="mt-[150px]">
+      <Link href="4-8">
+      <motion.div
+        initial={{ opacity: 0, z: -20 }}
+        animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
+      >
+        <NextButton />
+      </motion.div>
+      </Link>
+      </div>
     </div>
   );
 };
