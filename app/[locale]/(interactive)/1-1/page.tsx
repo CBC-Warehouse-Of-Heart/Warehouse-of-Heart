@@ -1,31 +1,23 @@
+import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
 
 type Props = {};
 
 const Page = (props: Props) => {
-  const t = useTranslations("Welcome");
+  const t = useTranslations("1-1");
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center">
-      <div className="flex flex-col items-center space-y-1 text-center text-[21px] leading-relaxed text-[#F8F8F7] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-        <p>
-          {t("hello")}
-          <br />
-          <br />
-          {t("welcomeTo")}
-        </p>
-        <p className="font-serif font-bold">{t("warehouseOfHeart")}</p>
-        <p>{t("thankYouForVisiting")}</p>
+    <div className="absolute flex h-full w-full flex-col items-center bg-1-1 bg-cover bg-no-repeat text-center text-base">
+      <p className="mt-60 font-bold text-[#1E1B20]">{t("about")}</p>
+      <p className="mt-3 w-80 text-[#1E1B20]">{t("story")}</p>
+      <p className="mt-8 font-bold text-[#A65554]">{t("warningHeading")}</p>
+      <p className="mt-2 w-80 text-[#A65554]">{t("warning")}</p>
+
+      <div className="absolute bottom-48">
+        <Link href="/1-2">
+          <NextButton trigger={true} />
+        </Link>
       </div>
-      <Link href="/1-1" locale="en">
-        <p>Switch to english</p>
-      </Link>
-      <Link href="/1-1" locale="th">
-        <p>Switch to thai</p>
-      </Link>
-      <Link href="/1-2" className="fixed bottom-36 text-[15px] text-[#F8F8F7]">
-        <p>กดที่หน้าจอเพื่อไปต่อ</p>
-      </Link>
     </div>
   );
 };
