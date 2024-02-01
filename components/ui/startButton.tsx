@@ -5,7 +5,7 @@ const NextButton = () => {
     <div className="fixed left-1/2 top-[60%] -translate-x-1/2 transform">
       <Button className="relative" variant="next" size="xs">
         <p className="fixed left-1/2 -translate-x-1/2 transform text-base font-semibold text-[#6C1F1F]">
-          ถัดไป
+        เริ่มเลย
         </p>
         <div className="absolute right-1">
           <svg
