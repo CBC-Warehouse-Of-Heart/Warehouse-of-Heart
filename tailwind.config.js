@@ -82,6 +82,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        '4-15': "url('/img/4-15.png')",
+        '4-16': "url('/img/4-16.png')",
+      }
     },
   },
   variants: {
