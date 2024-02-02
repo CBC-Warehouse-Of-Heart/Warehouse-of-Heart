@@ -1,31 +1,42 @@
-import Heart from "@/components/background/heart";
-import { Button } from "@/components/ui/button";
+"use client";
+import NextButton from "@/components/ui/nextButton";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 type Props = {};
 
 const Page = (props: Props) => {
+  const t = useTranslations("1-4");
   return (
-    <>
-      <Heart />
-      <div className="flex h-screen items-center">
-        <div className="container z-10 h-[248px] w-[267px] rounded-[30px] bg-[#F8F8F7] px-[60px] py-7 text-center">
-          <p className="font-sans text-lg font-bold text-[#6C1F1F]">
-            เธอพร้อมเดินทางไปด้วยกันมั้ย..?
-          </p>
+    <div className="bg-1-4 absolute h-full w-full bg-cover bg-no-repeat">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 2,
+        }}
+        className="text-woh-black flex flex-col items-center text-center text-base leading-8"
+      >
+        <p className="mt-64">
+          {t("blank")}
+          <br />
+          {t("youMight")}
+          <br />
+          {t("safeAndSound")}
+          <br />
+          {t("toWander")}
+          <br />
+          {t("whereATreasure")}
+        </p>
+        <div className="absolute bottom-44">
           <Link href="/1-5">
-            <Button variant="ready" size="xl" className="mt-5">
-              <p className="font-sans text-lg font-semibold">พร้อมแล้ว</p>
-            </Button>
-          </Link>
-          <Link href="/1-4a">
-            <Button variant="notSure" size="xl" className="mt-3">
-              <p className="font-sans text-lg font-semibold">ยังไม่แน่ใจ</p>
-            </Button>
+            <NextButton trigger={true} />
           </Link>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </div>
   );
 };
 

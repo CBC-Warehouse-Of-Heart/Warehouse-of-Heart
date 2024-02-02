@@ -26,6 +26,7 @@ module.exports = {
         'woh-white': '#F8F8F7',
         'purple-slider': '#374375',
         'light-purple-slider': '#8793C5',
+        'woh-black': '#1E1B20',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -86,6 +87,7 @@ module.exports = {
         '1-1': "url('/img/1-1.png')",
         '1-2': "url('/img/1-2.png')",
         '1-3': "url('/img/1-3.png')",
+        '1-4': "url('/img/1-4.gif')",
       }
     },
   },

@@ -1,27 +1,41 @@
+"use client";
 import NextButton from "@/components/ui/nextButton";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 type Props = {};
 
 const Page = (props: Props) => {
+  const t = useTranslations("1-3");
   return (
-    <div className="absolute flex h-full w-full flex-col items-center bg-1-3 bg-cover bg-no-repeat text-center text-base leading-[32px] text-[#1E1B20]">
-      <p className="mt-72">
-        ในระหว่างการเดินทาง
-        <br />
-        คุณอาจค้นเจอทั้งความทรงจำ
-        <br />
-        ที่แสนอบอุ่นเหมือนกับอ้อมกอด
-        <br />
-        ที่ปลอบประโลมและความทรงจำ
-        <br />
-        ที่คุณอาจพยายามหลีกเลี่ยง
-      </p>
-      <div className="absolute bottom-48">
-        <Link href="/1-4">
-          <NextButton trigger={true} />
-        </Link>
-      </div>
+    <div className="absolute h-full w-full bg-1-3 bg-cover bg-no-repeat">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 1,
+        }}
+        className="text-woh-black flex flex-col items-center text-center text-base leading-8"
+      >
+        <p className="mt-72">
+          {t("blank")}
+          <br />
+          {t("inThisJourney")}
+          <br />
+          {t("thereWillBe")}
+          <br />
+          {t("onesWarm")}
+          <br />
+          {t("likeHotCocoa")}
+        </p>
+        <div className="absolute bottom-44">
+          <Link href="/1-4">
+            <NextButton trigger={true} />
+          </Link>
+        </div>
+      </motion.div>
     </div>
   );
 };
