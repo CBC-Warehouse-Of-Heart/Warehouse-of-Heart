@@ -6,6 +6,7 @@ import { useNameStorkeStore } from "@/stores/NameStroke.store";
 import { useShareYourselfWordsStore } from "@/stores/ShareYourselfWords.store";
 import { useStickerStore } from "@/stores/sticker.store";
 import { toPng } from "html-to-image";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { getStroke } from "perfect-freehand";
 import { useCallback, useRef, useState } from "react";
@@ -13,10 +14,18 @@ import { useCallback, useRef, useState } from "react";
 type Props = {};
 
 const Page = (props: Props) => {
-  const words = useShareYourselfWordsStore((state) => state.words);
-  const stickerBgPath = useStickerStore((state) => state.stickerBgPath);
+  const t = useTranslations("4-17");
+
+  const words = useShareYourselfWordsStore(
+    (state: { words: string }) => state.words,
+  );
+  const stickerBgPath = useStickerStore(
+    (state: { stickerBgPath: string }) => state.stickerBgPath,
+  );
   const wordsRef = useRef<HTMLDivElement>(null);
-  const nameStorke = useNameStorkeStore((state) => state.nameStorke);
+  const nameStorke = useNameStorkeStore(
+    (state: { nameStorke: number[][][] }) => state.nameStorke,
+  );
   const [popup, setPopup] = useState<boolean>(false);
   const [downloadAlert, setDownloadAlert] = useState<boolean>(false);
 
@@ -62,7 +71,7 @@ const Page = (props: Props) => {
       setDownloadAlert(false);
     }, 3000);
     toPng(wordsRef.current, { cacheBust: true })
-      .then((dataUrl) => {
+      .then((dataUrl: string) => {
         const link = document.createElement("a");
         link.download = "warehouseofheart.png";
         link.href = dataUrl;
@@ -88,12 +97,12 @@ const Page = (props: Props) => {
         />
         <div className="z-1 absolute mr-8 mt-56 flex h-[480px] w-[284px] flex-col items-start rounded-xl">
           <div className="flex">
-            <p className="font-cursive text-lg text-[#1E1B20]">ถึง</p>
+            <p className="font-cursive text-woh-black text-lg">{t("dear")}</p>
             <svg id="svg" className="relative h-[30px] w-[63px] touch-none">
               {renderedStrokes}
             </svg>
           </div>
-          <div className="mt-1 overflow-hidden break-words text-base text-[#1E1B20]">
+          <div className="text-woh-black mt-1 overflow-hidden break-words text-base">
             <p>{words}</p>
           </div>
         </div>
@@ -101,7 +110,7 @@ const Page = (props: Props) => {
 
       <div
         onClick={onButtonClick}
-        className="z-1 absolute bottom-40 flex h-11 w-11 items-center justify-center gap-2.5 rounded-full bg-[#FFF]"
+        className="z-1 absolute bottom-32 flex h-11 w-11 items-center justify-center gap-2.5 rounded-full bg-[#FFF]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

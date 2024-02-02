@@ -2,43 +2,43 @@
 import NextButton from "@/components/ui/nextButton";
 import { useShareYourselfWordsStore } from "@/stores/ShareYourselfWords.store";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 type Props = {};
 
 const Page = (props: Props) => {
-  const words = useShareYourselfWordsStore((state) => state.words);
-  const updateWords = useShareYourselfWordsStore((state) => state.updateWords);
+  const t = useTranslations("4-15");
+
+  const words = useShareYourselfWordsStore(
+    (state: { words: string }) => state.words,
+  );
+  const updateWords = useShareYourselfWordsStore(
+    (state: { updateWords: (words: string) => void }) => state.updateWords,
+  );
 
   return (
-    <div className="absolute h-full w-full overflow-hidden">
-      <Image
-        src="/img/bg/4-5.png"
-        alt="Background"
-        className="z-0 object-cover "
-        fill={true}
-        priority={true}
-      />
+    <div className="bg-4-15 absolute h-full w-full bg-cover bg-no-repeat">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          duration: 2,
+          duration: 1,
+          delay: 1,
         }}
         className="absolute flex h-full w-full flex-col items-center"
       >
-        <p className="z-1 absolute mt-52 text-base text-[#F8F8F7]">
-          พอได้ทบทวนเรื่องราวช่วงนี้แล้ว
+        <p className="z-1 absolute mt-52 text-base text-woh-white">
+          {t("afterAll")}
           <br />
-          คุณอยากบอกอะไรกับตัวเอง
+          {t("doYou")}
         </p>
 
         <div className="z-1 absolute mt-80 h-[240px] w-[342px]">
           <textarea
             id="tellmyself-text"
             className="h-[240px] w-[342px] break-words rounded-xl bg-woh-white p-4 text-base text-[#1E1B20]"
-            placeholder="โปรดพิมพ์คำตอบของคุณ"
+            placeholder={t("typeAnswer")}
             maxLength={225}
             value={words}
             onChange={(e) => updateWords(e.target.value)}
@@ -48,7 +48,7 @@ const Page = (props: Props) => {
           </p>
         </div>
 
-        <div className="absolute bottom-52">
+        <div className="absolute bottom-48">
           <Link href="/4-16">
             <NextButton trigger={words.length > 0} />
           </Link>

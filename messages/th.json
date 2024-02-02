@@ -7,5 +7,37 @@
     "welcomeTo": "ยินดีต้อนรับเข้าสู่",
     "warehouseOfHeart": "\"Warehouse of Heart\"",
     "thankYouForVisiting": "ขอบคุณที่เข้ามาหาเราในวันนี้นะ :-)"
+  },
+  "NextButton": {
+    "next": "ถัดไป"
+  },
+  "4-15": {
+    "afterAll": "พอได้ทบทวนเรื่องราวช่วงนี้แล้ว",
+    "doYou": "คุณอยากบอกอะไรกับตัวเอง",
+    "typeAnswer": "โปรดพิมพ์คำตอบของคุณ"
+  },
+  "4-16": {
+    "dear": "ถึง ",
+    "click": "กด",
+    "toSelect": "เพื่อเลือก",
+    "sticker": "สติ๊กเกอร์",
+    "choose": "เลือก"
+  },
+  "StickerSelector": {
+    "sticker": "สติ๊กเกอร์"
+  },
+  "4-17": {
+    "dear": "ถึง "
+  },
+  "ConfirmPopup": {
+    "areYouSure": "ยืนยันเพื่อพลิกหน้าไดอารี่",
+    "youCannot": "หากผ่านไปแล้วไม่สามารถ",
+    "blank": "ย้อนกลับมาที่หน้านี้ได้",
+    "cancel": "ยกเลิก",
+    "next": "ถัดไป"
+  },
+  "DownloadImageAlert": {
+    "success": "ดาวน์โหลดสำเร็จ",
+    "theImage": "รูปภาพถูกบันทึกลงเครื่องของคุณ"
   }
 }

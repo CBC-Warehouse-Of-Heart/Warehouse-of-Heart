@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const DownloadImageAlert = (props: { trigger: boolean }) => {
+  const t = useTranslations("DownloadImageAlert");
   return (
     <AnimatePresence>
       {props.trigger && (
@@ -41,11 +43,9 @@ const DownloadImageAlert = (props: { trigger: boolean }) => {
               </svg>
               <div className="flex flex-col items-start">
                 <p className="text-sm font-semibold text-[#00B488]">
-                  ดาวน์โหลดสำเร็จ
+                  {t("success")}
                 </p>
-                <p className="text-xs text-[#293038]">
-                  รูปภาพถูกบันทึกลงเครื่องของคุณ
-                </p>
+                <p className="text-xs text-[#293038]">{t("theImage")}</p>
               </div>
             </div>
           </motion.div>

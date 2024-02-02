@@ -10,7 +10,7 @@ type SoundAction = {
 
 export const useSoundStore = create<SoundState & SoundAction>((set) => ({
   sound: true,
-  updateSound: (sound) =>
+  updateSound: (sound: boolean) =>
     set(() => ({
       sound: sound,
     })),

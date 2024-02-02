@@ -11,6 +11,7 @@ type NameStorkeAction = {
 export const useNameStorkeStore = create<NameStorkeState & NameStorkeAction>(
   (set) => ({
     nameStorke: [],
-    updateNameStorke: (nameStorke) => set(() => ({ nameStorke: nameStorke })),
+    updateNameStorke: (nameStorke: number[][][]) =>
+      set(() => ({ nameStorke: nameStorke })),
   }),
 );

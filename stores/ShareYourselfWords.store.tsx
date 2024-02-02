@@ -12,5 +12,5 @@ export const useShareYourselfWordsStore = create<
   ShareYourselfWordsState & ShareYourselfWordsAction
 >((set) => ({
   words: "",
-  updateWords: (words) => set(() => ({ words: words })),
+  updateWords: (words: string) => set(() => ({ words: words })),
 }));

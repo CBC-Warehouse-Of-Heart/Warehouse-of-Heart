@@ -7,5 +7,37 @@
     "welcomeTo": "Welcome to",
     "warehouseOfHeart": "\"Warehouse of Heart\"",
     "thankYouForVisiting": "Thank you for visiting us today :)"
+  },
+  "NextButton": {
+    "next": "Next"
+  },
+  "4-15": {
+    "afterAll": "After all, what tender words",
+    "doYou": "do you wish to share with yourself?",
+    "typeAnswer": "Please type your answer."
+  },
+  "4-16": {
+    "dear": "Dear ",
+    "click": "Click",
+    "toSelect": "to select",
+    "sticker": "Sticker",
+    "choose": "Choose"
+  },
+  "StickerSelector": {
+    "sticker": "Sticker"
+  },
+  "4-17": {
+    "dear": "Dear "
+  },
+  "ConfirmPopup": {
+    "areYouSure": "Are you sure ?",
+    "youCannot": "You cannot return to this page.",
+    "blank": "",
+    "cancel": "Cancel",
+    "next": "Next"
+  },
+  "DownloadImageAlert": {
+    "success": "Download success",
+    "theImage": "The image has been saved to your camera roll."
   }
 }

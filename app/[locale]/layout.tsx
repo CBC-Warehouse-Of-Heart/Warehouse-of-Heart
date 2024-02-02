@@ -6,7 +6,7 @@ import {
   Lora,
   Nothing_You_Could_Do,
 } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const ibmPlexSansThaiLooped = IBM_Plex_Sans_Thai_Looped({
   weight: ["400", "500", "600", "700"],
