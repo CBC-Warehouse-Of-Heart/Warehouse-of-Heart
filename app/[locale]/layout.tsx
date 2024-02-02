@@ -1,3 +1,4 @@
+import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import {
@@ -30,13 +31,19 @@ export const metadata: Metadata = {
   description: "Warehouse of Heart",
 };
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
 export default function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={cn(
           lora.variable,
