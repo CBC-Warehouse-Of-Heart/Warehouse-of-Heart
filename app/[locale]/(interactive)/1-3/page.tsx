@@ -17,7 +17,7 @@ const Page = (props: Props) => {
           duration: 1,
           delay: 1,
         }}
-        className="text-woh-black flex flex-col items-center text-center text-base leading-8"
+        className="flex flex-col items-center text-center text-base leading-8 text-woh-black"
       >
         <p className="mt-72">
           {t("blank")}
@@ -32,7 +32,7 @@ const Page = (props: Props) => {
         </p>
         <div className="absolute bottom-44">
           <Link href="/1-4">
-            <NextButton trigger={true} />
+            <NextButton />
           </Link>
         </div>
       </motion.div>

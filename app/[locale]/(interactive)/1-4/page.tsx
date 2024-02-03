@@ -9,7 +9,7 @@ type Props = {};
 const Page = (props: Props) => {
   const t = useTranslations("1-4");
   return (
-    <div className="bg-1-4 absolute h-full w-full bg-cover bg-no-repeat">
+    <div className="absolute h-full w-full bg-1-4 bg-cover bg-no-repeat">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -17,7 +17,7 @@ const Page = (props: Props) => {
           duration: 1,
           delay: 2,
         }}
-        className="text-woh-black flex flex-col items-center text-center text-base leading-8"
+        className="flex flex-col items-center text-center text-base leading-8 text-woh-black"
       >
         <p className="mt-64">
           {t("blank")}
@@ -32,7 +32,7 @@ const Page = (props: Props) => {
         </p>
         <div className="absolute bottom-44">
           <Link href="/1-5">
-            <NextButton trigger={true} />
+            <NextButton />
           </Link>
         </div>
       </motion.div>
