@@ -85,6 +85,7 @@ module.exports = {
       },
       backgroundImage: {
         '1-6': "url('/img/1-6.gif')",
+        '1-5': "url('/img/1-5.png')",
       }
     },
   },

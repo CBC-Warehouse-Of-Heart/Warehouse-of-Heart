@@ -7,7 +7,7 @@ type Props = {};
 const Page = (props: Props) => {
   return (
     <>
-      <div className="flex flex-col bg-1-6 mx-auto min-w-[430px] items-center justify-center overflow-hidden bg-cover bg-no-repeat">
+      <div className="flex flex-col bg-1-5 mx-auto min-w-[430px] items-center justify-center overflow-hidden bg-cover bg-no-repeat">
         <div className="mb-0 font-semibold text-center text-[#F8F8F7]">
           <p className="mb-1">ตอนนี้คุณพร้อมที่จะเดินทาง</p>
           <p className="mb-1">เข้าสู่ห้องเก็บของใจแล้วหรือยัง</p>
