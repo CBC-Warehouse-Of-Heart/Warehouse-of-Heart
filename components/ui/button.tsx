@@ -19,7 +19,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         ready: "bg-[#272018] text-[#FFFFFF]",
         notSure: "border-[2px] border-[#272018] text-[#272018]",
-        next: "bg-woh-white text-[#6C1F1F] text-base font-semibold",
+        next: "bg-woh-white text-[#6C1F1F] text-base font-semibold disabled:text-[#B8BFCB]",
       },
       size: {
         default: "h-auto text-xl sm:text-5xl px-6 py-3 sm:py-5",
