@@ -7,16 +7,21 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format:fix": "prettier --write --ignore-path .gitignore ."
+    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "test": "pnpm test"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "framer-motion": "^10.18.0",
     "lucide-react": "^0.292.0",
     "next": "14.0.1",
+    "next-videos": "^1.4.1",
     "react": "^18",
     "react-dom": "^18",
+    "slider": "^1.0.4",
+    "swiper": "^11.0.5",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7"
   },

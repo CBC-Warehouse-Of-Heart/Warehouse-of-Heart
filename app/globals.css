@@ -10,9 +10,9 @@
   :root {
     --background: radial-gradient(
       80.99% 50% at 50% 50%,
-      #aa5656 0%,
-      #ce9a87 51.04%,
-      #f2deb9 100%
+      #ffffff 0%,
+      #ffffff 51.04%,
+      #ffffff 100%
     );
     --background-secondary: radial-gradient(
       125.94% 49.83% at 50% 50%,
