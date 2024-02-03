@@ -68,12 +68,12 @@ const Page = (props: Props) => {
     <div className="bg-4-16 absolute flex h-full w-full flex-col items-center bg-cover bg-no-repeat">
       <div className="z-1 absolute mr-8 mt-56 flex h-[440px] w-[284px] flex-col items-start rounded-xl">
         <div className="flex">
-          <p className="font-cursive text-woh-black text-lg">{t("dear")}</p>
+          <p className="font-cursive text-lg text-woh-black">{t("dear")}</p>
           <svg id="svg" className="relative h-[30px] w-[63px] touch-none">
             {renderedStrokes}
           </svg>
         </div>
-        <div className="text-woh-black mt-1 overflow-hidden break-words text-base">
+        <div className="mt-1 overflow-hidden break-words text-base text-woh-black">
           <p>{words}</p>
         </div>
         <p className="fixed ml-20 mt-[400px] -rotate-6 text-[#844D4D]">
@@ -144,7 +144,7 @@ const Page = (props: Props) => {
       {!showStickers && (hasSelectedSticker || stickerId > 1) && (
         <div className="z-1 absolute bottom-16">
           <Link href="/4-17">
-            <NextButton trigger={true} />
+            <NextButton />
           </Link>
         </div>
       )}

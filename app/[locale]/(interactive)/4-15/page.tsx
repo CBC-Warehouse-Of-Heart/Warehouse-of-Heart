@@ -37,7 +37,7 @@ const Page = (props: Props) => {
         <div className="z-1 absolute mt-80 h-[240px] w-[342px]">
           <textarea
             id="tellmyself-text"
-            className="h-[240px] w-[342px] break-words rounded-xl bg-woh-white p-4 text-base text-[#1E1B20]"
+            className="h-[240px] w-[342px] break-words rounded-xl bg-woh-white p-4 text-base text-[#1E1B20] placeholder:text-[#B4A49A]"
             placeholder={t("typeAnswer")}
             maxLength={225}
             value={words}

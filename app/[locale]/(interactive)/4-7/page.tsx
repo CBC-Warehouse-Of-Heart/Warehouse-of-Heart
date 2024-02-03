@@ -54,7 +54,7 @@ const Page = (props: Props) => {
       </div>
       <div className="mt-6">
         <Link href="/4-15">
-          <NextButton trigger={true} />
+          <NextButton />
         </Link>
       </div>
     </div>
