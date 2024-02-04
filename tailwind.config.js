@@ -13,16 +13,17 @@ module.exports = {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
-        // "se": "380px"
+
       },
-    },
-    fontFamily: {
-      sans: ["var(--ibm-plex-sans-thai-looped-font)", "Inter", "sans-serif"],
-      serif: ["var(--lora-font)", "Merriweather", "serif"],
-      cursive: ["var(--nothing-you-could-do-font)", "Nothing You Could Do", "cursive"]
     },
     extend: {
       colors: {
+        brown: "#675D51",
+        gray: "#D9D9D9",
+        "woh-white": "#F8F8F7",
+        "purple-slider": "#374375",
+        "light-purple-slider": "#8793C5",
+        "woh-black": "#1E1B20",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -79,21 +80,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      backgroundImage: {
-        '4-1': "url('/img/4-1.png')",
-        '4-2': "url('/img/4-2.png')",
-        '4-3': "url('/img/4-3.png')",
-        '4-5': "url('/img/4-5.png')",
-        'book-1': "url('/img/book-1.png')",
-        'book-2': "url('/img/book-2.png')",
-        'book-3': "url('/img/book-3.png')",
-        'book-4': "url('/img/book-4.png')",
-        'white-radial': "url('/img/white-radial.png')"
-      }
-    },
-    colors: {
-      'white': '#F8F8F7',
-      'secondary-white': "#F3F3F0",
+
     },
   },
   variants: {
