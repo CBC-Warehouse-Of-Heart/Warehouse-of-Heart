@@ -7,7 +7,7 @@ type Props = {};
 const Page = (props: Props) => {
   const t = useTranslations("1-1");
   return (
-    <div className="bg-1-1 absolute flex h-full w-full flex-col items-center bg-cover bg-no-repeat text-center text-base">
+    <div className="absolute flex h-full w-full flex-col items-center text-center text-base">
       <p className="text-woh-black mt-52 font-bold">{t("about")}</p>
       <p className="text-woh-black mt-2 w-80">{t("story")}</p>
       <p className="mt-10 font-bold text-[#A65554]">{t("warningHeading")}</p>

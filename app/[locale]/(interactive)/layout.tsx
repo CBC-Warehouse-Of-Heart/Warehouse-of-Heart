@@ -1,11 +1,13 @@
 "use client";
+import AnimatedImage from "@/components/animated-image";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { backgroundMapConfig } from "@/lib/bg-config";
 import { Link, usePathname } from "@/lib/navigation";
 import { soundPageMap } from "@/lib/sounds";
 import { Volume2, VolumeX } from "lucide-react";
 import { useLocale } from "next-intl";
-import React, { createRef, useEffect, useState } from "react";
+import React, { createRef, useEffect, useMemo, useState } from "react";
 import ReactHowler from "react-howler";
 
 export default function RootLayout({
@@ -35,6 +37,10 @@ export default function RootLayout({
 
   const soundRef = createRef<ReactHowler>();
 
+  const backgroundImgSrc = useMemo(() => {
+    return backgroundMapConfig[page] ?? "/img/1-1.png";
+  }, [page]);
+
   const handleToggleSound = () => {
     setIsPlaying((prev) => !prev);
   };
@@ -51,27 +57,32 @@ export default function RootLayout({
           soundRef.current?.howler.fade(0, 0.5, fadeDuration);
         }}
       />
-      <div
-        className={
-          "relative h-full w-full bg-[radial-gradient(80.99%_50%_at_50%_50%,#AA5656_0%,#CE9A87_51.04%,#F2DEB9_100%)]"
-        }
-      >
+      <div className={"relative h-full w-full bg-[#e0dac7]"}>
+        <AnimatedImage
+          src={backgroundImgSrc}
+          alt="background-image"
+          fill
+          className="object-cover"
+        />
         <div className="fixed right-5 top-10 z-10 flex items-center">
           <Link href={path} locale={locale === "en" ? "th" : "en"}>
-            <Button variant="ghost" className="h-auto w-auto p-3 text-accent">
+            <Button
+              variant="ghost"
+              className="h-auto w-auto p-3 text-sm text-accent"
+            >
               {locale === "en" ? "EN" : "TH"}
             </Button>
           </Link>
-          <Separator orientation="vertical" className="h-10" />
+          <Separator orientation="vertical" className="h-8" />
           <Button
             variant="ghost"
             onClick={handleToggleSound}
-            className="h-auto w-auto p-3 text-accent"
+            className="h-auto w-auto p-2 text-accent"
           >
             {isPlaying ? (
-              <Volume2 className="h-7 w-7" />
+              <Volume2 className="h-5 w-5" />
             ) : (
-              <VolumeX className="h-7 w-7" />
+              <VolumeX className="h-5 w-5" />
             )}
           </Button>
         </div>
