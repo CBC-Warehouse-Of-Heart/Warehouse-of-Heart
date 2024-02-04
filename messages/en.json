@@ -23,7 +23,8 @@
     "haveNotSeen": "I haven't seen it in such a long time\""
   },
   "4-6": {
-    "theOwnerIs": "The owner of this book is..."
+    "theOwnerIs": "The owner of this book is...",
+    "drawToSign": "Draw here to sign"
   },
   "Feedback": {
     "rating": "Tell us how you feel about the website",

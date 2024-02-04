@@ -1,14 +1,17 @@
 "use client";
-import NextButton from "@/components/ui/nextButton";
+
+import { Link } from "@/lib/navigation";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function Page() {
   return (
-
-    <div className="mx-auto min-w-[430px] min-h-screen bg-4-5 bg-cover bg-no-repeat">
-      <Link href="4-6">
-      <div className="flex justify-center mt-[350px] p-20"></div>
+    <div className="mx-auto flex h-[100dvh] flex-col items-center text-white">
+      <Link href="4-6" className="h-full w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.6, transition: { duration: 1, delay: 1 } }}
+          className="absolute right-[20%] top-[40%] h-10 w-10 animate-pulse rounded-full bg-black"
+        />
       </Link>
     </div>
   );

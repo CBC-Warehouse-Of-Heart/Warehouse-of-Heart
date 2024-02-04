@@ -13,7 +13,6 @@ module.exports = {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
-
       },
     },
     extend: {
@@ -61,6 +60,9 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        "white-radial": "url('/img/white-radial.png')",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -80,7 +82,6 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-
     },
   },
   variants: {

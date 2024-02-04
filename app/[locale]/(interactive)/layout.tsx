@@ -61,12 +61,12 @@ export default function RootLayout({
           soundRef.current?.howler.fade(0, 0.5, fadeDuration);
         }}
       />
-      <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none bg-[#e0dac7]">
+      <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
         <AnimatedImage
           src={backgroundImgSrc}
           alt="background-image"
           fill
-          className="object-cover"
+          className="-z-50 object-cover"
         />
         <div className="absolute right-5 top-10 z-10 flex items-center">
           <Link href={path} locale={locale === "en" ? "th" : "en"}>

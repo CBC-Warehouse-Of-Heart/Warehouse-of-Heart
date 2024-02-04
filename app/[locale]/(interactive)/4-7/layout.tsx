@@ -6,7 +6,7 @@ const Layout = ({ children }: PropsWithChildren<{}>) => {
   const messages = useMessages();
 
   return (
-    <NextIntlClientProvider messages={pick(messages, ["4-2", "NextButton"])}>
+    <NextIntlClientProvider messages={pick(messages, ["NextButton"])}>
       {children}
     </NextIntlClientProvider>
   );

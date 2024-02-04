@@ -1,15 +1,13 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
+import { Link } from "@/lib/navigation";
+import { useNameStrokeStore } from "@/stores/NameStroke.store";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { getStroke } from "perfect-freehand";
-import { useContext } from "react";
-import AppContext from "../../../../components/AppContext";
 type Props = {};
 
 const Page = (props: Props) => {
-  const context = useContext(AppContext);
-  const strokes = context.session;
+  const { nameStroke } = useNameStrokeStore();
 
   function getSvgPathFromStroke(stroke: any) {
     if (!stroke.length) return "";
@@ -32,7 +30,7 @@ const Page = (props: Props) => {
     return d.join(" ");
   }
 
-  const renderedStrokes = strokes.map((stroke: any, index: any) => {
+  const renderedStrokes = nameStroke.map((stroke: any, index: any) => {
     const pathData = getSvgPathFromStroke(
       getStroke(stroke, {
         size: 8,
@@ -45,17 +43,15 @@ const Page = (props: Props) => {
   });
 
   return (
-    <div className="bg-4-3 mx-auto min-h-screen min-w-[430px] bg-cover bg-no-repeat">
-      <div className="ml-10 mt-[295px] flex justify-center">
-        <svg
-          id="svg"
-          className="relative scale-[0.2] touch-none object-contain"
-        >
-          {renderedStrokes}
-        </svg>
-      </div>
-      <div className="mt-[225px] max-[380px]:mt-[135px]">
-        <Link href="4-8">
+    <div className="relative mx-auto flex h-[100dvh] flex-col items-center text-white">
+      <svg
+        id="svg"
+        className="absolute left-[22%] top-[31%] scale-[0.15] touch-none object-contain"
+      >
+        {renderedStrokes}
+      </svg>
+      <div className="absolute bottom-[25%]">
+        <Link href="/4-9">
           <motion.div
             initial={{ opacity: 0, z: -20 }}
             animate={{
