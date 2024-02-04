@@ -17,12 +17,7 @@ const Page = (props: Props) => {
         <p className="font-serif font-bold">{t("warehouseOfHeart")}</p>
         <p>{t("thankYouForVisiting")}</p>
       </div>
-      <Link href="/1-1" locale="en">
-        <p>Switch to english</p>
-      </Link>
-      <Link href="/1-1" locale="th">
-        <p>Switch to thai</p>
-      </Link>
+
       <Link href="/1-2" className="fixed bottom-36 text-[15px] text-[#F8F8F7]">
         <p>กดที่หน้าจอเพื่อไปต่อ</p>
       </Link>
