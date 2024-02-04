@@ -1,10 +1,16 @@
 import Heart from "@/components/background/heart";
 import NextButton from "@/components/ui/nextButton";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 
-type Props = {};
+type Props = {
+  params: {
+    locale: string;
+  };
+};
 
-const Page = (props: Props) => {
+const Page = ({ params: { locale } }: Props) => {
+  unstable_setRequestLocale(locale);
   return (
     <>
       <Heart />
