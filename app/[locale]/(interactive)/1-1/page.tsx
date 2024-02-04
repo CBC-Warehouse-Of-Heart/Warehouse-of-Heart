@@ -1,26 +1,23 @@
+import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
 
 type Props = {};
 
 const Page = (props: Props) => {
-  const t = useTranslations("Welcome");
+  const t = useTranslations("1-1");
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center">
-      <div className="flex flex-col items-center space-y-1 text-center text-[21px] leading-relaxed text-[#F8F8F7] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-        <p>
-          {t("hello")}
-          <br />
-          <br />
-          {t("welcomeTo")}
-        </p>
-        <p className="font-serif font-bold">{t("warehouseOfHeart")}</p>
-        <p>{t("thankYouForVisiting")}</p>
-      </div>
+    <div className="bg-1-1 absolute flex h-full w-full flex-col items-center bg-cover bg-no-repeat text-center text-base">
+      <p className="text-woh-black mt-52 font-bold">{t("about")}</p>
+      <p className="text-woh-black mt-2 w-80">{t("story")}</p>
+      <p className="mt-10 font-bold text-[#A65554]">{t("warningHeading")}</p>
+      <p className="mt-2 w-72 text-[#A65554]">{t("warning")}</p>
 
-      <Link href="/1-2" className="fixed bottom-36 text-[15px] text-[#F8F8F7]">
-        <p>กดที่หน้าจอเพื่อไปต่อ</p>
-      </Link>
+      <div className="absolute bottom-44">
+        <Link href="/1-2">
+          <NextButton />
+        </Link>
+      </div>
     </div>
   );
 };

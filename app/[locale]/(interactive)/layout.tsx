@@ -40,42 +40,33 @@ export default function RootLayout({
   };
 
   return (
-    <>
-      <ReactHowler
-        src={currentSound}
-        volume={0.5}
-        playing={isPlaying}
-        loop
-        ref={soundRef}
-        onPlay={() => {
-          soundRef.current?.howler.fade(0, 0.5, fadeDuration);
-        }}
-      />
-      <div
-        className={
-          "relative h-full w-full bg-[radial-gradient(80.99%_50%_at_50%_50%,#AA5656_0%,#CE9A87_51.04%,#F2DEB9_100%)]"
-        }
-      >
-        <div className="fixed right-5 top-20 flex items-center">
-          <Link href={path} locale={locale === "en" ? "th" : "en"}>
-            <Button variant="ghost" className="h-auto w-auto p-3 text-accent">
-              {locale === "en" ? "EN" : "TH"}
-            </Button>
-          </Link>
-          <Separator orientation="vertical" className="h-10" />
+    <div
+      className={
+        "relative h-full w-full bg-[radial-gradient(80.99%_50%_at_50%_50%,#AA5656_0%,#CE9A87_51.04%,#F2DEB9_100%)]"
+      }
+    >
+      <div className="fixed right-5 top-5 z-10 flex items-center">
+        <Link href={path} locale={locale === "en" ? "th" : "en"}>
           <Button
             variant="ghost"
-            onClick={handleToggleSound}
             className="h-auto w-auto p-3 text-accent"
+            size="sm"
           >
-            {isPlaying ? (
-              <Volume2 className="h-7 w-7" />
-            ) : (
-              <VolumeX className="h-7 w-7" />
-            )}
+            {locale === "en" ? "EN" : "TH"}
           </Button>
-        </div>
-        {children}
+        </Link>
+        <Separator orientation="vertical" className="h-8" />
+        <Button
+          variant="ghost"
+          onClick={handleToggleSound}
+          className="h-auto w-auto rounded-sm p-2 text-accent"
+        >
+          {sound ? (
+            <Volume2 className="h-5 w-5" />
+          ) : (
+            <VolumeX className="h-5 w-5" />
+          )}
+        </Button>
       </div>
     </>
   );

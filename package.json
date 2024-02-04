@@ -16,6 +16,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "howler": "^2.2.4",
+    "framer-motion": "^11.0.3",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.292.0",
     "next": "14.0.1",
     "next-intl": "^3.4.5",
