@@ -14,8 +14,7 @@ export default function Page() {
         animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
         className="mt-[147px] mb-[403px] max-[380px]:mb-[310px] bg-white-radial bg-center bg-no-repeat p-10"
       >
-        <p className="text-center">{t("What is that?")}</p>
-        {/* <p className="text-center">{text_4_1}</p> */}
+        <p className="text-center">{t("whatIsThat")}</p>
       </motion.div>
       
 

@@ -1,11 +1,11 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/lib/navigation";
 
 export default function Page() {
-  const text_4_3 = '"นี่มันไดอารี่ของเรานี่นา"';
-
+  const t = useTranslations("4-3");
   return (
     <div className="text-white text-center mx-auto min-w-[430px] min-h-screen bg-4-3 bg-cover bg-no-repeat">
       <motion.div
@@ -13,7 +13,7 @@ export default function Page() {
         animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
         className="mt-[218px] mb-[403px] max-[380px]:mb-[335px]"
       >
-        <p>{text_4_3}</p>
+        <p>{t("myDiary")}</p>
       </motion.div>
       
 

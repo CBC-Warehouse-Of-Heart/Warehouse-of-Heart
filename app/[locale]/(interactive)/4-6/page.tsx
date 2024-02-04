@@ -1,38 +1,21 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
-import Link from "next/link";
+import { Link } from "@/lib/navigation";
+import { useNameStrokeStore } from "@/stores/NameStroke.store";
+import { getSvgPathFromStroke, renderedStrokes } from "@/utils/svg";
+import { useTranslations } from "next-intl";
 import { getStroke } from "perfect-freehand";
-import React, { useContext, useEffect, useRef } from "react";
-import AppContext from "../../../../components/AppContext";
+import React, { useRef } from "react";
 
 type Props = {};
 
 const Page = (props: Props) => {
-  function getSvgPathFromStroke(stroke: any) {
-    if (!stroke.length) return "";
-    const d = stroke.reduce(
-      (acc: any[], [x0, y0]: any, i: number, arr: string | any[]) => {
-        const [x1, y1] = arr[(i + 1) % arr.length];
-        acc.push(x0, y0, (x0 + x1) / 2, (y0 + y1) / 2);
-        return acc;
-      },
-      ["M", ...stroke[0], "Q"],
-    );
-    d.push("Z");
-    return d.join(" ");
-  }
-
+  const t = useTranslations("4-6");
+  const { nameStroke, updateNameStroke } = useNameStrokeStore();
   const [hasWrite, setWrite] = React.useState<boolean>(false);
-  const [strokes, setStrokes] = React.useState<number[][][]>([]);
   const currentStroke = useRef<number[][]>([]);
-  const context = useContext(AppContext);
   const svgRef = useRef();
-
-  useEffect(() => {
-    return () => {
-      context.setSession(strokes);
-    };
-  }, [strokes]);
+  const allStrokes = renderedStrokes(1);
 
   function handlePointerDown(e: React.PointerEvent<SVGSVGElement>) {
     setWrite(true);
@@ -51,37 +34,25 @@ const Page = (props: Props) => {
       e.pageY - pos.top,
       e.pressure,
     ]);
-    setStrokes([...strokes]);
+    updateNameStroke([...nameStroke]);
   }
 
   function handlePointerUp() {
     // new function to handle new independent stroke
-    setStrokes([...strokes, currentStroke.current]);
+    updateNameStroke([...nameStroke, currentStroke.current]);
     currentStroke.current = [];
   }
 
   function clearStrokes() {
     setWrite(false);
-    setStrokes([]);
+    updateNameStroke([]);
   }
-
-  const renderedStrokes = strokes.map((stroke, index) => {
-    const pathData = getSvgPathFromStroke(
-      getStroke(stroke, {
-        size: 8,
-        thinning: 0.5,
-        smoothing: 0.5,
-        streamline: 0.5,
-      }),
-    );
-    return <path key={index} d={pathData} />;
-  });
 
   return (
     <>
       <div className=" bg-4-5 mx-auto min-h-screen min-w-[430px] bg-cover bg-no-repeat">
         <div className="mb-[140px] mt-[231px] flex flex-col items-center text-center max-[380px]:mb-[50px]">
-          <p className="mb-4 text-white">เจ้าของสมุดเล่มนี้คือ...</p>
+          <p className="mb-4 text-white">{t("theOwnerIs")}</p>
           <div className="relative mt-20">
             <svg
               id="svg"
@@ -91,7 +62,7 @@ const Page = (props: Props) => {
               onPointerUp={handlePointerUp}
               className="relative h-[160px] w-[342px] touch-none rounded-[10px] bg-[#E8E5DD] opacity-100"
             >
-              {renderedStrokes}
+              {allStrokes}
               {currentStroke.current.length > 0 && (
                 <path
                   d={getSvgPathFromStroke(
@@ -101,11 +72,13 @@ const Page = (props: Props) => {
                       smoothing: 0.5,
                       streamline: 0.5,
                     }),
+                    1,
                   )}
                 />
               )}
             </svg>
-            {!hasWrite && (
+
+            {!(hasWrite || nameStroke.length) && (
               <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-center text-[#B4A49A]">
                 ลากนิ้วเพื่อเขียนชื่อ
               </p>
