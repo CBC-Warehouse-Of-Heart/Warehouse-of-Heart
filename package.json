@@ -25,7 +25,8 @@
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
     "use-sound": "^4.0.1",
-    "web-audio-api": "^0.2.2"
+    "web-audio-api": "^0.2.2",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/howler": "^2.2.11",
