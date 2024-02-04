@@ -1,6 +1,7 @@
 import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
+import { unstable_setRequestLocale } from "next-intl/server";
 import {
   IBM_Plex_Sans_Thai_Looped,
   Lora,
@@ -11,19 +12,16 @@ import "../globals.css";
 const ibmPlexSansThaiLooped = IBM_Plex_Sans_Thai_Looped({
   weight: ["400", "500", "600", "700"],
   subsets: ["thai"],
-  variable: "--ibm-plex-sans-thai-looped-font",
 });
 
 const lora = Lora({
   weight: ["400", "500", "600", "700"],
-  variable: "--lora-font",
   subsets: ["latin"],
 });
 
 const nothingYouCouldDo = Nothing_You_Could_Do({
   weight: ["400"],
   subsets: ["latin"],
-  variable: "--nothing-you-could-do-font",
 });
 
 export const metadata: Metadata = {
@@ -42,13 +40,16 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
   return (
     <html lang={locale}>
       <body
         className={cn(
-          lora.variable,
-          ibmPlexSansThaiLooped.variable,
-          nothingYouCouldDo.variable,
+          {
+            [lora.className]: locale === "en",
+            [ibmPlexSansThaiLooped.className]: locale === "th",
+            [nothingYouCouldDo.className]: locale === "en",
+          },
           "h-screen w-screen ",
         )}
       >

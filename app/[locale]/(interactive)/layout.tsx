@@ -1,26 +1,100 @@
-'use client'
-// Interactive game layout here
-import React, { useState } from 'react'
+"use client";
+import AnimatedImage from "@/components/animated-image";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { backgroundMapConfig } from "@/lib/bg-config";
+import { Link, usePathname } from "@/lib/navigation";
+import { soundPageMap } from "@/lib/sounds";
+import { cn } from "@/lib/utils";
+import { useSoundStore } from "@/store/sound";
+import { Volume2, VolumeX } from "lucide-react";
+import { useLocale } from "next-intl";
+import { Inter } from "next/font/google";
+import React, { createRef, useEffect, useMemo, useState } from "react";
+import ReactHowler from "react-howler";
+
+const interFont = Inter({
+  weight: "600",
+  subsets: ["greek"],
+});
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = useLocale();
 
-  const [sound, setSound] = useState(true)
+  const path = usePathname();
+  const page = path.split("/")[1];
+  const { isPlaying, toggle } = useSoundStore();
+
+  const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
+
+  const fadeDuration = 500;
+
+  useEffect(() => {
+    const nextSound = soundPageMap[page] ?? "/sound/main.mp3";
+    if (nextSound !== currentSound) {
+      soundRef.current?.howler.fade(0.5, 0, fadeDuration);
+      setTimeout(() => {
+        setCurrentSound(nextSound);
+      }, fadeDuration);
+    }
+  }, [page]);
+
+  const soundRef = createRef<ReactHowler>();
+
+  const backgroundImgSrc = useMemo(() => {
+    return backgroundMapConfig[page] ?? "/img/1-1.png";
+  }, [page]);
 
   return (
-    <div className={"h-full w-full bg-[radial-gradient(80.99%_50%_at_50%_50%,#AA5656_0%,#CE9A87_51.04%,#F2DEB9_100%)] relative"}>
-      <div className='fixed top-20 right-14' onClick={() => setSound(!sound)}>
-        {sound && (
-          <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 24 24" fill="none" stroke="#F8F8F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-volume-2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="#F8F8F7"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-        )}
-        {!sound && (
-          <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 24 24" fill="none" stroke="#F8F8F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-volume-x"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="#F8F8F7"/><line x1="22" x2="16" y1="9" y2="15" /><line x1="16" x2="22" y1="9" y2="15"/></svg>
-        )}
+    <>
+      <ReactHowler
+        src={currentSound}
+        volume={0.5}
+        playing={isPlaying}
+        loop
+        ref={soundRef}
+        onPlay={() => {
+          soundRef.current?.howler.fade(0, 0.5, fadeDuration);
+        }}
+      />
+      <div className={"relative h-full w-full bg-[#e0dac7]"}>
+        <AnimatedImage
+          src={backgroundImgSrc}
+          alt="background-image"
+          fill
+          className="object-cover"
+        />
+        <div className="fixed right-5 top-10 z-10 flex items-center">
+          <Link href={path} locale={locale === "en" ? "th" : "en"}>
+            <Button
+              variant="ghost"
+              className={cn(
+                interFont.className,
+                "h-auto w-auto p-2 text-sm font-semibold text-accent",
+              )}
+            >
+              {locale === "en" ? "EN" : "TH"}
+            </Button>
+          </Link>
+          <Separator orientation="vertical" className="h-7" />
+          <Button
+            variant="ghost"
+            onClick={toggle}
+            className="h-auto w-auto p-2 text-accent"
+          >
+            {isPlaying ? (
+              <Volume2 className="h-5 w-5" />
+            ) : (
+              <VolumeX className="h-5 w-5" />
+            )}
+          </Button>
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+    </>
   );
 }
