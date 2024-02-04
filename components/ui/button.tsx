@@ -22,7 +22,7 @@ const buttonVariants = cva(
         next: "bg-[#F8F8F7]",
       },
       size: {
-        default: "h-auto text-xl sm:text-5xl px-6 py-3 sm:py-5",
+        default: "h-[57px] w-[145px] text-xl sm:text-xl px-6 py-3 sm:py-5",
         xs: "h-8 rounded-[100px] w-28",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",

@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@radix-ui/react-slider": "^1.1.2",
-    "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.292.0",
     "next": "14.0.1",
     "next-intl": "^3.4.5",
@@ -25,9 +25,12 @@
     "web-audio-api": "^0.2.2"
   },
   "devDependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "@types/lodash": "^4.14.202",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-howler": "^5.2.3",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",

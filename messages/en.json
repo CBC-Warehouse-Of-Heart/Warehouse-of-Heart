@@ -7,5 +7,22 @@
     "welcomeTo": "Welcome to",
     "warehouseOfHeart": "\"Warehouse of Heart\"",
     "thankYouForVisiting": "Thank you for visiting us today :)"
+  },
+  "1-5": {
+    "areYouReady": "Are you ready",
+    "forTheJourney": "for the journey to begin?",
+    "ready": "Yes",
+    "maybeNotNow": "Maybe not now"
+  },
+  "1-6": {
+    "welcomeTo": "Welcome to",
+    "warehouseOfHeart": "Warehouse of Heart.",
+    "journeyBegin": "Let your journey begin."
+  },
+  "1-6a": {
+    "itsOkay": "It's okay to say so.",
+    "weAre": "We are truly proud of you that you choose to admit the unreadiness.",
+    "takeRest": "Now, take a good rest.",
+    "seeYou": "See you whenever you'd like :-)"
   }
 }
