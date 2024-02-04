@@ -331,7 +331,7 @@ const Page = (props: Props) => {
           )}
           <NextButton
             label={isEmpty ? t("next") : t("submit")}
-            disabled={submissionStatus === "SUBMITTING"}
+            trigger={submissionStatus === "SUBMITTING"}
           />
         </div>
       </form>

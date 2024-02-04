@@ -15,17 +15,14 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    fontFamily: {
-      sans: ["var(--ibm-plex-sans-thai-looped-font)", "Inter", "sans-serif"],
-      serif: ["var(--lora-font)", "Merriweather", "serif"],
-    },
     extend: {
       colors: {
-        'brown': '#675D51',
-        'gray': '#D9D9D9',
-        'woh-white': '#F8F8F7',
-        'purple-slider': '#374375',
-        'light-purple-slider': '#8793C5',
+        brown: "#675D51",
+        gray: "#D9D9D9",
+        "woh-white": "#F8F8F7",
+        "purple-slider": "#374375",
+        "light-purple-slider": "#8793C5",
+        "woh-black": "#1E1B20",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -81,6 +78,12 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        "1-1": "url('/img/1-1.png')",
+        "1-2": "url('/img/1-2.png')",
+        "1-3": "url('/img/1-3.png')",
+        "1-4": "url('/img/1-4.gif')",
       },
     },
   },
