@@ -22,6 +22,7 @@ const AnimatedImage = ({ src, alt, ...props }: AnimatedImageProps) => {
         <Image
           src={src}
           alt={alt}
+          priority={true}
           onLoadingComplete={() => {
             setCurrentSrc(src);
           }}
