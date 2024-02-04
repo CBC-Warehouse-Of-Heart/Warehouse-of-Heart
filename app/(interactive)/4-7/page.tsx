@@ -54,7 +54,7 @@ const Page = (props: Props) => {
           {renderedStrokes}
         </svg>
       </div>
-      <div className="mt-[150px]">
+      <div className="mt-[200px] max-[380px]:mt-[110px]">
       <Link href="4-8">
       <motion.div
         initial={{ opacity: 0, z: -20 }}

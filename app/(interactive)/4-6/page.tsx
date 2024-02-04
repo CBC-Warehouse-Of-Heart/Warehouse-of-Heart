@@ -80,7 +80,7 @@ const Page = (props: Props) => {
   return (
     <>
       <div className=" mx-auto min-w-[430px] min-h-screen bg-4-5 bg-cover bg-no-repeat">
-        <div className="mt-[231px] mb-[150px] flex flex-col items-center text-center">
+        <div className="mt-[231px] mb-[140px] max-[380px]:mb-[50px] flex flex-col items-center text-center">
           <p className="text-white mb-4">เจ้าของสมุดเล่มนี้คือ...</p>
           <div className="mt-20 relative">
             <svg

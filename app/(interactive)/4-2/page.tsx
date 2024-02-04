@@ -12,7 +12,7 @@ export default function Page() {
       <motion.div
         initial={{ opacity: 0, z: -20 }}
         animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
-        className="mt-[147px] mb-[403px] bg-white-radial bg-center bg-no-repeat p-10"
+        className="mt-[147px] mb-[403px] max-[380px]:mb-[310px] bg-white-radial bg-center bg-no-repeat p-10"
       >
         <p className="text-center">เมื่อเดินเข้าไปใกล้ ๆ </p>
         <p className="text-center">ก็พบว่ามีสมุดเล่มนึงวางอยู่</p>

@@ -12,7 +12,7 @@ export default function Page() {
       <motion.div
         initial={{ opacity: 0, z: -20 }}
         animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
-        className="mt-[218px] mb-[403px]"
+        className="mt-[218px] mb-[403px] max-[380px]:mb-[310px]"
       >
         <p className="">{text_4_3_a}</p>
         <p className="">{text_4_3_b}</p>

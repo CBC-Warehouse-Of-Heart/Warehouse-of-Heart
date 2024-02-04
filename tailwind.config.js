@@ -13,6 +13,7 @@ module.exports = {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
+        // "se": "380px"
       },
     },
     fontFamily: {
