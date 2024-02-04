@@ -20,7 +20,6 @@ const Page = (props: Props) => {
     [rating, comment],
   );
 
-  console.log(rating, comment, isEmpty);
   const router = useRouter();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
