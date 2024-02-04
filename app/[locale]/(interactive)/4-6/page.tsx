@@ -1,13 +1,15 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
-import Link from "next/link";
 import { getStroke } from "perfect-freehand";
 import React, { useContext, useEffect, useRef } from "react";
-import AppContext from "../../../components/AppContext";
+import AppContext from "../../../../components/AppContext";
+import { useTranslations } from "next-intl";
+import { Link } from "@/lib/navigation";
 
 type Props = {};
 
 const Page = (props: Props) => {
+  const t = useTranslations("4-6");
   function getSvgPathFromStroke(stroke: any) {
     if (!stroke.length) return "";
     const d = stroke.reduce(
@@ -81,7 +83,7 @@ const Page = (props: Props) => {
     <>
       <div className=" mx-auto min-w-[430px] min-h-screen bg-4-5 bg-cover bg-no-repeat">
         <div className="mt-[231px] mb-[140px] max-[380px]:mb-[50px] flex flex-col items-center text-center">
-          <p className="text-white mb-4">เจ้าของสมุดเล่มนี้คือ...</p>
+          <p className="text-white mb-4">{t("theOwnerIs")}</p>
           <div className="mt-20 relative">
             <svg
               id="svg"

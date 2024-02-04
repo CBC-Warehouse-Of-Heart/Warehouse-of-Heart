@@ -9,6 +9,20 @@
     "thankYouForVisiting": "Thank you for visiting us today :)"
   },
   "4-1": {
-    "quote": "What is that?"
+    "whatIsThat": "\"What is that?\""
+  },
+  "4-2": {
+    "asYouWalk": "As you walk toward the table,",
+    "youSawANotebook": "you see a notebook lying there."
+  },
+  "4-3": {
+    "myDiary": "\"Oh..It is my diary\""
+  },
+  "4-4": {
+    "whyHere": "\"Why is it here?",
+    "haveNotSeen": "I haven't seen it in such a long time\""
+  },
+  "4-6": {
+    "theOwnerIs": "The owner of this book is..."
   }
 }

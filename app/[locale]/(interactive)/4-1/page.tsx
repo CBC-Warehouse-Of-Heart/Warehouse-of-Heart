@@ -1,25 +1,24 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/lib/navigation";
 
 export default function Page() {
-  const text_4_3_a = '"ทำไมถึงมาอยู่ตรงนี้กันนะ';
-  const text_4_3_b = 'ไม่ได้เห็นมานานเลย..."';
+  const t = useTranslations("4-1");
 
   return (
-    <div className="text-white text-center mx-auto min-w-[430px] min-h-screen bg-4-3 bg-cover bg-no-repeat">
+    <div className="mx-auto min-w-[430px] bg-4-1 bg-cover bg-no-repeat overflow-hidden">
       <motion.div
         initial={{ opacity: 0, z: -20 }}
         animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
-        className="mt-[218px] mb-[403px] max-[380px]:mb-[310px]"
+        className="mt-[147px] mb-[403px] max-[380px]:mb-[310px] bg-white-radial bg-center bg-no-repeat p-10"
       >
-        <p className="">{text_4_3_a}</p>
-        <p className="">{text_4_3_b}</p>
+        <p className="text-center">{t("whatIsThat")}</p>
       </motion.div>
       
 
-      <Link href="4-5">
+      <Link href="4-2">
       <motion.div
         initial={{ opacity: 0, z: -20 }}
         animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 2.5 } }}
