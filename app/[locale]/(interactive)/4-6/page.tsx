@@ -3,7 +3,7 @@ import NextButton from "@/components/ui/nextButton";
 import Link from "next/link";
 import { getStroke } from "perfect-freehand";
 import React, { useContext, useEffect, useRef } from "react";
-import AppContext from "../../../components/AppContext";
+import AppContext from "../../../../components/AppContext";
 
 type Props = {};
 
@@ -79,10 +79,10 @@ const Page = (props: Props) => {
 
   return (
     <>
-      <div className=" mx-auto min-w-[430px] min-h-screen bg-4-5 bg-cover bg-no-repeat">
-        <div className="mt-[231px] mb-[140px] max-[380px]:mb-[50px] flex flex-col items-center text-center">
-          <p className="text-white mb-4">เจ้าของสมุดเล่มนี้คือ...</p>
-          <div className="mt-20 relative">
+      <div className=" bg-4-5 mx-auto min-h-screen min-w-[430px] bg-cover bg-no-repeat">
+        <div className="mb-[140px] mt-[231px] flex flex-col items-center text-center max-[380px]:mb-[50px]">
+          <p className="mb-4 text-white">เจ้าของสมุดเล่มนี้คือ...</p>
+          <div className="relative mt-20">
             <svg
               id="svg"
               ref={svgRef}

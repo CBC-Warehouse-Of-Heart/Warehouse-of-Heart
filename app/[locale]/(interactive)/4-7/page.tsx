@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { getStroke } from "perfect-freehand";
 import { useContext } from "react";
-import AppContext from "../../../components/AppContext";
+import AppContext from "../../../../components/AppContext";
 type Props = {};
 
 const Page = (props: Props) => {
@@ -45,8 +45,8 @@ const Page = (props: Props) => {
   });
 
   return (
-    <div className="bg-4-5 mx-auto min-w-[430px] min-h-screen bg-cover bg-no-repeat">
-      <div className="flex justify-center mt-[320px]">
+    <div className="bg-4-5 mx-auto min-h-screen min-w-[430px] bg-cover bg-no-repeat">
+      <div className="mt-[320px] flex justify-center">
         <svg
           id="svg"
           className="relative scale-[0.4] touch-none object-contain"
@@ -55,14 +55,18 @@ const Page = (props: Props) => {
         </svg>
       </div>
       <div className="mt-[200px] max-[380px]:mt-[110px]">
-      <Link href="4-8">
-      <motion.div
-        initial={{ opacity: 0, z: -20 }}
-        animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
-      >
-        <NextButton />
-      </motion.div>
-      </Link>
+        <Link href="4-8">
+          <motion.div
+            initial={{ opacity: 0, z: -20 }}
+            animate={{
+              opacity: 1,
+              z: 0,
+              transition: { duration: 1, delay: 1 },
+            }}
+          >
+            <NextButton />
+          </motion.div>
+        </Link>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import AppContext from "../../components/AppContext";
+import AppContext from "../../../components/AppContext";
 
 export default function RootLayout({
   children,
@@ -11,9 +11,9 @@ export default function RootLayout({
 
   return (
     <AppContext.Provider value={{ session, setSession }}>
-     <div className="flex justify-center h-screen overflow-hidden bg-secondary-white">
-     {children}
-      </div> 
+      <div className="bg-secondary-white flex h-screen justify-center overflow-hidden">
+        {children}
+      </div>
     </AppContext.Provider>
   );
 }
