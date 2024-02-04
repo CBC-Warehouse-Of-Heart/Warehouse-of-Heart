@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { backgroundMapConfig } from "@/lib/bg-config";
 import { Link, usePathname } from "@/lib/navigation";
 import { soundPageMap } from "@/lib/sounds";
+import { useSoundStore } from "@/store/sound";
 import { Volume2, VolumeX } from "lucide-react";
 import { useLocale } from "next-intl";
 import React, { createRef, useEffect, useMemo, useState } from "react";
@@ -19,8 +20,8 @@ export default function RootLayout({
 
   const path = usePathname();
   const page = path.split("/")[1];
+  const { isPlaying, toggle } = useSoundStore();
 
-  const [isPlaying, setIsPlaying] = useState(true);
   const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
 
   const fadeDuration = 500;
@@ -40,10 +41,6 @@ export default function RootLayout({
   const backgroundImgSrc = useMemo(() => {
     return backgroundMapConfig[page] ?? "/img/1-1.png";
   }, [page]);
-
-  const handleToggleSound = () => {
-    setIsPlaying((prev) => !prev);
-  };
 
   return (
     <>
@@ -76,7 +73,7 @@ export default function RootLayout({
           <Separator orientation="vertical" className="h-8" />
           <Button
             variant="ghost"
-            onClick={handleToggleSound}
+            onClick={toggle}
             className="h-auto w-auto p-2 text-accent"
           >
             {isPlaying ? (

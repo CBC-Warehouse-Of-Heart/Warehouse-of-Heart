@@ -1,16 +1,19 @@
 import { create } from "zustand";
-
-const fadeDuration = 500;
+import { persist } from "zustand/middleware";
 
 type State = {
   isPlaying: boolean;
-  currentVolume: number;
-  currentSound?: string;
   toggle: () => void;
 };
 
-export const useSoundStore = create<State>((set) => ({
-  currentVolume: 0.5,
-  isPlaying: false,
-  toggle: () => set((state) => ({ isPlaying: !state.isPlaying })),
-}));
+export const useSoundStore = create(
+  persist<State>(
+    (set) => ({
+      isPlaying: true,
+      toggle: () => set((state) => ({ isPlaying: !state.isPlaying })),
+    }),
+    {
+      name: "sound",
+    },
+  ),
+);
