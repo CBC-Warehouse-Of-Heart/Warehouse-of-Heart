@@ -19,7 +19,7 @@ const Page = (props: Props) => {
         }}
         className="text-woh-black flex flex-col items-center text-center text-base leading-8"
       >
-        <p className="mt-72">
+        <p className="mt-[275px]">
           {t("blank")}
           <br />
           {t("inThisJourney")}
