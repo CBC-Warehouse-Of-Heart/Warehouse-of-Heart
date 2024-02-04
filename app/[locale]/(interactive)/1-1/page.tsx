@@ -19,7 +19,7 @@ const Page = ({ params: { locale } }: Props) => {
       <p className="mt-10 font-bold text-[#A65554]">{t("warningHeading")}</p>
       <p className="mt-2 w-72 text-[#A65554]">{t("warning")}</p>
 
-      <div className="absolute bottom-44">
+      <div className="absolute bottom-36">
         <Link href="/1-2">
           <NextButton />
         </Link>

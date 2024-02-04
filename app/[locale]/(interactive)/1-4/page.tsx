@@ -1,15 +1,15 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
+import { Link } from "@/lib/navigation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 type Props = {};
 
 const Page = (props: Props) => {
   const t = useTranslations("1-4");
   return (
-    <div className="absolute h-full w-full bg-cover bg-no-repeat">
+    <div className="absolute h-full w-full">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

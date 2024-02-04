@@ -5,11 +5,18 @@ import { Separator } from "@/components/ui/separator";
 import { backgroundMapConfig } from "@/lib/bg-config";
 import { Link, usePathname } from "@/lib/navigation";
 import { soundPageMap } from "@/lib/sounds";
+import { cn } from "@/lib/utils";
 import { useSoundStore } from "@/store/sound";
 import { Volume2, VolumeX } from "lucide-react";
 import { useLocale } from "next-intl";
+import { Inter } from "next/font/google";
 import React, { createRef, useEffect, useMemo, useState } from "react";
 import ReactHowler from "react-howler";
+
+const interFont = Inter({
+  weight: "400",
+  subsets: ["greek"],
+});
 
 export default function RootLayout({
   children,
@@ -65,7 +72,10 @@ export default function RootLayout({
           <Link href={path} locale={locale === "en" ? "th" : "en"}>
             <Button
               variant="ghost"
-              className="h-auto w-auto p-3 text-sm text-accent"
+              className={cn(
+                "h-auto w-auto p-3 text-sm text-accent",
+                interFont.className,
+              )}
             >
               {locale === "en" ? "EN" : "TH"}
             </Button>
