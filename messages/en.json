@@ -8,6 +8,20 @@
     "warehouseOfHeart": "\"Warehouse of Heart\"",
     "thankYouForVisiting": "Thank you for visiting us today :)"
   },
+  "Feedback": {
+    "rating": "Tell us how you feel about the website",
+    "worst": "Not happy at all",
+    "best": "So happy!",
+    "comment": "Anything else you want to tell us?",
+    "commentPlaceholder": "Please enter your comment here",
+    "error": "Please try again",
+    "next": "Next",
+    "submit": "Send"
+  },
+  "SubmittedPage": {
+    "received": "We have received your feedback!",
+    "next": "Next"
+  },
   "NextButton": {
     "next": "Next"
   },

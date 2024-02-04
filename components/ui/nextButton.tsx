@@ -3,13 +3,14 @@ import { Button } from "./button";
 
 type Props = {
   trigger?: boolean;
+  label?: string;
 };
 
-const NextButton = ({ trigger = true }: Props) => {
+const NextButton = ({ trigger = true, label }: Props) => {
   const t = useTranslations("NextButton");
   return (
     <Button disabled={!trigger} variant="next" size="xs">
-      <p>{t("next")}</p>
+      <p>{label ? label : t("next")}</p>
     </Button>
   );
 };
