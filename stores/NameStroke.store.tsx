@@ -1,17 +1,17 @@
 import { create } from "zustand";
 
-type NameStorkeState = {
-  nameStorke: number[][][];
+type NameStrokeState = {
+  nameStroke: number[][][];
 };
 
-type NameStorkeAction = {
-  updateNameStorke: (nameStorke: NameStorkeState["nameStorke"]) => void;
+type NameStrokeAction = {
+  updateNameStroke: (nameStroke: NameStrokeState["nameStroke"]) => void;
 };
 
-export const useNameStorkeStore = create<NameStorkeState & NameStorkeAction>(
+export const useNameStrokeStore = create<NameStrokeState & NameStrokeAction>(
   (set) => ({
-    nameStorke: [],
-    updateNameStorke: (nameStorke: number[][][]) =>
-      set(() => ({ nameStorke: nameStorke })),
+    nameStroke: [],
+    updateNameStroke: (nameStroke: number[][][]) =>
+      set(() => ({ nameStroke: nameStroke })),
   }),
 );

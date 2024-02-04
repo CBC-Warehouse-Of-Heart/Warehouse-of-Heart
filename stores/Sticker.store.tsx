@@ -1,10 +1,10 @@
-import { stickerItems } from "@/components/ui/stickerItems";
+import { stickerItems } from "@/components/constant/stickerItems";
 import { create } from "zustand";
 
 type StickerState = {
   stickerId: number;
   stickerPath: string;
-  stickerBgPath: string;
+  stickerBgStyle: string;
 };
 
 type StickerAction = {
@@ -14,7 +14,8 @@ type StickerAction = {
 const initialState: StickerState = {
   stickerId: 1,
   stickerPath: "/img/sticker/notSelect.png",
-  stickerBgPath: "/img/bg/4-16.png",
+  stickerBgStyle:
+    "absolute flex h-full w-full flex-col items-center overflow-hidden bg-4-17-0 bg-cover bg-no-repeat",
 };
 
 export const useStickerStore = create<StickerState & StickerAction>((set) => ({
@@ -23,6 +24,6 @@ export const useStickerStore = create<StickerState & StickerAction>((set) => ({
     set(() => ({
       stickerId: stickerId,
       stickerPath: stickerItems.find((i) => i.id === stickerId)?.path,
-      stickerBgPath: stickerItems.find((i) => i.id === stickerId)?.bgPath,
+      stickerBgStyle: stickerItems.find((i) => i.id === stickerId)?.bgStyle,
     })),
 }));

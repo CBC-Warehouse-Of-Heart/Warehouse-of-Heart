@@ -1,35 +1,19 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
-import { useNameStorkeStore } from "@/stores/NameStroke.store";
+import { useNameStrokeStore } from "@/stores/NameStroke.store";
+import { getSvgPathFromStroke, renderedStrokes } from "@/utils/svg";
 import Link from "next/link";
-import { getStroke } from "perfect-freehand";
+import getStroke from "perfect-freehand";
 import React, { useRef } from "react";
 
 type Props = {};
 
 const Page = (props: Props) => {
-  const nameStorke = useNameStorkeStore((state) => state.nameStorke);
-  const updateNameStorke = useNameStorkeStore(
-    (state) => state.updateNameStorke,
-  );
-
-  function getSvgPathFromStroke(stroke: number[][]) {
-    if (!stroke.length) return "";
-    const d = stroke.reduce(
-      (acc: any[], [x0, y0]: any, i: number, arr: string | any[]) => {
-        const [x1, y1] = arr[(i + 1) % arr.length];
-        acc.push(x0, y0, (x0 + x1) / 2, (y0 + y1) / 2);
-        return acc;
-      },
-      ["M", ...stroke[0], "Q"],
-    );
-    d.push("Z");
-    return d.join(" ");
-  }
-
+  const { nameStroke, updateNameStroke } = useNameStrokeStore();
   const [hasWrite, setWrite] = React.useState<boolean>(false);
   const currentStroke = useRef<number[][]>([]);
   const svgRef = useRef();
+  const allStrokes = renderedStrokes(1);
 
   function handlePointerDown(e: React.PointerEvent<SVGSVGElement>) {
     setWrite(true);
@@ -48,31 +32,19 @@ const Page = (props: Props) => {
       e.pageY - pos.top,
       e.pressure,
     ]);
-    updateNameStorke([...nameStorke]);
+    updateNameStroke([...nameStroke]);
   }
 
   function handlePointerUp() {
     // new function to handle new independent stroke
-    updateNameStorke([...nameStorke, currentStroke.current]);
+    updateNameStroke([...nameStroke, currentStroke.current]);
     currentStroke.current = [];
   }
 
   function clearStrokes() {
     setWrite(false);
-    updateNameStorke([]);
+    updateNameStroke([]);
   }
-
-  const renderedStrokes = nameStorke.map((stroke, index) => {
-    const pathData = getSvgPathFromStroke(
-      getStroke(stroke, {
-        size: 8,
-        thinning: 0.5,
-        smoothing: 0.5,
-        streamline: 0.5,
-      }),
-    );
-    return <path key={index} d={pathData} />;
-  });
 
   return (
     <>
@@ -88,7 +60,7 @@ const Page = (props: Props) => {
               onPointerUp={handlePointerUp}
               className="relative h-[158px] w-[331px] touch-none rounded-[10px] bg-[#F8F8F7] opacity-80"
             >
-              {renderedStrokes}
+              {allStrokes}
               {currentStroke.current.length > 0 && (
                 <path
                   d={getSvgPathFromStroke(
@@ -98,6 +70,7 @@ const Page = (props: Props) => {
                       smoothing: 0.5,
                       streamline: 0.5,
                     }),
+                    1,
                   )}
                 />
               )}

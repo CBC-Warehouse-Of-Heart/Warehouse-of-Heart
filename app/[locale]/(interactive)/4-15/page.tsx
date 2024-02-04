@@ -9,16 +9,10 @@ type Props = {};
 
 const Page = (props: Props) => {
   const t = useTranslations("4-15");
-
-  const words = useShareYourselfWordsStore(
-    (state: { words: string }) => state.words,
-  );
-  const updateWords = useShareYourselfWordsStore(
-    (state: { updateWords: (words: string) => void }) => state.updateWords,
-  );
+  const { words, updateWords } = useShareYourselfWordsStore();
 
   return (
-    <div className="bg-4-15 absolute h-full w-full bg-cover bg-no-repeat">
+    <div className="absolute h-full w-full bg-4-15 bg-cover bg-no-repeat">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
