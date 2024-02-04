@@ -60,6 +60,9 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        "white-radial": "url('/img/white-radial.png')",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -78,12 +81,6 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      backgroundImage: {
-        "1-1": "url('/img/1-1.png')",
-        "1-2": "url('/img/1-2.png')",
-        "1-3": "url('/img/1-3.png')",
-        "1-4": "url('/img/1-4.gif')",
       },
     },
   },
