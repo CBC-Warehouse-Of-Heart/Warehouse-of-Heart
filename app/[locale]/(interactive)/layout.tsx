@@ -14,7 +14,7 @@ import React, { createRef, useEffect, useMemo, useState } from "react";
 import ReactHowler from "react-howler";
 
 const interFont = Inter({
-  weight: "400",
+  weight: "600",
   subsets: ["greek"],
 });
 
@@ -73,14 +73,14 @@ export default function RootLayout({
             <Button
               variant="ghost"
               className={cn(
-                "h-auto w-auto p-3 text-sm text-accent",
                 interFont.className,
+                "h-auto w-auto p-2 text-sm font-semibold text-accent",
               )}
             >
               {locale === "en" ? "EN" : "TH"}
             </Button>
           </Link>
-          <Separator orientation="vertical" className="h-8" />
+          <Separator orientation="vertical" className="h-7" />
           <Button
             variant="ghost"
             onClick={toggle}
