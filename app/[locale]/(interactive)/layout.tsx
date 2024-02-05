@@ -52,7 +52,8 @@ export default function RootLayout({
     const images = backgroundMapConfig[page]?.image;
     if (typeof images === "string") {
       bgImgSrc = images;
-    } else {
+    }
+    if (Array.isArray(images)) {
       if (page === "4-17") {
         bgImgSrc = images[stickerId - 1];
       } else {
