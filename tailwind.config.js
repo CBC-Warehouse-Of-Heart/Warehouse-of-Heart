@@ -23,6 +23,7 @@ module.exports = {
         "purple-slider": "#374375",
         "light-purple-slider": "#8793C5",
         "woh-black": "#1E1B20",
+        "pink-brown": "#B78181",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -83,6 +84,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
+        "1-6": "url('/img/1-6.gif')",
+        "1-5": "url('/img/1-5.png')",
         "4-17-0": "url('/img/4-16.png')",
         "4-17-1": "url('/img/4-17/bg-sticker1.webp')",
         "4-17-2": "url('/img/4-17/bg-sticker2.webp')",
