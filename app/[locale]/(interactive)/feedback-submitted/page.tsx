@@ -25,7 +25,7 @@ export default function SubmittedPage({
         <p className="text-base text-black">{t("received")}</p>
       </div>
       <Link href="/end" className="absolute bottom-36">
-        <NextButton label={t("next")} />
+        <NextButton />
       </Link>
     </div>
   );

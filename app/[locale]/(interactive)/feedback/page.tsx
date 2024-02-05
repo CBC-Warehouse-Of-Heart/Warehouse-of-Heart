@@ -16,7 +16,7 @@ const Page = (props: Props) => {
     "NOT_SUBMITTED" | "SUBMITTING" | "SUBMIT_FAILED"
   >("NOT_SUBMITTED");
   const isEmpty = useMemo(
-    () => rating === 0 || comment.trim() === "",
+    () => rating === 0 && comment.trim() === "",
     [rating, comment],
   );
 
@@ -326,8 +326,8 @@ const Page = (props: Props) => {
         )}
         <div className="absolute bottom-36">
           <NextButton
-            label={t("submit")}
-            trigger={submissionStatus !== "SUBMITTING" && !isEmpty}
+            label={isEmpty ? undefined : t("submit")}
+            trigger={submissionStatus !== "SUBMITTING"}
           />
         </div>
       </div>
