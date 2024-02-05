@@ -1,7 +1,7 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
-import { useNameStrokeStore } from "@/stores/NameStroke.store";
+import { useNameStrokeStore } from "@/store/nameStroke";
 import { getSvgPathFromStroke, useRenderedStrokes } from "@/utils/svg";
 import { useTranslations } from "next-intl";
 import { getStroke } from "perfect-freehand";
@@ -107,7 +107,7 @@ const Page = (props: Props) => {
         </div>
 
         <Link href="/4-7">
-          <NextButton></NextButton>
+          <NextButton />
         </Link>
       </div>
     </>
