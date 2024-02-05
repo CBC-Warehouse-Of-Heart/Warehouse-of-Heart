@@ -93,6 +93,7 @@ module.exports = {
         "4-17-4": "url('/img/4-17/bg-sticker4.webp')",
         "4-17-5": "url('/img/4-17/bg-sticker5.webp')",
         "4-17-6": "url('/img/4-17/bg-sticker6.webp')",
+        "white-radial": "url('/img/white-radial.webp')",
       },
     },
   },
