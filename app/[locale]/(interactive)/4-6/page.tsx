@@ -1,24 +1,26 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
+import { Link } from "@/lib/navigation";
 import { useNameStrokeStore } from "@/stores/NameStroke.store";
-import { getSvgPathFromStroke, renderedStrokes } from "@/utils/svg";
-import Link from "next/link";
-import getStroke from "perfect-freehand";
+import { getSvgPathFromStroke, useRenderedStrokes } from "@/utils/svg";
+import { useTranslations } from "next-intl";
+import { getStroke } from "perfect-freehand";
 import React, { useRef } from "react";
 
 type Props = {};
 
 const Page = (props: Props) => {
+  const t = useTranslations("4-6");
   const { nameStroke, updateNameStroke } = useNameStrokeStore();
   const [hasWrite, setWrite] = React.useState<boolean>(false);
   const currentStroke = useRef<number[][]>([]);
-  const svgRef = useRef();
-  const allStrokes = renderedStrokes(1);
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const allStrokes = useRenderedStrokes(1);
 
   function handlePointerDown(e: React.PointerEvent<SVGSVGElement>) {
     setWrite(true);
     e.currentTarget.setPointerCapture(e.pointerId);
-    const pos = svgRef.current.getBoundingClientRect();
+    const pos = svgRef.current!.getBoundingClientRect();
     currentStroke.current = [
       [e.pageX - pos.left, e.pageY - pos.top, e.pressure],
     ];
@@ -26,7 +28,7 @@ const Page = (props: Props) => {
 
   function handlePointerMove(e: React.PointerEvent<SVGSVGElement>) {
     if (e.buttons !== 1) return;
-    const pos = svgRef.current.getBoundingClientRect();
+    const pos = svgRef.current!.getBoundingClientRect();
     currentStroke.current.push([
       e.pageX - pos.left,
       e.pageY - pos.top,
@@ -48,17 +50,17 @@ const Page = (props: Props) => {
 
   return (
     <>
-      <div className="flex h-full w-full flex-col items-center justify-center">
-        <div className="flex flex-col items-center space-y-5 text-center text-[26px]">
-          <p className="text-[#F8F8F7]">เจ้าของสมุดเล่มนี้คือ...</p>
-          <div className="relative">
+      <div className="mx-auto flex h-[100dvh] flex-col items-center text-white">
+        <div className="mb-[140px] mt-[231px] flex flex-col items-center text-center max-[380px]:mb-[50px]">
+          <p className="mb-4 text-white">{t("theOwnerIs")}</p>
+          <div className="relative mt-16">
             <svg
               id="svg"
               ref={svgRef}
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
-              className="relative h-[158px] w-[331px] touch-none rounded-[10px] bg-[#F8F8F7] opacity-80"
+              className="relative h-[160px] w-[350px] touch-none rounded-[10px] bg-[#E8E5DD] opacity-100"
             >
               {allStrokes}
               {currentStroke.current.length > 0 && (
@@ -76,16 +78,13 @@ const Page = (props: Props) => {
               )}
             </svg>
 
-            {!hasWrite && (
-              <p className="absolute left-[59px] top-[59px] text-[#A98F7E]">
-                ลากนิ้วเพื่อเขียนชื่อ
+            {!(hasWrite || nameStroke.length) && (
+              <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform select-none text-center text-[#B4A49A]">
+                {t("drawToSign")}
               </p>
             )}
 
-            <div
-              onClick={clearStrokes}
-              className="absolute left-[285px] top-[11px]"
-            >
+            <div onClick={clearStrokes} className="absolute right-4 top-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="35"

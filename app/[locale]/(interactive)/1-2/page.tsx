@@ -1,19 +1,42 @@
-"use client"
-import { useRouter } from 'next/navigation'
+"use client";
+import NextButton from "@/components/ui/nextButton";
+import { Link } from "@/lib/navigation";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 const Page = (props: Props) => {
-  const router = useRouter()
+  const t = useTranslations("1-2");
   return (
-    <div className='flex h-full w-full flex-col items-center justify-center' onClick={() => router.push('/1-3')}>
-
-      <div className='flex flex-col items-center text-center text-[21px] text-[#F8F8F7] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] leading-relaxed'>
-        <p>เรากำลังจะพาเธอเข้าสู่<br/>เส้นทางการสำรวจ<br/>และทบทวนสิ่งที่อยู่ในใจ</p>
-      </div>
-
-      <p className="fixed bottom-36 text-[#F8F8F7] text-[15px]">กดที่หน้าจอเพื่อไปต่อ</p>
-
+    <div className="absolute h-full w-full bg-cover bg-no-repeat">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 1,
+        }}
+        className="text-woh-black flex flex-col items-center text-center text-base leading-8"
+      >
+        <p className="mt-72">
+          {t("welcomeTo")}
+          <br />
+          {t("warehouseOfHeart")}
+        </p>
+        <p className="mt-10">
+          {t("inWhich")}
+          <br />
+          {t("yourJourney")}
+          <br />
+          {t("yourHeart")}
+        </p>
+        <div className="absolute bottom-44">
+          <Link href="/1-3">
+            <NextButton />
+          </Link>
+        </div>
+      </motion.div>
     </div>
   );
 };

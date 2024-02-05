@@ -1,17 +1,19 @@
 import { useTranslations } from "next-intl";
 import { Button } from "./button";
 
-const NextButton = (props: { trigger: boolean }) => {
+type Props = {
+  trigger?: boolean;
+  label?: string;
+};
+
+const NextButton = ({ trigger = true, label }: Props) => {
   const t = useTranslations("NextButton");
   return (
-    <Button disabled={!props.trigger} variant="next" size="xs">
-      <p>{t("next")}</p>
+    <Button disabled={!trigger} variant="next" size="xs">
+      <p>{label ? label : t("next")}</p>
     </Button>
   );
 };
 
-NextButton.defaultProps = {
-  trigger: true,
-};
 
 export default NextButton;
