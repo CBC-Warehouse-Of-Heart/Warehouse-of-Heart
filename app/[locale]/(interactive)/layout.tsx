@@ -7,6 +7,7 @@ import { Link, usePathname } from "@/lib/navigation";
 import { soundPageMap } from "@/lib/sounds";
 import { cn } from "@/lib/utils";
 import { useSoundStore } from "@/store/sound";
+import { useStickerStore } from "@/stores/sticker.store";
 import { Volume2, VolumeX } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Inter } from "next/font/google";
@@ -28,6 +29,7 @@ export default function RootLayout({
   const path = usePathname();
   const page = path.split("/")[1];
   const { isPlaying, toggle } = useSoundStore();
+  const { stickerId } = useStickerStore();
 
   const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
 
@@ -45,12 +47,20 @@ export default function RootLayout({
 
   const soundRef = createRef<ReactHowler>();
 
-  const [backgroundImgSrc, preloadSrcs] = useMemo(() => {
-    const bgImgSrc = backgroundMapConfig[page]?.image ?? "/img/1-1.png";
-    const pagePreloadSrcs = (backgroundMapConfig[page]?.pagePreload ?? [])
-      .map((page) => backgroundMapConfig[page]?.image)
-      .filter((src) => src);
-    return [bgImgSrc, pagePreloadSrcs];
+  const [backgroundImgSrc, imagePreloadSrc] = useMemo(() => {
+    let bgImgSrc: string | undefined;
+    const images = backgroundMapConfig[page]?.image;
+    if (typeof images === "string") {
+      bgImgSrc = images;
+    } else {
+      if (page === "4-17") {
+        bgImgSrc = images[stickerId - 1];
+      } else {
+        bgImgSrc = images[0];
+      }
+    }
+    const imagePreloadSrc = backgroundMapConfig[page]?.imagePreload ?? [];
+    return [bgImgSrc ?? "/img/1-1.png", imagePreloadSrc];
   }, [page]);
 
   return (
@@ -68,7 +78,7 @@ export default function RootLayout({
       <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
         <AnimatedImage
           src={backgroundImgSrc}
-          preloadSrcs={preloadSrcs}
+          preloadSrcs={imagePreloadSrc}
           alt="background-image"
           fill
           className="-z-50 object-cover"

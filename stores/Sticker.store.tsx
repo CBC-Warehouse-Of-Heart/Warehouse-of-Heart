@@ -1,5 +1,6 @@
 import { stickerItems } from "@/components/constant/stickerItems";
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type StickerState = {
   stickerId: number;
@@ -18,12 +19,19 @@ const initialState: StickerState = {
     "absolute flex h-full w-full flex-col items-center overflow-hidden bg-4-17-0 bg-cover bg-no-repeat",
 };
 
-export const useStickerStore = create<StickerState & StickerAction>((set) => ({
-  ...initialState,
-  updateSticker: (stickerId: number) =>
-    set(() => ({
-      stickerId: stickerId,
-      stickerPath: stickerItems.find((i) => i.id === stickerId)?.path,
-      stickerBgStyle: stickerItems.find((i) => i.id === stickerId)?.bgStyle,
-    })),
-}));
+export const useStickerStore = create(
+  persist<StickerState & StickerAction>(
+    (set) => ({
+      ...initialState,
+      updateSticker: (stickerId: number) =>
+        set(() => ({
+          stickerId: stickerId,
+          stickerPath: stickerItems.find((i) => i.id === stickerId)?.path,
+          stickerBgStyle: stickerItems.find((i) => i.id === stickerId)?.bgStyle,
+        })),
+    }),
+    {
+      name: "sticker",
+    },
+  ),
+);
