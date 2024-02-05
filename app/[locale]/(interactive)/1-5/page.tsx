@@ -14,7 +14,7 @@ const Page = ({ params: { locale } }: Props) => {
   const t = useTranslations("1-5");
   return (
     <>
-      <div className="bg-1-5 mx-auto flex min-w-[430px] flex-col items-center justify-center overflow-hidden bg-cover bg-no-repeat">
+      <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
         <div className="mb-0 text-center font-semibold text-[#F8F8F7]">
           <p className="mb-1">{t("areYouReady")}</p>
           <p className="mb-1">{t("forTheJourney")}</p>

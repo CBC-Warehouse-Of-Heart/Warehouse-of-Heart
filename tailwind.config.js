@@ -23,6 +23,7 @@ module.exports = {
         "purple-slider": "#374375",
         "light-purple-slider": "#8793C5",
         "woh-black": "#1E1B20",
+        "pink-brown": "#B78181",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -14,14 +14,15 @@ dependencies:
   '@radix-ui/react-slider':
     specifier: ^1.1.2
     version: 1.1.2(@types/react-dom@18.0.0)(@types/react@18.0.0)(react-dom@18.0.0)(react@18.0.0)
+  '@radix-ui/react-slot':
+    specifier: ^1.0.2
+    version: 1.0.2(@types/react@18.0.0)(react@18.0.0)
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
-<<<<<<< HEAD
-=======
   firebase:
     specifier: ^10.7.1
     version: 10.8.0
@@ -34,7 +35,6 @@ dependencies:
   html-to-image:
     specifier: ^1.11.11
     version: 1.11.11
->>>>>>> ec8b9002c3e02e31bc439e154d920432ca07fed7
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -85,15 +85,9 @@ dependencies:
     version: 4.5.0(@types/react@18.0.0)(react@18.0.0)
 
 devDependencies:
-<<<<<<< HEAD
-  '@radix-ui/react-slot':
-    specifier: ^1.0.2
-    version: 1.0.2(@types/react@18.0.0)(react@18.0.0)
-=======
   '@types/howler':
     specifier: ^2.2.11
     version: 2.2.11
->>>>>>> ec8b9002c3e02e31bc439e154d920432ca07fed7
   '@types/lodash':
     specifier: ^4.14.202
     version: 4.14.202
@@ -1141,6 +1135,7 @@ packages:
       '@babel/runtime': 7.23.2
       '@types/react': 18.0.0
       react: 18.0.0
+    dev: false
 
   /@radix-ui/react-context@1.0.1(@types/react@18.0.0)(react@18.0.0):
     resolution: {integrity: sha512-ebbrdFoYTcuZ0v4wG5tedGnp9tzcV8awzsxYph7gXUyvnNLuTIcCk1q17JEbnVhXAKG9oX3KtchwiMIAYp9NLg==}
@@ -1410,6 +1405,7 @@ packages:
       '@radix-ui/react-compose-refs': 1.0.1(@types/react@18.0.0)(react@18.0.0)
       '@types/react': 18.0.0
       react: 18.0.0
+    dev: false
 
   /@radix-ui/react-use-callback-ref@1.0.1(@types/react@18.0.0)(react@18.0.0):
     resolution: {integrity: sha512-D94LjX4Sp0xJFVaoQOd3OO9k7tpBYNOXdVhkltUbGv2Qb9OXdrg/CpsjlZv7ia14Sylv398LswWBVVu5nqKzAQ==}
@@ -3228,13 +3224,10 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
-<<<<<<< HEAD
-=======
   /long@5.2.3:
     resolution: {integrity: sha512-lcHwpNoggQTObv5apGNCTdJrO69eHOZMi4BNC+rTLER8iHAqGrUVeLh/irVIM7zTw2bOXA8T6uNPeujwOLg/2Q==}
     dev: false
 
->>>>>>> ec8b9002c3e02e31bc439e154d920432ca07fed7
   /loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -3810,6 +3803,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
