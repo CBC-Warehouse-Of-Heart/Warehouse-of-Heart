@@ -27,5 +27,8 @@
   },
   "NextButton": {
     "next": "Next"
+  },
+  "StartButton": {
+    "start": "Begin"
   }
 }

@@ -27,5 +27,8 @@
   },
   "NextButton": {
     "next": "ถัดไป"
+  },
+  "StartButton": {
+    "start": "เริ่มเลย"
   }
 }

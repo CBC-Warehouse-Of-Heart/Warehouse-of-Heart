@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button";
-import NextButton from "@/components/ui/nextButton";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/navigation";
+import StartButton from "@/components/ui/startButton";
 
 type Props = {};
 
@@ -17,7 +16,7 @@ const Page = (props: Props) => {
         </div>
       </div>
       <Link href="/2-1">
-        <NextButton />
+        <StartButton />
       </Link>
     </>
   );
