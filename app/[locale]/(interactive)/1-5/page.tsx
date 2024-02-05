@@ -1,26 +1,35 @@
 import { Button } from "@/components/ui/button";
-import NextButton from "@/components/ui/nextButton";
 import { useTranslations } from "next-intl";
-import { Link } from "@/lib/navigation";
+import { unstable_setRequestLocale } from "next-intl/server";
+import Link from "next/link";
 
-type Props = {};
+type Props = {
+  params: {
+    locale: string;
+  };
+};
 
-const Page = (props: Props) => {
+const Page = ({ params: { locale } }: Props) => {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("1-5");
   return (
     <>
-      <div className="flex flex-col bg-1-5 mx-auto min-w-[430px] items-center justify-center overflow-hidden bg-cover bg-no-repeat">
-        <div className="mb-0 font-semibold text-center text-[#F8F8F7]">
+      <div className="bg-1-5 mx-auto flex min-w-[430px] flex-col items-center justify-center overflow-hidden bg-cover bg-no-repeat">
+        <div className="mb-0 text-center font-semibold text-[#F8F8F7]">
           <p className="mb-1">{t("areYouReady")}</p>
           <p className="mb-1">{t("forTheJourney")}</p>
         </div>
-        <div className="flex flex-row space-x-4 mt-5">
+        <div className="mt-5 flex flex-row space-x-4">
           <Link href="/1-6">
-          <Button className="border-solid border-[2.5px] border-pink-brown text-white bg-pink-brown">{t("ready")}</Button>
+            <Button className="border-pink-brown bg-pink-brown border-[2.5px] border-solid text-white">
+              {t("ready")}
+            </Button>
           </Link>
           <Link href="/1-6a">
-        <Button className="border-solid border-[2.5px] border-pink-brown text-pink-brown bg-white">{t("maybeNotNow")}</Button>
-        </Link>
+            <Button className="border-pink-brown text-pink-brown border-[2.5px] border-solid bg-white">
+              {t("maybeNotNow")}
+            </Button>
+          </Link>
         </div>
       </div>
     </>

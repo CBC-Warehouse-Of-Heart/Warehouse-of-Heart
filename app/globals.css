@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: var(--ibm-plex-sans-thai-looped-font);
-}
-
 @layer base {
   :root {
     --background: radial-gradient(

@@ -15,18 +15,14 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    fontFamily: {
-      sans: ["var(--ibm-plex-sans-thai-looped-font)", "Inter", "sans-serif"],
-      serif: ["var(--lora-font)", "Merriweather", "serif"],
-    },
     extend: {
       colors: {
-        'brown': '#675D51',
-        'gray': '#D9D9D9',
-        'woh-white': '#F8F8F7',
-        'purple-slider': '#374375',
-        'light-purple-slider': '#8793C5',
-        'pink-brown': '#B78181',
+        brown: "#675D51",
+        gray: "#D9D9D9",
+        "woh-white": "#F8F8F7",
+        "purple-slider": "#374375",
+        "light-purple-slider": "#8793C5",
+        "woh-black": "#1E1B20",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -64,6 +60,9 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        "white-radial": "url('/img/white-radial.png')",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -84,9 +83,16 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        '1-6': "url('/img/1-6.gif')",
-        '1-5': "url('/img/1-5.png')",
-      }
+        "1-6": "url('/img/1-6.gif')",
+        "1-5": "url('/img/1-5.png')",
+        "4-17-0": "url('/img/4-16.png')",
+        "4-17-1": "url('/img/4-17/bg-sticker1.webp')",
+        "4-17-2": "url('/img/4-17/bg-sticker2.webp')",
+        "4-17-3": "url('/img/4-17/bg-sticker3.webp')",
+        "4-17-4": "url('/img/4-17/bg-sticker4.webp')",
+        "4-17-5": "url('/img/4-17/bg-sticker5.webp')",
+        "4-17-6": "url('/img/4-17/bg-sticker6.webp')",
+      },
     },
   },
   variants: {

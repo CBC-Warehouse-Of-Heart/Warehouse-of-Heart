@@ -1,13 +1,23 @@
 "use client";
+import AnimatedImage from "@/components/animated-image";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { backgroundMapConfig } from "@/lib/bg-config";
 import { Link, usePathname } from "@/lib/navigation";
 import { soundPageMap } from "@/lib/sounds";
+import { cn } from "@/lib/utils";
+import { useSoundStore } from "@/store/sound";
+import { useStickerStore } from "@/store/sticker";
 import { Volume2, VolumeX } from "lucide-react";
 import { useLocale } from "next-intl";
-import React, { createRef, useEffect, useState } from "react";
+import { Inter } from "next/font/google";
+import React, { createRef, useEffect, useMemo, useState } from "react";
 import ReactHowler from "react-howler";
-import AppContext from "../../../components/AppContext";
+
+const interFont = Inter({
+  weight: "600",
+  subsets: ["greek"],
+});
 
 export default function RootLayout({
   children,
@@ -18,13 +28,12 @@ export default function RootLayout({
 
   const path = usePathname();
   const page = path.split("/")[1];
+  const { isPlaying, toggle } = useSoundStore();
+  const { stickerId } = useStickerStore();
 
-  const [isPlaying, setIsPlaying] = useState(true);
   const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
 
   const fadeDuration = 500;
-
-  const [session, setSession] = useState();
 
   useEffect(() => {
     const nextSound = soundPageMap[page] ?? "/sound/main.mp3";
@@ -38,13 +47,25 @@ export default function RootLayout({
 
   const soundRef = createRef<ReactHowler>();
 
-  const handleToggleSound = () => {
-    setIsPlaying((prev) => !prev);
-  };
+  const [backgroundImgSrc, imagePreloadSrc] = useMemo(() => {
+    let bgImgSrc: string | undefined;
+    const images = backgroundMapConfig[page]?.image;
+    if (typeof images === "string") {
+      bgImgSrc = images;
+    }
+    if (Array.isArray(images)) {
+      if (page === "4-17") {
+        bgImgSrc = images[stickerId - 1];
+      } else {
+        bgImgSrc = images[0];
+      }
+    }
+    const imagePreloadSrc = backgroundMapConfig[page]?.imagePreload ?? [];
+    return [bgImgSrc ?? "/img/1-1.png", imagePreloadSrc];
+  }, [page]);
 
   return (
     <>
-    <AppContext.Provider value={{ session, setSession }}>
       <ReactHowler
         src={currentSound}
         volume={0.5}
@@ -55,33 +76,41 @@ export default function RootLayout({
           soundRef.current?.howler.fade(0, 0.5, fadeDuration);
         }}
       />
-      <div
-        className={
-          "flex justify-center h-screen overflow-hidden bg-secondary-white"
-        }
-      >
-        <div className="fixed right-5 top-10 z-10 flex items-center">
+      <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
+        <AnimatedImage
+          src={backgroundImgSrc}
+          preloadSrcs={imagePreloadSrc}
+          alt="background-image"
+          fill
+          className="-z-50 object-cover"
+        />
+        <div className="absolute right-5 top-10 z-10 flex items-center">
           <Link href={path} locale={locale === "en" ? "th" : "en"}>
-            <Button variant="ghost" className="h-auto w-auto p-3 text-accent">
+            <Button
+              variant="ghost"
+              className={cn(
+                interFont.className,
+                "h-auto w-auto p-2 text-sm font-semibold text-accent",
+              )}
+            >
               {locale === "en" ? "EN" : "TH"}
             </Button>
           </Link>
-          <Separator orientation="vertical" className="h-10" />
+          <Separator orientation="vertical" className="h-7" />
           <Button
             variant="ghost"
-            onClick={handleToggleSound}
-            className="h-auto w-auto p-3 text-accent"
+            onClick={toggle}
+            className="h-auto w-auto p-2 text-accent"
           >
             {isPlaying ? (
-              <Volume2 className="h-7 w-7" />
+              <Volume2 className="h-5 w-5" />
             ) : (
-              <VolumeX className="h-7 w-7" />
+              <VolumeX className="h-5 w-5" />
             )}
           </Button>
         </div>
         {children}
       </div>
-      </AppContext.Provider>
     </>
   );
 }
