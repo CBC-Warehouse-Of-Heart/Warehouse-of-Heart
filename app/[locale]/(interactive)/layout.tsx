@@ -7,7 +7,7 @@ import { Link, usePathname } from "@/lib/navigation";
 import { soundPageMap } from "@/lib/sounds";
 import { cn } from "@/lib/utils";
 import { useSoundStore } from "@/store/sound";
-import { useStickerStore } from "@/stores/sticker.store";
+import { useStickerStore } from "@/store/sticker";
 import { Volume2, VolumeX } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Inter } from "next/font/google";

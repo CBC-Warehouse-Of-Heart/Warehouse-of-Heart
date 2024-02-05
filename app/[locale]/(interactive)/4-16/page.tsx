@@ -1,8 +1,8 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import StickerSelector from "@/components/ui/stickerSelector";
-import { useShareYourselfWordsStore } from "@/stores/shareYourselfWords.store";
-import { useStickerStore } from "@/stores/sticker.store";
+import { useShareYourselfWordsStore } from "@/store/shareYourselfWords";
+import { useStickerStore } from "@/store/sticker";
 import { useRenderedStrokes } from "@/utils/svg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
