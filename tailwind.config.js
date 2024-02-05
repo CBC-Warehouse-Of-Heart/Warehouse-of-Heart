@@ -82,6 +82,15 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        "4-17-0": "url('/img/4-16.png')",
+        "4-17-1": "url('/img/4-17/bg-sticker1.webp')",
+        "4-17-2": "url('/img/4-17/bg-sticker2.webp')",
+        "4-17-3": "url('/img/4-17/bg-sticker3.webp')",
+        "4-17-4": "url('/img/4-17/bg-sticker4.webp')",
+        "4-17-5": "url('/img/4-17/bg-sticker5.webp')",
+        "4-17-6": "url('/img/4-17/bg-sticker6.webp')",
+      },
     },
   },
   variants: {

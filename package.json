@@ -10,13 +10,15 @@
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "firebase": "^10.7.1",
     "framer-motion": "^11.0.3",
+    "html-to-image": "^1.11.11",
+    "firebase": "^10.7.1",
     "howler": "^2.2.4",
     "lodash": "^4.17.21",
     "lucide-react": "^0.292.0",

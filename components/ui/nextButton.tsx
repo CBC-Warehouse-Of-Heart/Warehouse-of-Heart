@@ -15,4 +15,5 @@ const NextButton = ({ trigger = true, label }: Props) => {
   );
 };
 
+
 export default NextButton;
