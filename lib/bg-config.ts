@@ -18,7 +18,7 @@ export const backgroundMapConfig: Record<
     pagePreload: ["1-4"],
   },
   "1-4": {
-    image: "/img/1-4.gif",
+    image: "/img/1-4.webp",
     pagePreload: [],
   },
   "4-1": {
