@@ -46,10 +46,10 @@ export default function RootLayout({
   const soundRef = createRef<ReactHowler>();
 
   const [backgroundImgSrc, preloadSrcs] = useMemo(() => {
-    const bgImgSrc = backgroundMapConfig[page].image ?? "/img/1-1.png";
-    const pagePreloadSrcs = backgroundMapConfig[page].pagePreload.map(
-      (page) => backgroundMapConfig[page].image,
-    );
+    const bgImgSrc = backgroundMapConfig[page]?.image ?? "/img/1-1.png";
+    const pagePreloadSrcs = (backgroundMapConfig[page]?.pagePreload ?? [])
+      .map((page) => backgroundMapConfig[page]?.image)
+      .filter((src) => src);
     return [bgImgSrc, pagePreloadSrcs];
   }, [page]);
 
