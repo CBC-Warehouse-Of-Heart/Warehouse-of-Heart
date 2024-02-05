@@ -45,8 +45,12 @@ export default function RootLayout({
 
   const soundRef = createRef<ReactHowler>();
 
-  const backgroundImgSrc = useMemo(() => {
-    return backgroundMapConfig[page] ?? "/img/1-1.png";
+  const [backgroundImgSrc, preloadSrcs] = useMemo(() => {
+    const bgImgSrc = backgroundMapConfig[page]?.image ?? "/img/1-1.png";
+    const pagePreloadSrcs = (backgroundMapConfig[page]?.pagePreload ?? [])
+      .map((page) => backgroundMapConfig[page]?.image)
+      .filter((src) => src);
+    return [bgImgSrc, pagePreloadSrcs];
   }, [page]);
 
   return (
@@ -64,6 +68,7 @@ export default function RootLayout({
       <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
         <AnimatedImage
           src={backgroundImgSrc}
+          preloadSrcs={preloadSrcs}
           alt="background-image"
           fill
           className="-z-50 object-cover"
