@@ -1,6 +1,6 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
-import { useShareYourselfWordsStore } from "@/stores/ShareYourselfWords.store";
+import { useShareYourselfWordsStore } from "@/stores/shareYourselfWords.store";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -12,7 +12,7 @@ const Page = (props: Props) => {
   const { words, updateWords } = useShareYourselfWordsStore();
 
   return (
-    <div className="absolute h-full w-full bg-4-15 bg-cover bg-no-repeat">
+    <div className="bg-4-15 absolute h-full w-full bg-cover bg-no-repeat">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

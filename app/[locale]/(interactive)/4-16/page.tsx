@@ -1,9 +1,9 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import StickerSelector from "@/components/ui/stickerSelector";
-import { useShareYourselfWordsStore } from "@/stores/ShareYourselfWords.store";
+import { useShareYourselfWordsStore } from "@/stores/shareYourselfWords.store";
 import { useStickerStore } from "@/stores/sticker.store";
-import { renderedStrokes } from "@/utils/svg";
+import { useRenderedStrokes } from "@/utils/svg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -18,10 +18,10 @@ const Page = (props: Props) => {
   const { stickerId, stickerPath } = useStickerStore();
   const [showStickers, setShowSticker] = useState<boolean>(false);
   const [hasSelectedSticker, setSelectedSticker] = useState<boolean>(false);
-  const allStrokes = renderedStrokes(5);
+  const allStrokes = useRenderedStrokes(5);
 
   return (
-    <div className="absolute flex h-full w-full flex-col items-center bg-4-16 bg-cover bg-no-repeat">
+    <div className="bg-4-16 absolute flex h-full w-full flex-col items-center bg-cover bg-no-repeat">
       <div className="z-1 absolute mr-8 mt-56 flex h-[440px] w-[284px] flex-col items-start rounded-xl">
         <div className="flex">
           <p className="font-cursive text-lg text-woh-black">{t("dear")}</p>

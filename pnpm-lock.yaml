@@ -23,12 +23,6 @@ dependencies:
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
-  framer-motion:
-    specifier: ^11.0.3
-    version: 11.0.3(react-dom@18.0.0)(react@18.0.0)
-  html-to-image:
-    specifier: ^1.11.11
-    version: 1.11.11
   firebase:
     specifier: ^10.7.1
     version: 10.8.0
@@ -38,6 +32,9 @@ dependencies:
   howler:
     specifier: ^2.2.4
     version: 2.2.4
+  html-to-image:
+    specifier: ^1.11.11
+    version: 1.11.11
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -2112,11 +2109,13 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /detect-node-es@1.1.0:
-    resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
   /detect-libc@2.0.2:
     resolution: {integrity: sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==}
     engines: {node: '>=8'}
+    dev: false
+
+  /detect-node-es@1.1.0:
+    resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
     dev: false
 
   /didyoumean@1.2.2:
@@ -2888,6 +2887,8 @@ packages:
 
   /html-to-image@1.11.11:
     resolution: {integrity: sha512-9gux8QhvjRO/erSnDPv28noDZcPZmYE7e1vFsBLKLlRlKDSqNJYebj6Qz1TGd5lsRV+X+xYyjCKjuZdABinWjA==}
+    dev: false
+
   /http-parser-js@0.5.8:
     resolution: {integrity: sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q==}
     dev: false
@@ -4381,8 +4382,6 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /use-intl@3.4.5(react@18.0.0):
-    resolution: {integrity: sha512-QXDYgJMAYX+aAyNWUg1paZbdAu5DbBpwpBcflM85PxnAJ7dvRX9KCPiEXKE6/I9e88ZzMmr7gtb+t4iM/7BsCA==}
   /use-intl@3.5.4(react@18.0.0):
     resolution: {integrity: sha512-JYTDmLyZ1WjlDr0RoBusIuS0puVCHsQ7CgGoMn8bP90TxaSojOKo09UM6qbiISPcmBHMJlemRo3V3wAcchD3Gw==}
     peerDependencies:
