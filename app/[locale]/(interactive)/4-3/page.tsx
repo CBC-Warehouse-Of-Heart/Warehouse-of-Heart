@@ -1,35 +1,33 @@
-import Image from "next/image";
-import Link from "next/link";
-type Props = {};
+"use client";
+import NextButton from "@/components/ui/nextButton";
+import { Link } from "@/lib/navigation";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-const Page = (props: Props) => {
+export default function Page() {
+  const t = useTranslations("4-3");
   return (
-    <>
-      <Image
-        src="/images/bg_4-3.webp"
-        alt="Description"
-        layout="fill"
-        objectFit="cover"
-        className="-z-1"
-      />
-      <div className="flex h-screen flex-col items-center justify-center">
-        <div className="container px-10 text-center ">
-          <p className="text-3xl leading-loose text-[#F8F8F7] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-            ในชีวิตของเรามีเรื่องราวเกิดขึ้นมากมาย <br />{" "}
-            มีทั้งเรื่องที่อยากให้เกิด และไม่อยากให้เกิด <br /> เรื่องที่อยากทำ
-            เรื่องที่ทำไม่ได้
-          </p>
-        </div>
-      </div>
-      <Link href="/4-4">
-        <div className="container fixed left-1/2 top-[85%] z-10 -translate-x-1/2 transform text-center">
-          <p className=" text-base leading-normal text-[#F8F8F7] ">
-            เลื่อนหน้าจอเพื่อไปต่อ
-          </p>
-        </div>
-      </Link>
-    </>
-  );
-};
+    <div className="mx-auto flex flex-col items-center overflow-hidden text-white">
+      <motion.div
+        initial={{ opacity: 0, z: -20 }}
+        animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
+        className="mb-[403px] mt-[218px] max-[380px]:mb-[335px]"
+      >
+        <p>{t("myDiary")}</p>
+      </motion.div>
 
-export default Page;
+      <Link href="4-4">
+        <motion.div
+          initial={{ opacity: 0, z: -20 }}
+          animate={{
+            opacity: 1,
+            z: 0,
+            transition: { duration: 1, delay: 2.5 },
+          }}
+        >
+          <NextButton />
+        </motion.div>
+      </Link>
+    </div>
+  );
+}

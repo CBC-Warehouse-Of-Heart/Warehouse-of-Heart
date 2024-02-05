@@ -1,3 +1,4 @@
+import GoogleAnalytics from "@/components/google-analytics";
 import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -50,9 +51,11 @@ export default function RootLayout({
             [ibmPlexSansThaiLooped.className]: locale === "th",
             [nothingYouCouldDo.className]: locale === "en",
           },
-          "h-screen w-screen ",
+          nothingYouCouldDo.variable,
+          "min-h-[100dvh] w-full",
         )}
       >
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

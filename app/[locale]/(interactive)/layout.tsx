@@ -7,6 +7,7 @@ import { Link, usePathname } from "@/lib/navigation";
 import { soundPageMap } from "@/lib/sounds";
 import { cn } from "@/lib/utils";
 import { useSoundStore } from "@/store/sound";
+import { useStickerStore } from "@/store/sticker";
 import { Volume2, VolumeX } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Inter } from "next/font/google";
@@ -28,6 +29,7 @@ export default function RootLayout({
   const path = usePathname();
   const page = path.split("/")[1];
   const { isPlaying, toggle } = useSoundStore();
+  const { stickerId } = useStickerStore();
 
   const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
 
@@ -45,8 +47,21 @@ export default function RootLayout({
 
   const soundRef = createRef<ReactHowler>();
 
-  const backgroundImgSrc = useMemo(() => {
-    return backgroundMapConfig[page] ?? "/img/1-1.png";
+  const [backgroundImgSrc, imagePreloadSrc] = useMemo(() => {
+    let bgImgSrc: string | undefined;
+    const images = backgroundMapConfig[page]?.image;
+    if (typeof images === "string") {
+      bgImgSrc = images;
+    }
+    if (Array.isArray(images)) {
+      if (page === "4-17") {
+        bgImgSrc = images[stickerId - 1];
+      } else {
+        bgImgSrc = images[0];
+      }
+    }
+    const imagePreloadSrc = backgroundMapConfig[page]?.imagePreload ?? [];
+    return [bgImgSrc ?? "/img/1-1.png", imagePreloadSrc];
   }, [page]);
 
   return (
@@ -61,14 +76,15 @@ export default function RootLayout({
           soundRef.current?.howler.fade(0, 0.5, fadeDuration);
         }}
       />
-      <div className={"relative h-full w-full bg-[#e0dac7]"}>
+      <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
         <AnimatedImage
           src={backgroundImgSrc}
+          preloadSrcs={imagePreloadSrc}
           alt="background-image"
           fill
-          className="object-cover"
+          className="-z-50 object-cover"
         />
-        <div className="fixed right-5 top-10 z-10 flex items-center">
+        <div className="absolute right-5 top-10 z-10 flex items-center">
           <Link href={path} locale={locale === "en" ? "th" : "en"}>
             <Button
               variant="ghost"
