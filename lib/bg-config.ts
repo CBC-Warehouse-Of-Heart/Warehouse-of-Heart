@@ -1,16 +1,64 @@
-export const backgroundMapConfig: Record<string, string> = {
-  "1-1": "/img/1-1.webp",
-  "1-2": "/img/1-2.webp",
-  "1-3": "/img/1-3.webp",
-  "1-4": "/img/1-4.gif",
-  "4-1": "/img/4-1.png",
-  "4-2": "/img/4-2.png",
-  "4-3": "/img/4-3.png",
-  "4-4": "/img/4-3.png",
-  "4-5": "/img/4-5.png",
-  "4-6": "/img/4-5.png",
-  "4-7": "/img/4-5.png",
-  "4-8": "/img/4-3.png",
-  feedback: "/img/feedback.webp",
-  "feedback-submitted": "/img/feedback-submitted.webp",
+export const backgroundMapConfig: Record<
+  string,
+  {
+    image: string;
+    pagePreload: string[];
+  }
+> = {
+  "1-1": {
+    image: "/img/1-1.webp",
+    pagePreload: ["1-2"],
+  },
+  "1-2": {
+    image: "/img/1-2.webp",
+    pagePreload: ["1-3"],
+  },
+  "1-3": {
+    image: "/img/1-3.webp",
+    pagePreload: ["1-4"],
+  },
+  "1-4": {
+    image: "/img/1-4.gif",
+    pagePreload: [],
+  },
+  "4-1": {
+    image: "/img/4-1.webp",
+    pagePreload: ["4-2"],
+  },
+  "4-2": {
+    image: "/img/4-2.webp",
+    pagePreload: ["4-3"],
+  },
+  "4-3": {
+    image: "/img/4-3.webp",
+    pagePreload: [],
+  },
+  "4-4": {
+    image: "/img/4-3.webp",
+    pagePreload: ["4-5"],
+  },
+  "4-5": {
+    image: "/img/4-5.webp",
+    pagePreload: [],
+  },
+  "4-6": {
+    image: "/img/4-5.webp",
+    pagePreload: [],
+  },
+  "4-7": {
+    image: "/img/4-5.webp",
+    pagePreload: [],
+  },
+  "4-8": {
+    image: "/img/4-3.webp",
+    pagePreload: [],
+  },
+  feedback: {
+    image: "/img/feedback.webp",
+    pagePreload: ["feedback-submitted"],
+  },
+  "feedback-submitted": {
+    image: "/img/feedback-submitted.webp",
+    pagePreload: [],
+  },
 };

@@ -6,9 +6,15 @@ import { useEffect, useState } from "react";
 
 interface AnimatedImageProps extends ImageProps {
   src: string;
+  preloadSrcs: string[];
 }
 
-const AnimatedImage = ({ src, alt, ...props }: AnimatedImageProps) => {
+const AnimatedImage = ({
+  src,
+  alt,
+  preloadSrcs,
+  ...props
+}: AnimatedImageProps) => {
   const [currentSrc, setCurrentSrc] = useState(src);
   const [attachPreload, setAttachPreload] = useState(false);
 
@@ -23,7 +29,7 @@ const AnimatedImage = ({ src, alt, ...props }: AnimatedImageProps) => {
           src={src}
           alt={alt}
           priority={true}
-          onLoadingComplete={() => {
+          onLoad={() => {
             setCurrentSrc(src);
           }}
           {...props}
@@ -42,6 +48,20 @@ const AnimatedImage = ({ src, alt, ...props }: AnimatedImageProps) => {
           <Image src={currentSrc} alt={alt} {...props} />
         </motion.div>
       </AnimatePresence>
+      {preloadSrcs.map((src, index) => (
+        <Image
+          key={`preload-${index}`}
+          src={src}
+          alt={alt}
+          loading="eager"
+          priority={true}
+          {...props}
+          className="hidden"
+          onLoad={() => {
+            console.log(`preloaded image: ${src}`);
+          }}
+        />
+      ))}
     </>
   );
 };
