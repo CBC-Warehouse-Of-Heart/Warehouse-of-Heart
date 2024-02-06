@@ -20,8 +20,8 @@ module.exports = {
         brown: "#675D51",
         gray: "#D9D9D9",
         "woh-white": "#F8F8F7",
-        "purple-slider": "#374375",
-        "light-purple-slider": "#8793C5",
+        "pink-brown-slider": "#AA5656",
+        "light-pink-brown-slider": "#B78481",
         "woh-black": "#1E1B20",
         "pink-brown": "#B78181",
         border: "hsl(var(--border))",
@@ -63,6 +63,7 @@ module.exports = {
       },
       backgroundImage: {
         "white-radial": "url('/img/white-radial.png')",
+        "value-box": "url('/img/value_box.png')",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -94,6 +95,7 @@ module.exports = {
         "4-17-5": "url('/img/4-17/bg-sticker5.webp')",
         "4-17-6": "url('/img/4-17/bg-sticker6.webp')",
         "white-radial": "url('/img/white-radial.webp')",
+        "value-box": "url('/img/value-box.webp')",
       },
     },
   },

@@ -33,6 +33,18 @@ export const backgroundMapConfig: Record<
     image: "/img/1-6.webp",
     imagePreload: [],
   },
+  "2-6": {
+    image: "/img/2-6.webp",
+    imagePreload: [],
+  },
+  "2-8": {
+    image: "/img/2-6.webp",
+    imagePreload: [],
+  },
+  "2-9": {
+    image: "/img/2-9.webp",
+    imagePreload: [],
+  },
   "4-1": {
     image: "/img/4-1.webp",
     imagePreload: ["/img/4-2.webp"],

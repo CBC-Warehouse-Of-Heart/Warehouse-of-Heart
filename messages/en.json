@@ -118,5 +118,18 @@
     "safeAndSound": "“safe and sound”",
     "toWander": "To wander in your heart",
     "whereATreasure": "where a treasure will be found"
+  },
+  "2-6": {
+    "ifIWere": "If I were to rate today from 10 (Best)",
+    "to1": "to 1 (Worst), today would be.."
+  },
+  "2-8": {
+    "whenWas": "When was the last time I let myself",
+    "walkOn": "walk on my own pace like this.."
+  },
+  "2-9": {
+    "onTheWay": "On the way home,",
+    "youReflect": "you reflect on the day",
+    "andLookForward": "and look forward to some rest."
   }
 }
