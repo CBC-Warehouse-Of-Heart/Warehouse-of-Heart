@@ -24,7 +24,6 @@ const Slider = React.forwardRef<
           className,
         )}
       >
-        
         <SliderPrimitive.Root
           ref={ref}
           className={cn(
@@ -46,10 +45,10 @@ const Slider = React.forwardRef<
             }}
           >
             <div
-              className="bg-value-box background-size-100-102 absolute -top-[45px] left-[60%] m-auto 
-              w-[50px] -translate-x-1/2 bg-cover bg-no-repeat text-lg text-white"
+              className="background-size-110-110 absolute -top-[45px] left-[60%] m-auto w-[55px] 
+              -translate-x-1/2 bg-[url('/img/value-box.webp')] bg-cover bg-no-repeat text-lg text-white"
             >
-              <p className="mb-4 mr-2 mt-0 font-serif">{value}</p>
+              <p className="mb-4 mt-0 font-serif">{value}</p>
             </div>
           </SliderPrimitive.Thumb>
         </SliderPrimitive.Root>
