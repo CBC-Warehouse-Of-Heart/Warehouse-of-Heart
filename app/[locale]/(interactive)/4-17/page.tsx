@@ -3,9 +3,9 @@ import ConfirmPopup from "@/components/ui/confirmPopup";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import DownloadImageAlert from "@/components/ui/downloadImageAlert";
 import NextButton from "@/components/ui/nextButton";
-import { useShareYourselfWordsStore } from "@/stores/ShareYourselfWords.store";
-import { useStickerStore } from "@/stores/sticker.store";
-import { renderedStrokes } from "@/utils/svg";
+import { useShareYourselfWordsStore } from "@/store/shareYourselfWords";
+import { useStickerStore } from "@/store/sticker";
+import { useRenderedStrokes } from "@/utils/svg";
 import { AnimatePresence } from "framer-motion";
 import { toPng } from "html-to-image";
 import { useTranslations } from "next-intl";
@@ -19,7 +19,7 @@ const Page = (props: Props) => {
   const { stickerBgStyle } = useStickerStore();
   const wordsRef = useRef<HTMLDivElement>(null);
   const [downloadAlert, setDownloadAlert] = useState<boolean>(false);
-  const allStrokes = renderedStrokes(5);
+  const allStrokes = useRenderedStrokes(5);
 
   const onButtonClick = useCallback(() => {
     if (wordsRef.current === null) {

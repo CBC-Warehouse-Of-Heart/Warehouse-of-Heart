@@ -1,63 +1,116 @@
 "use client";
-import { useSoundStore } from "@/stores/Sound.store";
-// Interactive game layout here
-import React from "react";
+import AnimatedImage from "@/components/animated-image";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { backgroundMapConfig } from "@/lib/bg-config";
+import { Link, usePathname } from "@/lib/navigation";
+import { soundPageMap } from "@/lib/sounds";
+import { cn } from "@/lib/utils";
+import { useSoundStore } from "@/store/sound";
+import { useStickerStore } from "@/store/sticker";
+import { Volume2, VolumeX } from "lucide-react";
+import { useLocale } from "next-intl";
+import { Inter } from "next/font/google";
+import React, { createRef, useEffect, useMemo, useState } from "react";
+import ReactHowler from "react-howler";
+
+const interFont = Inter({
+  weight: "600",
+  subsets: ["greek"],
+});
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const sound = useSoundStore((state) => state.sound);
-  const updateSound = useSoundStore((state) => state.updateSound);
+  const locale = useLocale();
+
+  const path = usePathname();
+  const page = path.split("/")[1];
+  const { isPlaying, toggle } = useSoundStore();
+  const { stickerId } = useStickerStore();
+
+  const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
+
+  const fadeDuration = 500;
+
+  useEffect(() => {
+    const nextSound = soundPageMap[page] ?? "/sound/main.mp3";
+    if (nextSound !== currentSound) {
+      soundRef.current?.howler.fade(0.5, 0, fadeDuration);
+      setTimeout(() => {
+        setCurrentSound(nextSound);
+      }, fadeDuration);
+    }
+  }, [page]);
+
+  const soundRef = createRef<ReactHowler>();
+
+  const [backgroundImgSrc, imagePreloadSrc] = useMemo(() => {
+    let bgImgSrc: string | undefined;
+    const images = backgroundMapConfig[page]?.image;
+    if (typeof images === "string") {
+      bgImgSrc = images;
+    }
+    if (Array.isArray(images)) {
+      if (page === "4-17") {
+        bgImgSrc = images[stickerId - 1];
+      } else {
+        bgImgSrc = images[0];
+      }
+    }
+    const imagePreloadSrc = backgroundMapConfig[page]?.imagePreload ?? [];
+    return [bgImgSrc ?? "/img/1-1.png", imagePreloadSrc];
+  }, [page]);
 
   return (
-    <div className="h-full w-full bg-[radial-gradient(62.09%_62.09%_at_50%_50%,_#8F3939_0%,_#FFB094_20.31%,_#FFFCF5_100%)]">
-      <div className="fixed right-4 top-12" onClick={() => updateSound(!sound)}>
-        {sound && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#B5B5B5"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-volume-2"
+    <>
+      <ReactHowler
+        src={currentSound}
+        volume={0.5}
+        playing={isPlaying}
+        loop
+        ref={soundRef}
+        onPlay={() => {
+          soundRef.current?.howler.fade(0, 0.5, fadeDuration);
+        }}
+      />
+      <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
+        <AnimatedImage
+          src={backgroundImgSrc}
+          preloadSrcs={imagePreloadSrc}
+          alt="background-image"
+          fill
+          className="-z-50 object-cover"
+        />
+        <div className="absolute right-5 top-10 z-10 flex items-center">
+          <Link href={path} locale={locale === "en" ? "th" : "en"}>
+            <Button
+              variant="ghost"
+              className={cn(
+                interFont.className,
+                "h-auto w-auto p-2 text-sm font-semibold text-accent",
+              )}
+            >
+              {locale === "en" ? "EN" : "TH"}
+            </Button>
+          </Link>
+          <Separator orientation="vertical" className="h-7" />
+          <Button
+            variant="ghost"
+            onClick={toggle}
+            className="h-auto w-auto p-2 text-accent"
           >
-            <polygon
-              points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"
-              fill="#B5B5B5"
-            />
-            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-          </svg>
-        )}
-        {!sound && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#B5B5B5"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-volume-x"
-          >
-            <polygon
-              points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"
-              fill="#B5B5B5"
-            />
-            <line x1="22" x2="16" y1="9" y2="15" />
-            <line x1="16" x2="22" y1="9" y2="15" />
-          </svg>
-        )}
+            {isPlaying ? (
+              <Volume2 className="h-5 w-5" />
+            ) : (
+              <VolumeX className="h-5 w-5" />
+            )}
+          </Button>
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
+    </>
   );
 }

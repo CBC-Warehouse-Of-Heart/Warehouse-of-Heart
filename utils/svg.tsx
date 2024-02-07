@@ -1,4 +1,4 @@
-import { useNameStrokeStore } from "@/stores/NameStroke.store";
+import { useNameStrokeStore } from "@/store/nameStroke";
 import getStroke from "perfect-freehand";
 
 export const getSvgPathFromStroke = (stroke: number[][], divisor: number) => {
@@ -21,7 +21,7 @@ export const getSvgPathFromStroke = (stroke: number[][], divisor: number) => {
   return d.join(" ");
 };
 
-export const renderedStrokes = (divisor: number) => {
+export const useRenderedStrokes = (divisor: number) => {
   const { nameStroke } = useNameStrokeStore();
   const allStroke = nameStroke.flatMap((stroke, index) => {
     const pathData = getSvgPathFromStroke(

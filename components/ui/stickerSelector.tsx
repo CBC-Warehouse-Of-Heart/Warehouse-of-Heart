@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { useStickerStore } from "@/stores/sticker.store";
+import { useStickerStore } from "@/store/sticker";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { stickerItems } from "../constant/stickerItems";

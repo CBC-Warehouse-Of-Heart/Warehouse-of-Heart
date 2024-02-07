@@ -1,9 +1,9 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import StickerSelector from "@/components/ui/stickerSelector";
-import { useShareYourselfWordsStore } from "@/stores/ShareYourselfWords.store";
-import { useStickerStore } from "@/stores/sticker.store";
-import { renderedStrokes } from "@/utils/svg";
+import { useShareYourselfWordsStore } from "@/store/shareYourselfWords";
+import { useStickerStore } from "@/store/sticker";
+import { useRenderedStrokes } from "@/utils/svg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -18,7 +18,7 @@ const Page = (props: Props) => {
   const { stickerId, stickerPath } = useStickerStore();
   const [showStickers, setShowSticker] = useState<boolean>(false);
   const [hasSelectedSticker, setSelectedSticker] = useState<boolean>(false);
-  const allStrokes = renderedStrokes(5);
+  const allStrokes = useRenderedStrokes(5);
 
   return (
     <div className="bg-4-16 absolute flex h-full w-full flex-col items-center bg-cover bg-no-repeat">

@@ -1,6 +1,6 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
-import { useShareYourselfWordsStore } from "@/stores/ShareYourselfWords.store";
+import { useShareYourselfWordsStore } from "@/store/shareYourselfWords";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
