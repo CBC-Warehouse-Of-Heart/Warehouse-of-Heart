@@ -12,7 +12,7 @@ const Page = (props: Props) => {
   const { words, updateWords } = useShareYourselfWordsStore();
 
   return (
-    <div className="absolute h-full w-full bg-4-15 bg-cover bg-no-repeat">
+    <div className="bg-4-15 absolute h-full w-full bg-cover bg-no-repeat">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -22,7 +22,7 @@ const Page = (props: Props) => {
         }}
         className="absolute flex h-full w-full flex-col items-center"
       >
-        <p className="z-1 absolute mt-52 text-base text-woh-white">
+        <p className="z-1 absolute mt-[22vh] text-base text-woh-white">
           {t("afterAll")}
           <br />
           {t("doYou")}
@@ -42,7 +42,7 @@ const Page = (props: Props) => {
           </p>
         </div>
 
-        <div className="absolute bottom-48">
+        <div className="absolute bottom-[20vh]">
           <Link href="/4-16">
             <NextButton trigger={words.length > 0} />
           </Link>

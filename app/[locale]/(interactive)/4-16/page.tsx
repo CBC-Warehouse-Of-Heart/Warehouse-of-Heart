@@ -21,8 +21,8 @@ const Page = (props: Props) => {
   const allStrokes = renderedStrokes(5);
 
   return (
-    <div className="absolute flex h-full w-full flex-col items-center bg-4-16 bg-cover bg-no-repeat">
-      <div className="z-1 absolute mr-8 mt-56 flex h-[440px] w-[284px] flex-col items-start rounded-xl">
+    <div className="bg-4-16 absolute flex h-full w-full flex-col items-center bg-cover bg-no-repeat">
+      <div className="z-1 absolute mr-8 mt-[25vh] flex h-[440px] w-[284px] flex-col items-start rounded-xl">
         <div className="flex">
           <p className="font-cursive text-lg text-woh-black">{t("dear")}</p>
           <svg id="svg" className="relative h-[30px] w-[63px] touch-none">
@@ -82,7 +82,7 @@ const Page = (props: Props) => {
             className="absolute flex h-full w-full flex-col items-center"
           >
             <StickerSelector />
-            <div className="z-1 absolute bottom-16">
+            <div className="z-1 absolute bottom-[8vh]">
               <button
                 onClick={() => {
                   setShowSticker(false);
@@ -98,7 +98,7 @@ const Page = (props: Props) => {
       </AnimatePresence>
 
       {!showStickers && (hasSelectedSticker || stickerId > 1) && (
-        <div className="z-1 absolute bottom-16">
+        <div className="z-1 absolute bottom-[8vh]">
           <Link href="/4-17">
             <NextButton />
           </Link>

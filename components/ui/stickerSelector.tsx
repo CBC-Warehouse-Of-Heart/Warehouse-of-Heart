@@ -8,7 +8,7 @@ const StickerSelector = () => {
   const t = useTranslations("StickerSelector");
   const { stickerId, updateSticker } = useStickerStore();
   return (
-    <div className="z-2 absolute mt-[154px] flex h-[560px] w-[342px] flex-col items-center gap-6 rounded-xl bg-[#F8F8F7] py-6">
+    <div className="z-2 fixed left-1/2 top-1/2 flex h-[560px] w-[342px] -translate-x-1/2 -translate-y-1/2 transform flex-col items-center gap-6 rounded-xl bg-[#F8F8F7] py-6">
       <p className="text-base font-semibold text-[#6C1F1F]">{t("sticker")}</p>
       <div className="flex w-[253px] flex-wrap items-center gap-x-[50px] gap-y-4">
         {stickerItems.map((item) => (
