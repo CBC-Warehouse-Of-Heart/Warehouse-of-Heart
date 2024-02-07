@@ -23,6 +23,7 @@ const lora = Lora({
 const nothingYouCouldDo = Nothing_You_Could_Do({
   weight: ["400"],
   subsets: ["latin"],
+  variable: "--nothing-you-could-do-font",
 });
 
 export const metadata: Metadata = {
@@ -49,7 +50,6 @@ export default function RootLayout({
           {
             [lora.className]: locale === "en",
             [ibmPlexSansThaiLooped.className]: locale === "th",
-            [nothingYouCouldDo.className]: locale === "en",
           },
           nothingYouCouldDo.variable,
           "min-h-[100dvh] w-full",

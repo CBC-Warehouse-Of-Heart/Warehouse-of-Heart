@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { useToBlob, useToJpeg } from "@hugocxl/react-to-image";
+import NextButton from "@/components/ui/nextButton";
+import { toJpeg } from "html-to-image";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -8,9 +8,46 @@ import { useState } from "react";
 export default function Page() {
   const [disabled, setDisabled] = useState(false);
 
-  const handleShare = async (data: Blob) => {
-    const image = new File([data], "Warehouse-of-Heart-Postcard.png", {
-      type: data.type,
+  const convertImage = async (element: HTMLElement) => {
+    let dataUrl = "";
+    const minDataLength = 150000;
+    const maxAttempts = 20;
+
+    for (let i = 0; dataUrl.length < minDataLength && i < maxAttempts; ++i) {
+      dataUrl = await toJpeg(element, { quality: 0.95 });
+    }
+
+    return dataUrl;
+  };
+
+  const downloadImage = async () => {
+    setDisabled(true);
+    const postcard = document.getElementById("postcard");
+    if (!postcard) return;
+
+    const dataUrl = await convertImage(postcard);
+
+    // console.log(dataUrl.length);
+    const link = document.createElement("a");
+    link.download = "Postcard from Warehouse of Heart.jpeg";
+    link.href = dataUrl;
+    link.click();
+    setDisabled(false);
+  };
+
+  const shareImage = async () => {
+    setDisabled(true);
+    const postcard = document.getElementById("postcard");
+    if (!postcard) return;
+
+    const dataUrl = await convertImage(postcard);
+
+    const dataBlob = await (await fetch(dataUrl)).blob();
+    if (!dataBlob) return;
+
+    // console.log(dataUrl.length);
+    const image = new File([dataBlob], "Postcard from Warehouse of Heart.png", {
+      type: dataBlob.type,
     });
     const shareData: ShareData = {
       title: "Warehouse of Heart Postcard",
@@ -23,60 +60,29 @@ export default function Page() {
     } catch (err) {
       console.log("Error: " + err);
     }
+    setDisabled(false);
   };
-
-  const [shareState, share] = useToBlob<HTMLDivElement>({
-    selector: "#postcard",
-    onStart: () => {
-      console.log("Start Converting...");
-      setDisabled(true);
-    },
-    onSuccess: (data) => {
-      setDisabled(false);
-      console.log("Convert Success", data);
-      if (data) handleShare(data);
-    },
-    onError: (error) => console.log("Error", error),
-  });
-
-  const [downloadState, download] = useToJpeg<HTMLDivElement>({
-    quality: 1,
-    selector: "#postcard",
-    onStart: () => {
-      console.log("Start Downloading...");
-      setDisabled(true);
-    },
-    onSuccess: (data) => {
-      setDisabled(false);
-      console.log("Download Success");
-      const link = document.createElement("a");
-      link.download = "Warehouse-of-Heart-Postcard.jpg";
-      link.href = data;
-      link.click();
-    },
-  });
 
   return (
     <>
-      <Image src="/bg/5-8.png" alt="Background" fill objectFit="cover" />
       <div className="flex h-screen flex-col items-center justify-start pt-20">
         <div
-          className="relative z-10 mb-4 flex aspect-[264/470] h-[80%] pt-[100%]"
+          className="relative z-10 mb-4 aspect-[264/470] h-[80%] max-w-[85%]"
           id="postcard"
         >
           <Image
-            src={"/postcards/postcard-03.jpg"}
+            src={"/postcards/postcard-07.png"}
             alt="Warehouse of Heart Postcard"
             objectFit="contain"
             fill
             className="h-full w-full"
           />
-          <p className="font-postcard absolute left-[58%] top-[68%] z-10 -translate-x-1/2 -translate-y-1/2 transform text-xs">
+          <p className="-translate-y-1/1 absolute left-[58%] top-[68%] z-10 -translate-x-1/2 transform font-postcard text-xs">
             #WarehouseofHeart
           </p>
         </div>
         <div className="z-10 mb-4 flex space-x-3">
-          <button onClick={download} disabled={disabled}>
+          <button onClick={downloadImage} disabled={disabled}>
             <svg
               width="44"
               height="44"
@@ -108,7 +114,7 @@ export default function Page() {
               </g>
             </svg>
           </button>
-          <button onClick={share} disabled={disabled}>
+          <button onClick={shareImage} disabled={disabled}>
             <svg
               width="44"
               height="44"
@@ -141,12 +147,8 @@ export default function Page() {
             </svg>
           </button>
         </div>
-        <Link href="/feedback">
-          <Button className="relative" variant="next" size="xs">
-            <p className="text-center text-base font-semibold text-[#6C1F1F]">
-              ถัดไป
-            </p>
-          </Button>
+        <Link href="/feedback" className="z-10">
+          <NextButton />
         </Link>
       </div>
     </>

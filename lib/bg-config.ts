@@ -93,4 +93,8 @@ export const backgroundMapConfig: Record<
     image: "/img/feedback-submitted.webp",
     imagePreload: [],
   },
+  "5-8": {
+    image: "/img/5-8.webp",
+    imagePreload: [],
+  },
 };
