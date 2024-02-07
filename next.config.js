@@ -1,11 +1,6 @@
+const withNextIntl = require("next-intl/plugin");
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = withNextIntl("./lib/i18n.ts")({});
 
-module.exports = {
-    images: {
-        domains: ['drive.google.com'],
-    },
-}
-const withVideos = require('next-videos')
-
-module.exports = withVideos()
+module.exports = nextConfig;
