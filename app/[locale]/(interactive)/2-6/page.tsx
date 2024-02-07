@@ -17,7 +17,7 @@ export default function page() {
         <p>{t("ifIWere")}</p>
         <p>{t("to1")}</p>
         <Slider
-          onValueChange={(newValue) => {
+          onValueChange={(newValue: { toString: () => string; }) => {
             console.log(newValue);
             localStorage.setItem("slider", newValue.toString());
           }}
