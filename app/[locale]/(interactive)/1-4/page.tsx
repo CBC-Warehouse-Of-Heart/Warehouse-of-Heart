@@ -19,7 +19,7 @@ const Page = (props: Props) => {
         }}
         className="flex flex-col items-center text-center text-base leading-8 text-woh-black"
       >
-        <p className="mt-64">
+        <p className="mt-[30vh]">
           {t("blank")}
           <br />
           {t("youMight")}
@@ -30,7 +30,7 @@ const Page = (props: Props) => {
           <br />
           {t("whereATreasure")}
         </p>
-        <div className="absolute bottom-44">
+        <div className="absolute bottom-[21vh]">
           <Link href="/1-5">
             <NextButton />
           </Link>

@@ -19,7 +19,7 @@ const Page = (props: Props) => {
         }}
         className="flex flex-col items-center text-center text-base leading-8 text-woh-black"
       >
-        <p className="mt-72">
+        <p className="mt-[34vh]">
           {t("welcomeTo")}
           <br />
           {t("warehouseOfHeart")}
@@ -31,7 +31,7 @@ const Page = (props: Props) => {
           <br />
           {t("yourHeart")}
         </p>
-        <div className="absolute bottom-44">
+        <div className="absolute bottom-[21vh]">
           <Link href="/1-3">
             <NextButton />
           </Link>
