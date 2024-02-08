@@ -1,19 +1,13 @@
+"use client";
 import NextButton from "@/components/ui/nextButton";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
-type Props = {
-  params: {
-    locale: string;
-  };
-};
+type Props = {};
 
-export default function SubmittedPage({
-  params: { locale },
-}: Props): JSX.Element {
-  unstable_setRequestLocale(locale);
+export default function SubmittedPage(props: Props): JSX.Element {
   const t = useTranslations("SubmittedPage");
   return (
     <div className="mx-auto flex h-screen w-full flex-col items-center justify-start">
@@ -25,7 +19,12 @@ export default function SubmittedPage({
         <p className="text-base text-black">{t("received")}</p>
       </div>
       <Link href="/end" className="absolute bottom-36">
-        <NextButton />
+        <motion.div
+          initial={{ opacity: 0, z: -20 }}
+          animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
+        >
+          <NextButton />
+        </motion.div>
       </Link>
     </div>
   );

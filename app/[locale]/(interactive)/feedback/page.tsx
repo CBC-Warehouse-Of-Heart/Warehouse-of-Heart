@@ -1,7 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import NextButton from "@/components/ui/nextButton";
-import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { FormEvent, useMemo, useState } from "react";
 import "./styles.css";
@@ -10,6 +11,7 @@ type Props = {};
 
 const Page = (props: Props) => {
   const t = useTranslations("Feedback");
+  const locale = useLocale();
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -27,7 +29,7 @@ const Page = (props: Props) => {
 
     if (submissionStatus === "SUBMITTING") return;
     if (isEmpty) {
-      router.push("/end");
+      router.push(`/${locale}/end`);
       return;
     }
 
@@ -44,13 +46,17 @@ const Page = (props: Props) => {
       }),
     }).then((res) => res.json());
 
-    if (res.success) router.push("/feedback-submitted");
+    if (res.success) router.push(`/${locale}/feedback-submitted`);
     else setSubmissionStatus("SUBMIT_FAILED");
   };
 
   return (
     <form method="post" onSubmit={handleSubmit}>
-      <div className="relative mx-auto flex h-screen w-full flex-col items-center justify-start">
+      <motion.div
+        initial={{ opacity: 0, z: -20 }}
+        animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
+        className="relative mx-auto flex h-screen w-full flex-col items-center justify-start"
+      >
         <div className="z-10 mt-[130px] text-center">
           <p className="text-base text-woh-white">{t("rating")}</p>
         </div>
@@ -330,7 +336,7 @@ const Page = (props: Props) => {
             trigger={submissionStatus !== "SUBMITTING"}
           />
         </div>
-      </div>
+      </motion.div>
     </form>
   );
 };
