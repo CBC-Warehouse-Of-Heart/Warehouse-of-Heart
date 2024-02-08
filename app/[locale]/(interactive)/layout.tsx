@@ -32,7 +32,7 @@ export default function RootLayout({
   const { stickerId } = useStickerStore();
 
   const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
-  const [bgImgSrc, setBgImgSrc] = useState<string>("/img/1-1.png");
+  const [bgImgSrc, setBgImgSrc] = useState<string>();
 
   const fadeDuration = 500;
 
@@ -81,13 +81,16 @@ export default function RootLayout({
         }}
       />
       <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
-        <AnimatedImage
-          src={bgImgSrc}
-          preloadSrcs={imagePreloadSrc}
-          alt="background-image"
-          fill
-          className="-z-50 object-cover"
-        />
+        {bgImgSrc && (
+          <AnimatedImage
+            src={bgImgSrc}
+            preloadSrcs={imagePreloadSrc}
+            alt="background-image"
+            fill
+            className="-z-50 object-cover"
+          />
+        )}
+
         <div className="absolute right-5 top-10 z-10 flex items-center">
           <Link href={path} locale={locale === "en" ? "th" : "en"}>
             <Button
