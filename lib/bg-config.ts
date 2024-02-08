@@ -97,4 +97,8 @@ export const backgroundMapConfig: Record<
     image: "/img/5-8.webp",
     imagePreload: [],
   },
+  "5-7": {
+    image: "/img/5-7.webp",
+    imagePreload: [],
+  },
 };
