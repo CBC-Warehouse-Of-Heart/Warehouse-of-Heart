@@ -1,18 +1,17 @@
 import { useTranslations } from "next-intl";
+import { Button } from "./button";
 
-const NextButton = (props: { trigger: boolean }) => {
+type Props = {
+  trigger?: boolean;
+  label?: string;
+};
 
-  const b = useTranslations("NextButton");
-
+const NextButton = ({ trigger = true, label }: Props) => {
+  const t = useTranslations("NextButton");
   return (
-    <button
-      // ถ้า props ที่ได้มาเป็น false => disable
-      disabled={!props.trigger}
-      // ใส่ disabled:text-[#B8BFCB]
-      className="relative flex h-8 w-[100px] items-center justify-center rounded-[100px] bg-[#F8F8F7] text-[#6C1F1F] disabled:text-[#B8BFCB]"
-    >
-      <p className="text-base font-semibold">{b("next")}</p>
-    </button>
+    <Button disabled={!trigger} variant="next" size="xs">
+      <p>{label ? label : t("next")}</p>
+    </Button>
   );
 };
 
