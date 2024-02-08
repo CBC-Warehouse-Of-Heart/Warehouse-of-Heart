@@ -1,25 +1,36 @@
-import Heart from "@/components/background/heart";
-import NextButton from "@/components/ui/nextButton";
+import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 
-type Props = {};
+type Props = {
+  params: {
+    locale: string;
+  };
+};
 
-const Page = (props: Props) => {
+const Page = ({ params: { locale } }: Props) => {
+  unstable_setRequestLocale(locale);
+  const t = useTranslations("1-5");
   return (
     <>
-      <Heart />
-      <div className="flex h-screen flex-col items-center justify-center">
-        <div className="container z-10 mb-[220px] mt-[244px] px-10 text-center ">
-          <p className="text-base leading-normal text-[#F8F8F7]">
-            งั้นเรามาเริ่ม <br /> การเดินทางนี้กันเลย
-            <br />
-            <br />
-            <br />
-          </p>
+      <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
+        <div className="mb-0 text-center font-semibold text-[#F8F8F7]">
+          <p className="mb-1">{t("areYouReady")}</p>
+          <p className="mb-1">{t("forTheJourney")}</p>
         </div>
-        <Link href="/2-1">
-          <NextButton />
-        </Link>
+        <div className="mt-5 flex flex-row space-x-4">
+          <Link href="/1-6">
+            <Button className="border-pink-brown bg-pink-brown border-[2.5px] border-solid text-white">
+              {t("ready")}
+            </Button>
+          </Link>
+          <Link href="/1-6a">
+            <Button className="border-pink-brown text-pink-brown border-[2.5px] border-solid bg-white">
+              {t("maybeNotNow")}
+            </Button>
+          </Link>
+        </div>
       </div>
     </>
   );
