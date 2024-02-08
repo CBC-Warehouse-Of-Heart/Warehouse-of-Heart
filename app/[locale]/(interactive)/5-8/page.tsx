@@ -3,7 +3,7 @@ import ConfirmPopup from "@/components/ui/confirmPopup";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import DownloadImageAlert from "@/components/ui/downloadImageAlert";
 import NextButton from "@/components/ui/nextButton";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { toJpeg } from "html-to-image";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -109,16 +109,26 @@ export default function Page() {
         >
           {postcardNo && (
             <>
-              <Image
-                src={"/postcards/postcard-" + "th" + "-" + postcardNo + ".png"}
-                alt="Warehouse of Heart Postcard"
-                objectFit="contain"
-                fill
-                className="h-full w-full"
-              />
-              <p className="absolute left-[58%] top-[68%] z-10 -translate-x-1/2 -translate-y-1/2 transform font-postcard text-xs">
-                #WarehouseofHeart
-              </p>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.5, delay: 0.5 },
+                }}
+              >
+                <Image
+                  src={
+                    "/postcards/postcard-" + "th" + "-" + postcardNo + ".png"
+                  }
+                  alt="Warehouse of Heart Postcard"
+                  objectFit="contain"
+                  fill
+                  className="h-full w-full"
+                />
+                <p className="absolute left-[58%] top-[68%] z-10 -translate-x-1/2 -translate-y-1/2 transform font-postcard text-xs">
+                  #WarehouseofHeart
+                </p>
+              </motion.div>
             </>
           )}
         </div>

@@ -85,20 +85,24 @@ export const backgroundMapConfig: Record<
     ],
     imagePreload: [],
   },
-  feedback: {
-    image: "/img/feedback.webp",
-    imagePreload: ["/img/feedback-submitted.webp"],
+  "5-7": {
+    image: "/img/5-7.webp",
+    imagePreload: [],
   },
-  "feedback-submitted": {
-    image: "/img/feedback-submitted.webp",
+  "5-6": {
+    image: "/img/5-6.webp",
     imagePreload: [],
   },
   "5-8": {
     image: "/img/5-8.webp",
     imagePreload: [],
   },
-  "5-7": {
-    image: "/img/5-7.webp",
+  feedback: {
+    image: "/img/feedback.webp",
+    imagePreload: ["/img/feedback-submitted.webp"],
+  },
+  "feedback-submitted": {
+    image: "/img/feedback-submitted.webp",
     imagePreload: [],
   },
 };
