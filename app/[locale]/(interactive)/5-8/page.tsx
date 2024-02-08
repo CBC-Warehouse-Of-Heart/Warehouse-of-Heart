@@ -115,6 +115,7 @@ export default function Page() {
                   opacity: 1,
                   transition: { duration: 0.5, delay: 0.5 },
                 }}
+                className="absolute inset-0 h-full w-full overflow-hidden"
               >
                 <Image
                   src={
