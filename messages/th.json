@@ -1,9 +1,22 @@
 {
     "NextButton": {
-        "next": "Next"
+        "next": "ถัดไป"
     },
     "TextArea": {
         "answerInput": "Please type your answer."
+    },
+    "3-2": {
+        "finallyArrived" : "ในที่สุดก็ถึงบ้านเเล้ว"
+    },
+    "3-3": {
+        "waveOfRelaxation" : "คุณเริ่มรู้สึกผ่อนคลาย",
+        "washOverYou" : "คล้ายกับว่าเวลาเริ่มเดินช้าลง",
+        "hasDecided" : " "
+    },
+    "3-5": {
+        "uponEntering" : "เมื่อเข้ามาข้างในแล้ว",
+        "theTable" : "คุณก็เหลือบไปเห็นอะไรบางอย่าง",
+        "yourAttention" : "วางอยู่บนโต๊ะที่คุ้นเคย"
     },
     "4-10": {
         "howIsLife" : "ช่วงนี้ของคุณเป็นยังไงบ้างนะ"
