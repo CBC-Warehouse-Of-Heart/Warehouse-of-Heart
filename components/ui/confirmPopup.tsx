@@ -2,7 +2,11 @@ import { DialogClose, DialogContent } from "@/components/ui/dialog";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-const ConfirmPopup = () => {
+type Props = {
+  href?: string;
+};
+
+const ConfirmPopup = ({ href = "/4-18" }: Props) => {
   const t = useTranslations("ConfirmPopup");
   return (
     <DialogContent className="border-none">
@@ -22,7 +26,7 @@ const ConfirmPopup = () => {
             </button>
           </DialogClose>
 
-          <Link href="/4-18">
+          <Link href={href}>
             <button className="h-8 w-[74px] rounded-[10px] bg-[#B78181] text-sm text-[#FFFFFF]">
               {t("next")}
             </button>

@@ -1,12 +1,16 @@
 "use client";
+import ConfirmPopup from "@/components/ui/confirmPopup";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import DownloadImageAlert from "@/components/ui/downloadImageAlert";
 import NextButton from "@/components/ui/nextButton";
+import { AnimatePresence } from "framer-motion";
 import { toJpeg } from "html-to-image";
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Page() {
-  const [disabled, setDisabled] = useState(false);
+  const [postcardNo, setPostcardNo] = useState<string | null>(null);
+  const [downloadAlert, setDownloadAlert] = useState(false);
 
   const convertImage = async (element: HTMLElement) => {
     let dataUrl = "";
@@ -21,22 +25,23 @@ export default function Page() {
   };
 
   const downloadImage = async () => {
-    setDisabled(true);
     const postcard = document.getElementById("postcard");
     if (!postcard) return;
 
     const dataUrl = await convertImage(postcard);
 
-    // console.log(dataUrl.length);
     const link = document.createElement("a");
     link.download = "Postcard from Warehouse of Heart.jpeg";
     link.href = dataUrl;
     link.click();
-    setDisabled(false);
+
+    setDownloadAlert(true);
+    window.setTimeout(() => {
+      setDownloadAlert(false);
+    }, 3000);
   };
 
   const shareImage = async () => {
-    setDisabled(true);
     const postcard = document.getElementById("postcard");
     if (!postcard) return;
 
@@ -45,7 +50,6 @@ export default function Page() {
     const dataBlob = await (await fetch(dataUrl)).blob();
     if (!dataBlob) return;
 
-    // console.log(dataUrl.length);
     const image = new File([dataBlob], "Postcard from Warehouse of Heart.png", {
       type: dataBlob.type,
     });
@@ -54,67 +58,117 @@ export default function Page() {
       text: "Your Postcard",
       files: [image],
     };
+
     try {
       navigator.share(shareData);
       console.log("Shared successfully");
     } catch (err) {
       console.log("Error: " + err);
     }
-    setDisabled(false);
   };
+
+  useEffect(() => {
+    const slider = localStorage.getItem("slider");
+    const score = slider
+      ? Math.max(1, Math.min(10, parseInt(slider)))
+      : Math.floor(Math.random() * 10) + 1;
+
+    switch (score) {
+      case 1:
+        setPostcardNo("01");
+        break;
+      case 2:
+      case 3:
+        setPostcardNo("02");
+        break;
+      case 4:
+      case 5:
+        setPostcardNo("03");
+        break;
+      case 6:
+        setPostcardNo("04");
+        break;
+      case 7:
+        setPostcardNo("05");
+        break;
+      case 8:
+      case 9:
+        setPostcardNo("06");
+        break;
+      case 10:
+        setPostcardNo("07");
+    }
+  }, []);
 
   return (
     <>
       <div className="flex h-screen flex-col items-center justify-start pt-20">
         <div
-          className="relative z-10 mb-4 aspect-[264/470] h-[80%] max-w-[85%]"
+          className="relative z-10 mb-4 aspect-[264/470] h-[80%] max-h-[678px] max-w-[85%]"
           id="postcard"
         >
-          <Image
-            src={"/postcards/postcard-07.png"}
-            alt="Warehouse of Heart Postcard"
-            objectFit="contain"
-            fill
-            className="h-full w-full"
-          />
-          <p className="-translate-y-1/1 absolute left-[58%] top-[68%] z-10 -translate-x-1/2 transform font-postcard text-xs">
-            #WarehouseofHeart
-          </p>
+          {postcardNo && (
+            <>
+              <Image
+                src={"/postcards/postcard-" + "th" + "-" + postcardNo + ".png"}
+                alt="Warehouse of Heart Postcard"
+                objectFit="contain"
+                fill
+                className="h-full w-full"
+              />
+              <p className="absolute left-[58%] top-[68%] z-10 -translate-x-1/2 -translate-y-1/2 transform font-postcard text-xs">
+                #WarehouseofHeart
+              </p>
+            </>
+          )}
         </div>
         <div className="z-10 mb-4 flex space-x-3">
-          <button onClick={downloadImage} disabled={disabled}>
-            <svg
-              width="44"
-              height="44"
-              viewBox="0 0 44 44"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="Group 25">
-                <circle id="Ellipse 30" cx="22" cy="22" r="22" fill="#F8F8F7" />
-                <g id="&#240;&#159;&#166;&#134; icon &#34;download outline&#34;">
-                  <g id="Group">
-                    <path
-                      id="Vector"
-                      d="M31.625 29.1895H12.375C11.6156 29.1895 11 29.7688 11 30.4836C11 31.1983 11.6156 31.7777 12.375 31.7777H31.625C32.3844 31.7777 33 31.1983 33 30.4836C33 29.7688 32.3844 29.1895 31.625 29.1895Z"
-                      fill="#AA5656"
+          <Dialog>
+            <DialogTrigger asChild>
+              <button onClick={downloadImage}>
+                <svg
+                  width="44"
+                  height="44"
+                  viewBox="0 0 44 44"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Group 25">
+                    <circle
+                      id="Ellipse 30"
+                      cx="22"
+                      cy="22"
+                      r="22"
+                      fill="#F8F8F7"
                     />
-                    <path
-                      id="Vector_2"
-                      d="M22.0019 25.3065C21.7169 25.3085 21.4382 25.2271 21.2044 25.0735L15.7044 21.4242C15.408 21.2262 15.2069 20.9259 15.1451 20.5888C15.0832 20.2518 15.1657 19.9054 15.3744 19.6253C15.4787 19.4854 15.6113 19.3662 15.7647 19.2748C15.9181 19.1833 16.0892 19.1214 16.2682 19.0925C16.4472 19.0636 16.6304 19.0684 16.8074 19.1065C16.9844 19.1447 17.1517 19.2155 17.2994 19.3148L22.0019 22.4077L26.6769 19.0948C26.9687 18.8888 27.3354 18.8004 27.6964 18.8489C28.0574 18.8975 28.3831 19.079 28.6019 19.3536C28.8207 19.6282 28.9147 19.9733 28.8631 20.3131C28.8116 20.6528 28.6187 20.9594 28.3269 21.1653L22.8269 25.0477C22.5889 25.2157 22.2995 25.3065 22.0019 25.3065Z"
-                      fill="#AA5656"
-                    />
-                    <path
-                      id="Vector_3"
-                      d="M22 22.7184C21.6353 22.7184 21.2856 22.5821 21.0277 22.3394C20.7699 22.0967 20.625 21.7675 20.625 21.4243V11.0715C20.625 10.7282 20.7699 10.3991 21.0277 10.1564C21.2856 9.91369 21.6353 9.77734 22 9.77734C22.3647 9.77734 22.7144 9.91369 22.9723 10.1564C23.2301 10.3991 23.375 10.7282 23.375 11.0715V21.4243C23.375 21.7675 23.2301 22.0967 22.9723 22.3394C22.7144 22.5821 22.3647 22.7184 22 22.7184Z"
-                      fill="#AA5656"
-                    />
+                    <g id="&#240;&#159;&#166;&#134; icon &#34;download outline&#34;">
+                      <g id="Group">
+                        <path
+                          id="Vector"
+                          d="M31.625 29.1895H12.375C11.6156 29.1895 11 29.7688 11 30.4836C11 31.1983 11.6156 31.7777 12.375 31.7777H31.625C32.3844 31.7777 33 31.1983 33 30.4836C33 29.7688 32.3844 29.1895 31.625 29.1895Z"
+                          fill="#AA5656"
+                        />
+                        <path
+                          id="Vector_2"
+                          d="M22.0019 25.3065C21.7169 25.3085 21.4382 25.2271 21.2044 25.0735L15.7044 21.4242C15.408 21.2262 15.2069 20.9259 15.1451 20.5888C15.0832 20.2518 15.1657 19.9054 15.3744 19.6253C15.4787 19.4854 15.6113 19.3662 15.7647 19.2748C15.9181 19.1833 16.0892 19.1214 16.2682 19.0925C16.4472 19.0636 16.6304 19.0684 16.8074 19.1065C16.9844 19.1447 17.1517 19.2155 17.2994 19.3148L22.0019 22.4077L26.6769 19.0948C26.9687 18.8888 27.3354 18.8004 27.6964 18.8489C28.0574 18.8975 28.3831 19.079 28.6019 19.3536C28.8207 19.6282 28.9147 19.9733 28.8631 20.3131C28.8116 20.6528 28.6187 20.9594 28.3269 21.1653L22.8269 25.0477C22.5889 25.2157 22.2995 25.3065 22.0019 25.3065Z"
+                          fill="#AA5656"
+                        />
+                        <path
+                          id="Vector_3"
+                          d="M22 22.7184C21.6353 22.7184 21.2856 22.5821 21.0277 22.3394C20.7699 22.0967 20.625 21.7675 20.625 21.4243V11.0715C20.625 10.7282 20.7699 10.3991 21.0277 10.1564C21.2856 9.91369 21.6353 9.77734 22 9.77734C22.3647 9.77734 22.7144 9.91369 22.9723 10.1564C23.2301 10.3991 23.375 10.7282 23.375 11.0715V21.4243C23.375 21.7675 23.2301 22.0967 22.9723 22.3394C22.7144 22.5821 22.3647 22.7184 22 22.7184Z"
+                          fill="#AA5656"
+                        />
+                      </g>
+                    </g>
                   </g>
-                </g>
-              </g>
-            </svg>
-          </button>
-          <button onClick={shareImage} disabled={disabled}>
+                </svg>
+              </button>
+            </DialogTrigger>
+            <AnimatePresence>
+              {downloadAlert && <DownloadImageAlert />}
+            </AnimatePresence>
+          </Dialog>
+          <button onClick={shareImage}>
             <svg
               width="44"
               height="44"
@@ -147,9 +201,14 @@ export default function Page() {
             </svg>
           </button>
         </div>
-        <Link href="/feedback" className="z-10">
-          <NextButton />
-        </Link>
+        <Dialog>
+          <DialogTrigger asChild>
+            <div>
+              <NextButton />
+            </div>
+          </DialogTrigger>
+          <ConfirmPopup href="/feedback" />
+        </Dialog>
       </div>
     </>
   );
