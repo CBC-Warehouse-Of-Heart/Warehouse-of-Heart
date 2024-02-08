@@ -27,41 +27,45 @@ export default function RootLayout({
   const locale = useLocale();
 
   const path = usePathname();
-  const page = path.split("/")[1];
+  const page = path.split("/")[1] as keyof typeof backgroundMapConfig;
   const { isPlaying, toggle } = useSoundStore();
   const { stickerId } = useStickerStore();
 
   const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
+  const [bgImgSrc, setBgImgSrc] = useState<string>("/img/1-1.png");
 
   const fadeDuration = 500;
 
   useEffect(() => {
     const nextSound = soundPageMap[page] ?? "/sound/main.mp3";
+
     if (nextSound !== currentSound) {
       soundRef.current?.howler.fade(0.5, 0, fadeDuration);
       setTimeout(() => {
         setCurrentSound(nextSound);
       }, fadeDuration);
     }
+
+    // page handlers
+    switch (page) {
+      case "4-9":
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
+      default:
+        setBgImgSrc(backgroundMapConfig[page].image);
+        break;
+    }
   }, [page]);
 
   const soundRef = createRef<ReactHowler>();
 
-  const [backgroundImgSrc, imagePreloadSrc] = useMemo(() => {
-    let bgImgSrc: string | undefined;
-    const images = backgroundMapConfig[page]?.image;
-    if (typeof images === "string") {
-      bgImgSrc = images;
-    }
-    if (Array.isArray(images)) {
-      if (page === "4-17") {
-        bgImgSrc = images[stickerId - 1];
-      } else {
-        bgImgSrc = images[0];
-      }
-    }
+  const imagePreloadSrc = useMemo(() => {
     const imagePreloadSrc = backgroundMapConfig[page]?.imagePreload ?? [];
-    return [bgImgSrc ?? "/img/1-1.png", imagePreloadSrc];
+    return imagePreloadSrc;
   }, [page]);
 
   return (
@@ -78,7 +82,7 @@ export default function RootLayout({
       />
       <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
         <AnimatedImage
-          src={backgroundImgSrc}
+          src={bgImgSrc}
           preloadSrcs={imagePreloadSrc}
           alt="background-image"
           fill
