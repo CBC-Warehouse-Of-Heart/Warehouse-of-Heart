@@ -3,11 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/navigation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-type Props = {
-  params: {
-    locale: string;
-  };
-};
 
 const Page = () => {
   const t = useTranslations("1-5");

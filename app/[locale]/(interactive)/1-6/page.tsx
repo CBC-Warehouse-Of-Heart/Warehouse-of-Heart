@@ -2,17 +2,9 @@
 import StartButton from "@/components/ui/startButton";
 import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
-// import { unstable_setRequestLocale } from "next-intl/server";
 import { motion } from "framer-motion";
 
-type Props = {
-  params: {
-    locale: string;
-  };
-};
-
 const Page = () => {
-  // unstable_setRequestLocale(locale);
   const t = useTranslations("1-6");
   return (
     <>
