@@ -15,6 +15,11 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ["var(--ibm-plex-sans-thai-looped-font)", "Inter", "sans-serif"],
+      serif: ["var(--lora-font)", "Merriweather", "serif"],
+      postcard: ["var(--nothing-you-could-do-font)", "Merriweather", "serif"],
+    },
     extend: {
       colors: {
         brown: "#675D51",
@@ -60,9 +65,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-      },
-      backgroundImage: {
-        "white-radial": "url('/img/white-radial.png')",
       },
       borderRadius: {
         lg: "var(--radius)",
