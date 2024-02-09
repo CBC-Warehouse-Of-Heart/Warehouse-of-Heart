@@ -121,5 +121,24 @@
   },
   "5-6": {
     "meetAgain": "Hope we can meet again soon.\nGoodbye for now, but rather,\nuntil we meet again."
+  },
+  "2-1": {
+    "today": "Today, just like every other day,"
+  },
+  "2-2": {
+    "youAre": "you're swept up in a chaotic,",
+    "fastPaced": "fast-paced world,"
+  },
+  "2-3": {
+    "feeling": "feeling the constant need",
+    "keepUp": "to keep up"
+  },
+  "2-4": {
+    "manyThing": "Many things happened,",
+    "theDay": "and now, the day finally concludes"
+  },
+  "2-5": {
+    "youAre": "You are heading back home",
+    "onThe": "on the familiar path"
   }
 }

@@ -5,19 +5,20 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 export default function Page() {
-  const t = useTranslations("2-1");
+  const t = useTranslations("2-5");
 
   return (
     <div className="mx-auto overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
-        className="mb-[353px] mt-[275px] bg-center bg-no-repeat px-10 max-[380px]:mb-[310px]"
+        className="mb-[440px] mt-[160px] bg-center bg-no-repeat px-10 max-[380px]:mb-[310px]"
       >
-        <p className="text-center text-woh-white">{t("today")}</p>
+        <p className="text-center leading-7 text-woh-white">{t("youAre")}</p>
+        <p className="text-center leading-7 text-woh-white">{t("onThe")}</p>
       </motion.div>
 
-      <Link href="2-2">
+      <Link href="2-6">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{

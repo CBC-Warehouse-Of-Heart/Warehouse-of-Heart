@@ -44,7 +44,7 @@ const Page = (props: Props) => {
   return (
     <div className="absolute flex h-full w-full flex-col items-center overflow-hidden">
       <div className={stickerBgStyle} ref={wordsRef}>
-        <div className="z-1 absolute mr-8 mt-56 flex h-[480px] w-[284px] flex-col items-start rounded-xl">
+        <div className="z-1 absolute mr-8 mt-[25vh] flex h-[480px] w-[284px] flex-col items-start rounded-xl">
           <div className="flex">
             <p className="font-cursive text-lg text-woh-black">{t("dear")}</p>
             <svg id="svg" className="relative h-[30px] w-[63px] touch-none">
@@ -58,7 +58,7 @@ const Page = (props: Props) => {
       </div>
 
       <Dialog>
-        <DialogTrigger asChild className="z-1 absolute bottom-32">
+        <DialogTrigger asChild className="z-1 absolute bottom-[16vh]">
           <div
             onClick={onButtonClick}
             className="flex h-11 w-11 items-center justify-center gap-2.5 rounded-full bg-[#FFF]"
@@ -91,7 +91,7 @@ const Page = (props: Props) => {
       </Dialog>
 
       <Dialog>
-        <DialogTrigger asChild className="z-1 absolute bottom-16">
+        <DialogTrigger asChild className="z-1 absolute bottom-[8vh]">
           <div>
             <NextButton />
           </div>
