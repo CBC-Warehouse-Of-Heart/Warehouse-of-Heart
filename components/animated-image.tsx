@@ -36,7 +36,7 @@ const AnimatedImage = ({
           {...props}
         />
       )}
-      <AnimatePresence mode="sync">
+      <AnimatePresence mode="wait">
         <motion.div
           key={currentSrc}
           initial={{ opacity: 1 }}
