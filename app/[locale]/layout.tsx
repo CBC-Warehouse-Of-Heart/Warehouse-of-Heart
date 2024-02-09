@@ -2,12 +2,12 @@ import GoogleAnalytics from "@/components/google-analytics";
 import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
+import { unstable_setRequestLocale } from "next-intl/server";
 import {
   IBM_Plex_Sans_Thai_Looped,
   Lora,
   Nothing_You_Could_Do,
 } from "next/font/google";
-import { unstable_setRequestLocale } from "next-intl/server";
 import "../globals.css";
 
 const ibmPlexSansThaiLooped = IBM_Plex_Sans_Thai_Looped({
@@ -52,7 +52,7 @@ export default function RootLayout({
             [ibmPlexSansThaiLooped.className]: locale === "th",
           },
           nothingYouCouldDo.variable,
-          "min-h-[100dvh] w-full",
+          "min-h-screen w-full",
         )}
       >
         <GoogleAnalytics />

@@ -1,4 +1,48 @@
 {
+  "TextArea": {
+    "answerInput": "Please type your answer."
+  },
+  "3-2": {
+    "finallyArrived": "You finally arrived."
+  },
+  "3-3": {
+    "waveOfRelaxation": "A wave of relaxation started ",
+    "washOverYou": "to wash over you. It's as if time itself",
+    "hasDecided": "has decided to slow down."
+  },
+  "3-5": {
+    "uponEntering": "Upon entering, your eyes drift over",
+    "theTable": "the table, and something familiar",
+    "yourAttention": "capture your attention."
+  },
+  "4-10": {
+    "howIsLife": "How is life lately?"
+  },
+  "4-11": {
+    "anyFeeling": "Is there any feeling or thought",
+    "toLetGo": "that you want to let go?"
+  },
+  "4-12": {
+    "someGoodThing": "What are some good things",
+    "haveHappened": "that have happened?"
+  },
+  "5-1": {
+    "dailyGrind": "With all the daily grind, you might",
+    "sometimesOverlook": "might sometimes overlook your own",
+    "pilingUp": "feelings, piling up in your heart."
+  },
+  "5-2": {
+    "thisDiaryIs": "This diary is like a window that gives you",
+    "aPeekInto": "a peek into the Warehouse in your heart."
+  },
+  "5-3": {
+    "fullOfMemories": "A place full of memories that are waiting",
+    "siftedThrough": "to be sifted through and cleaned up."
+  },
+  "5-4": {
+    "howNice": "How nice would it be if you could",
+    "inWarehouse": "actually be in that Warehouse?"
+  },
   "Index": {
     "title": "Hello, world!"
   },
