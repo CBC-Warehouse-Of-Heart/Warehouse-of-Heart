@@ -1,6 +1,7 @@
 import GoogleAnalytics from "@/components/google-analytics";
 import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { unstable_setRequestLocale } from "next-intl/server";
 import {
@@ -55,6 +56,7 @@ export default function RootLayout({
           "min-h-[100dvh] w-full",
         )}
       >
+        <SpeedInsights />
         <GoogleAnalytics />
         {children}
       </body>
