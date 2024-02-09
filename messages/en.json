@@ -85,12 +85,10 @@
     "comment": "Anything else you want to tell us?",
     "commentPlaceholder": "Please enter your comment here",
     "error": "Please try again",
-    "next": "Next",
     "submit": "Send"
   },
   "SubmittedPage": {
-    "received": "We have received your feedback!",
-    "next": "Next"
+    "received": "We have received your feedback!"
   },
   "1-1": {
     "about": "About the website",
