@@ -15,6 +15,11 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      sans: ["var(--ibm-plex-sans-thai-looped-font)", "Inter", "sans-serif"],
+      serif: ["var(--lora-font)", "Merriweather", "serif"],
+      postcard: ["var(--nothing-you-could-do-font)", "Merriweather", "serif"],
+    },
     extend: {
       colors: {
         brown: "#675D51",
@@ -61,9 +66,6 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      backgroundImage: {
-        "white-radial": "url('/img/white-radial.png')",
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -93,6 +95,9 @@ module.exports = {
         "4-17-4": "url('/img/4-17/bg-sticker4.webp')",
         "4-17-5": "url('/img/4-17/bg-sticker5.webp')",
         "4-17-6": "url('/img/4-17/bg-sticker6.webp')",
+        "feedback-submitted": "url('/img/feedback-submitted.webp')",
+        feedback: "url('/img/feedback.webp')",
+        "white-radial": "url('/img/white-radial.webp')",
       },
     },
   },
