@@ -1,9 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import NextButton from "@/components/ui/nextButton";
+import { useRouter } from "@/lib/navigation";
 import { motion } from "framer-motion";
-import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { FormEvent, useMemo, useState } from "react";
 import "./styles.css";
 
@@ -11,7 +11,6 @@ type Props = {};
 
 const Page = (props: Props) => {
   const t = useTranslations("Feedback");
-  const locale = useLocale();
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -29,7 +28,7 @@ const Page = (props: Props) => {
 
     if (submissionStatus === "SUBMITTING") return;
     if (isEmpty) {
-      router.push(`/${locale}/end`);
+      router.push("/end");
       return;
     }
 
@@ -46,7 +45,7 @@ const Page = (props: Props) => {
       }),
     }).then((res) => res.json());
 
-    if (res.success) router.push(`/${locale}/feedback-submitted`);
+    if (res.success) router.push("/feedback-submitted");
     else setSubmissionStatus("SUBMIT_FAILED");
   };
 
