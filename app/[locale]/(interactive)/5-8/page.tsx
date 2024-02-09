@@ -116,13 +116,13 @@ export default function Page() {
             className="absolute inset-0 h-full w-full overflow-hidden"
           >
             <Image
-              src={"/postcards/postcard-" + "th" + "-" + postcardNo + ".png"}
+              src={"/postcards/postcard-" + "th" + "-" + postcardNo + ".webp"}
               alt="Warehouse of Heart Postcard"
               objectFit="contain"
               fill
               className="h-full w-full"
             />
-            <p className="font-postcard absolute left-[58%] top-[68%] z-10 -translate-x-1/2 -translate-y-1/2 transform text-xs">
+            <p className="absolute left-[58%] top-[68%] z-10 -translate-x-1/2 -translate-y-1/2 transform font-postcard text-xs">
               #WarehouseofHeart
             </p>
           </motion.div>
