@@ -8,7 +8,7 @@ export const backgroundMapConfig: Record<string, string> = {
   "4-3": "/img/4-3.png",
   "4-4": "/img/4-3.png",
   "4-5": "/img/4-5.png",
-  "4-6": "/img/4-5.png",
+  "4-6": "/img/4-3.png",
   "4-7": "/img/4-5.png",
   "4-8": "/img/4-3.png",
   feedback: "/img/feedback.webp",
