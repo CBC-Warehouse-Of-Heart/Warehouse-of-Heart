@@ -28,7 +28,7 @@ const AnimatedImage = ({
       {attachPreload && (
         <Image
           src={src}
-          alt={alt}
+          alt={`attached-preload-${alt}`}
           priority={true}
           onLoad={() => {
             setCurrentSrc(src);
@@ -43,7 +43,9 @@ const AnimatedImage = ({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           onAnimationComplete={() => {
-            setAttachPreload(false);
+            setTimeout(() => {
+              setAttachPreload(false);
+            }, 150);
           }}
         >
           <Image src={currentSrc} alt={alt} {...props} />
@@ -53,7 +55,7 @@ const AnimatedImage = ({
         <Image
           key={`preload-${index}`}
           src={src}
-          alt={alt}
+          alt={`preload-${alt}`}
           loading="eager"
           priority={true}
           {...props}

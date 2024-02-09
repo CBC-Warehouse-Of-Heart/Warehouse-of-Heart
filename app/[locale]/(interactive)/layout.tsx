@@ -87,7 +87,7 @@ export default function RootLayout({
             preloadSrcs={imagePreloadSrc}
             alt="background-image"
             fill
-            className="-z-50 object-cover"
+            className="relative -z-50 object-cover"
           />
         )}
 
