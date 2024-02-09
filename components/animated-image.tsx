@@ -1,7 +1,6 @@
 "use client";
 
 import { backgroundMapConfig } from "@/lib/bg-config";
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useEffect, useState } from "react";
@@ -35,19 +34,19 @@ const AnimatedImage = ({
             setCurrentSrc(src);
           }}
           {...props}
-          className={cn("relative -z-50", props.className)}
         />
       )}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         <motion.div
           key={currentSrc}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           onAnimationComplete={() => {
-            setAttachPreload(false);
+            setTimeout(() => {
+              setAttachPreload(false);
+            }, 500);
           }}
-          className="relative -z-20"
         >
           <Image src={currentSrc} alt={alt} {...props} />
         </motion.div>
