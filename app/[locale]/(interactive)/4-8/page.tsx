@@ -43,10 +43,10 @@ const Page = (props: Props) => {
   });
 
   return (
-    <div className="relative mx-auto flex h-[100dvh] flex-col items-center text-white">
+    <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
       <svg
         id="svg"
-        className="absolute left-[22%] top-[31%] scale-[0.15] touch-none object-contain"
+        className="absolute left-[20%] top-[27%] scale-[0.2] touch-none object-contain"
       >
         {renderedStrokes}
       </svg>
