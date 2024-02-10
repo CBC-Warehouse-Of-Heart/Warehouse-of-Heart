@@ -33,7 +33,7 @@ export default function page() {
         </div>
       </motion.div>
       <motion.div></motion.div>
-      <Link href="2-8">
+      <Link href="2-7">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{

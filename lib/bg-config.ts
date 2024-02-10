@@ -1,10 +1,4 @@
-export const backgroundMapConfig: Record<
-  string,
-  {
-    image: string | string[];
-    imagePreload: string[];
-  }
-> = {
+export const backgroundMapConfig = {
   "1-1": {
     image: "/img/1-1.webp",
     imagePreload: ["/img/1-2.webp"],
@@ -35,6 +29,11 @@ export const backgroundMapConfig: Record<
   },
   "2-6": {
     image: "/img/2-6.webp",
+    imagePreload: ["/img/2-1.webp", "/img/2-2.webp", "/img/2-3.webp"],
+  },
+  "2-7": {
+    image: ["/img/2-1.webp", "/img/2-2.webp", "/img/2-3.webp"],
+    stopMotionDuration: 1500,
     imagePreload: [],
   },
   "2-8": {
@@ -75,6 +74,21 @@ export const backgroundMapConfig: Record<
   },
   "4-8": {
     image: "/img/4-3.webp",
+    imagePreload: [
+      "/img/4-9-1.webp",
+      "/img/4-9-2.webp",
+      "/img/4-9-3.webp",
+      "/img/4-9-4.webp",
+    ],
+  },
+  "4-9": {
+    image: [
+      "/img/4-9-1.webp",
+      "/img/4-9-2.webp",
+      "/img/4-9-3.webp",
+      "/img/4-9-4.webp",
+    ],
+    stopMotionDuration: 1500,
     imagePreload: [],
   },
   "4-15": {
@@ -86,15 +100,7 @@ export const backgroundMapConfig: Record<
     imagePreload: [],
   },
   "4-17": {
-    image: [
-      "/img/4-16.webp",
-      "/img/4-17/bg-sticker1.webp",
-      "/img/4-17/bg-sticker2.webp",
-      "/img/4-17/bg-sticker3.webp",
-      "/img/4-17/bg-sticker4.webp",
-      "/img/4-17/bg-sticker5.webp",
-      "/img/4-17/bg-sticker6.webp",
-    ],
+    image: "/img/4-16.webp",
     imagePreload: [],
   },
   feedback: {
@@ -105,4 +111,4 @@ export const backgroundMapConfig: Record<
     image: "/img/feedback-submitted.webp",
     imagePreload: [],
   },
-};
+} as const;

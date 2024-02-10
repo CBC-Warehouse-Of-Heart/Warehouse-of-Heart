@@ -3,7 +3,7 @@ import AnimatedImage from "@/components/animated-image";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { backgroundMapConfig } from "@/lib/bg-config";
-import { Link, usePathname } from "@/lib/navigation";
+import { Link, usePathname, useRouter } from "@/lib/navigation";
 import { soundPageMap } from "@/lib/sounds";
 import { cn } from "@/lib/utils";
 import { useSoundStore } from "@/store/sound";
@@ -27,41 +27,60 @@ export default function RootLayout({
   const locale = useLocale();
 
   const path = usePathname();
-  const page = path.split("/")[1];
+  const page = path.split("/")[1] as keyof typeof backgroundMapConfig;
   const { isPlaying, toggle } = useSoundStore();
   const { stickerId } = useStickerStore();
 
   const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
+  const [bgImgSrc, setBgImgSrc] = useState<string>("/img/1-1.png");
 
   const fadeDuration = 500;
-
+  const router = useRouter();
   useEffect(() => {
     const nextSound = soundPageMap[page] ?? "/sound/main.mp3";
+
     if (nextSound !== currentSound) {
       soundRef.current?.howler.fade(0.5, 0, fadeDuration);
       setTimeout(() => {
         setCurrentSound(nextSound);
       }, fadeDuration);
     }
+
+    // page handlers
+    switch (page) {
+      case "4-9":
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
+      case "2-7":
+        const animationDuration =
+          backgroundMapConfig[page].stopMotionDuration *
+          backgroundMapConfig[page].image.length;
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                router.push("2-8");
+              }, animationDuration);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
+      default:
+        setBgImgSrc(backgroundMapConfig[page].image);
+        break;
+    }
   }, [page]);
 
   const soundRef = createRef<ReactHowler>();
 
-  const [backgroundImgSrc, imagePreloadSrc] = useMemo(() => {
-    let bgImgSrc: string | undefined;
-    const images = backgroundMapConfig[page]?.image;
-    if (typeof images === "string") {
-      bgImgSrc = images;
-    }
-    if (Array.isArray(images)) {
-      if (page === "4-17") {
-        bgImgSrc = images[stickerId - 1];
-      } else {
-        bgImgSrc = images[0];
-      }
-    }
+  const imagePreloadSrc = useMemo(() => {
     const imagePreloadSrc = backgroundMapConfig[page]?.imagePreload ?? [];
-    return [bgImgSrc ?? "/img/1-1.png", imagePreloadSrc];
+    return imagePreloadSrc;
   }, [page]);
 
   return (
@@ -78,7 +97,7 @@ export default function RootLayout({
       />
       <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
         <AnimatedImage
-          src={backgroundImgSrc}
+          src={bgImgSrc}
           preloadSrcs={imagePreloadSrc}
           alt="background-image"
           fill
