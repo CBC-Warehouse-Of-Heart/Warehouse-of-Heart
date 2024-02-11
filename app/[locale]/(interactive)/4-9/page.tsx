@@ -1,7 +1,5 @@
-type Props = {};
-
-const Page = (props: Props) => {
-  return <div>Page</div>;
-};
-
-export default Page;
+export default function page() {
+  return (
+    <div className="relative flex h-screen flex-col items-center justify-center"></div>
+  );
+}

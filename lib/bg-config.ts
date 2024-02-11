@@ -27,6 +27,23 @@ export const backgroundMapConfig = {
     image: "/img/1-6.webp",
     imagePreload: [],
   },
+  "2-6": {
+    image: "/img/2-6.webp",
+    imagePreload: ["/img/2-1.webp", "/img/2-2.webp", "/img/2-3.webp"],
+  },
+  "2-7": {
+    image: ["/img/2-1.webp", "/img/2-2.webp", "/img/2-3.webp"],
+    stopMotionDuration: 1500,
+    imagePreload: [],
+  },
+  "2-8": {
+    image: "/img/2-6.webp",
+    imagePreload: [],
+  },
+  "2-9": {
+    image: "/img/2-9.webp",
+    imagePreload: [],
+  },
   "2-1": {
     image: "/img/2-1.webp",
     imagePreload: [],
