@@ -7,9 +7,9 @@ import { useShareYourselfWordsStore } from "@/store/shareYourselfWords";
 import { useStickerStore } from "@/store/sticker";
 import { useRenderedStrokes } from "@/utils/svg";
 import { AnimatePresence } from "framer-motion";
-import { toPng } from "html-to-image";
+import { toJpeg } from "html-to-image";
 import { useTranslations } from "next-intl";
-import { useCallback, useRef, useState } from "react";
+import { useState } from "react";
 
 type Props = {};
 
@@ -17,34 +17,42 @@ const Page = (props: Props) => {
   const t = useTranslations("4-17");
   const { words } = useShareYourselfWordsStore();
   const { stickerBgStyle } = useStickerStore();
-  const wordsRef = useRef<HTMLDivElement>(null);
   const [downloadAlert, setDownloadAlert] = useState<boolean>(false);
   const allStrokes = useRenderedStrokes(5);
 
-  const onButtonClick = useCallback(() => {
-    if (wordsRef.current === null) {
-      return;
+  const convertImage = async (element: HTMLElement) => {
+    let dataUrl = "";
+    const minDataLength = 150000;
+    const maxAttempts = 20;
+
+    for (let i = 0; dataUrl.length < minDataLength && i < maxAttempts; ++i) {
+      dataUrl = await toJpeg(element, { quality: 0.95 });
     }
+
+    return dataUrl;
+  };
+
+  const downloadImage = async () => {
+    const exportedWords = document.getElementById("exportedWords");
+    if (!exportedWords) return;
+
+    const dataUrl = await convertImage(exportedWords);
+
+    const link = document.createElement("a");
+    link.download = "Warehouse of Heart.jpeg";
+    link.href = dataUrl;
+    link.click();
+
     setDownloadAlert(true);
     window.setTimeout(() => {
       setDownloadAlert(false);
     }, 3000);
-    toPng(wordsRef.current, { cacheBust: true })
-      .then((dataUrl: string) => {
-        const link = document.createElement("a");
-        link.download = "warehouseofheart.png";
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [wordsRef]);
+  };
 
   return (
-    <div className="absolute flex h-full w-full flex-col items-center overflow-hidden">
-      <div className={stickerBgStyle} ref={wordsRef}>
-        <div className="z-1 absolute mr-8 mt-[25vh] flex h-[480px] w-[284px] flex-col items-start rounded-xl">
+    <div className="flex h-full w-full flex-col items-center overflow-hidden">
+      <div className={stickerBgStyle} id="exportedWords">
+        <div className="z-1 absolute top-1/4 mr-8 mt-[-4vh] flex h-[480px] w-[284px] flex-col items-start rounded-xl">
           <div className="flex">
             <p className="font-cursive text-lg text-woh-black">{t("dear")}</p>
             <svg id="svg" className="relative h-[30px] w-[63px] touch-none">
@@ -58,9 +66,9 @@ const Page = (props: Props) => {
       </div>
 
       <Dialog>
-        <DialogTrigger asChild className="z-1 absolute bottom-[16vh]">
+        <DialogTrigger asChild className="z-1 absolute bottom-[10vh]">
           <div
-            onClick={onButtonClick}
+            onClick={downloadImage}
             className="flex h-11 w-11 items-center justify-center gap-2.5 rounded-full bg-[#FFF]"
           >
             <svg
@@ -91,7 +99,7 @@ const Page = (props: Props) => {
       </Dialog>
 
       <Dialog>
-        <DialogTrigger asChild className="z-1 absolute bottom-[8vh]">
+        <DialogTrigger asChild className="z-1 absolute bottom-[4vh]">
           <div>
             <NextButton />
           </div>
