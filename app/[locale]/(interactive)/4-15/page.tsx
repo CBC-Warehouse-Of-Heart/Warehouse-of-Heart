@@ -12,7 +12,7 @@ const Page = (props: Props) => {
   const { words, updateWords } = useShareYourselfWordsStore();
 
   return (
-    <div className="bg-4-15 absolute h-full w-full bg-cover bg-no-repeat">
+    <div className="bg-4-15 h-full w-full bg-cover bg-no-repeat">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -22,13 +22,13 @@ const Page = (props: Props) => {
         }}
         className="absolute flex h-full w-full flex-col items-center"
       >
-        <p className="z-1 absolute mt-[22vh] text-base text-woh-white">
+        <p className="z-1 absolute mt-[16vh] text-base text-woh-white">
           {t("afterAll")}
           <br />
           {t("doYou")}
         </p>
 
-        <div className="z-1 absolute mt-80 h-[240px] w-[342px]">
+        <div className="z-1 absolute top-1/3 h-[240px] w-[342px]">
           <textarea
             id="tellmyself-text"
             className="h-[240px] w-[342px] break-words rounded-xl bg-woh-white p-4 text-base text-[#1E1B20] placeholder:text-[#B4A49A]"
@@ -41,8 +41,7 @@ const Page = (props: Props) => {
             {words.length} / 225
           </p>
         </div>
-
-        <div className="absolute bottom-[20vh]">
+        <div className="absolute bottom-[14vh]">
           <Link href="/4-16">
             <NextButton trigger={words.length > 0} />
           </Link>
