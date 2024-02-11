@@ -32,12 +32,13 @@ export default function RootLayout({
   const { stickerId } = useStickerStore();
 
   const [currentSound, setCurrentSound] = useState("/sound/main.mp3");
-  const [bgImgSrc, setBgImgSrc] = useState<string>("/img/1-1.png");
+  const [bgImgSrc, setBgImgSrc] = useState<string>();
 
   const fadeDuration = 500;
   const router = useRouter();
   useEffect(() => {
     const nextSound = soundPageMap[page] ?? "/sound/main.mp3";
+
     if (nextSound !== currentSound) {
       soundRef.current?.howler.fade(0.5, 0, fadeDuration);
       setTimeout(() => {
@@ -51,7 +52,7 @@ export default function RootLayout({
         const animationDuration_4_9 =
           backgroundMapConfig[page].stopMotionDuration *
           backgroundMapConfig[page].image.length;
-          backgroundMapConfig[page].image.forEach((image, index) => {
+        backgroundMapConfig[page].image.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
@@ -66,7 +67,7 @@ export default function RootLayout({
         const animationDuration_2_7 =
           backgroundMapConfig[page].stopMotionDuration *
           backgroundMapConfig[page].image.length;
-          backgroundMapConfig[page].image.forEach((image, index) => {
+        backgroundMapConfig[page].image.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
@@ -86,7 +87,7 @@ export default function RootLayout({
   const soundRef = createRef<ReactHowler>();
 
   const imagePreloadSrc = useMemo(() => {
-    const imagePreloadSrc = backgroundMapConfig[page]?.imagePreload ?? [];
+    const imagePreloadSrc = backgroundMapConfig[page].imagePreload;
     return imagePreloadSrc;
   }, [page]);
 
@@ -103,13 +104,16 @@ export default function RootLayout({
         }}
       />
       <div className="relative mx-auto min-h-[100dvh] w-full max-w-md overscroll-none">
-        <AnimatedImage
-          src={bgImgSrc}
-          preloadSrcs={imagePreloadSrc}
-          alt="background-image"
-          fill
-          className="-z-50 object-cover"
-        />
+        {bgImgSrc && (
+          <AnimatedImage
+            src={bgImgSrc}
+            preloadSrcs={imagePreloadSrc}
+            alt="background-image"
+            fill
+            className="relative -z-50 object-cover"
+          />
+        )}
+
         <div className="absolute right-5 top-10 z-10 flex items-center">
           <Link href={path} locale={locale === "en" ? "th" : "en"}>
             <Button

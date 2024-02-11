@@ -1,8 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import NextButton from "@/components/ui/nextButton";
+import { useRouter } from "@/lib/navigation";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
 import { FormEvent, useMemo, useState } from "react";
 import "./styles.css";
 
@@ -16,7 +17,7 @@ const Page = (props: Props) => {
     "NOT_SUBMITTED" | "SUBMITTING" | "SUBMIT_FAILED"
   >("NOT_SUBMITTED");
   const isEmpty = useMemo(
-    () => rating === 0 || comment.trim() === "",
+    () => rating === 0 && comment.trim() === "",
     [rating, comment],
   );
 
@@ -50,7 +51,11 @@ const Page = (props: Props) => {
 
   return (
     <form method="post" onSubmit={handleSubmit}>
-      <div className="relative mx-auto flex h-screen w-full flex-col items-center justify-start">
+      <motion.div
+        initial={{ opacity: 0, z: -20 }}
+        animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
+        className="relative mx-auto flex h-screen w-full flex-col items-center justify-start"
+      >
         <div className="z-10 mt-[130px] text-center">
           <p className="text-base text-woh-white">{t("rating")}</p>
         </div>
@@ -326,11 +331,11 @@ const Page = (props: Props) => {
         )}
         <div className="absolute bottom-36">
           <NextButton
-            label={t("submit")}
-            trigger={submissionStatus !== "SUBMITTING" && !isEmpty}
+            label={isEmpty ? undefined : t("submit")}
+            trigger={submissionStatus !== "SUBMITTING"}
           />
         </div>
-      </div>
+      </motion.div>
     </form>
   );
 };

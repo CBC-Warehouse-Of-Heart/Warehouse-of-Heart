@@ -8,6 +8,58 @@
     "warehouseOfHeart": "\"Warehouse of Heart\"",
     "thankYouForVisiting": "Thank you for visiting us today :)"
   },
+  "1-5": {
+    "areYouReady": "Are you ready",
+    "forTheJourney": "for the journey to begin?",
+    "ready": "Yes",
+    "maybeNotNow": "Maybe not now"
+  },
+  "1-6": {
+    "welcomeTo": "Welcome to",
+    "warehouseOfHeart": "Warehouse of Heart.",
+    "journeyBegin": "Let your journey begin."
+  },
+  "1-6a": {
+    "itsOkay": "It's okay to say so.",
+    "weAre": "We are truly proud of you that you choose to admit the unreadiness.",
+    "takeRest": "Now, take a good rest.",
+    "seeYou": "See you whenever you'd like :-)"
+  },
+  "NextButton": {
+    "next": "Next"
+  },
+  "StartButton": {
+    "start": "Begin"
+  },
+  "4-15": {
+    "afterAll": "After all, what tender words",
+    "doYou": "do you wish to share with yourself?",
+    "typeAnswer": "Please type your answer."
+  },
+  "4-16": {
+    "dear": "Dear ",
+    "click": "Click",
+    "toSelect": "to select",
+    "sticker": "Sticker",
+    "choose": "Choose"
+  },
+  "StickerSelector": {
+    "sticker": "Sticker"
+  },
+  "4-17": {
+    "dear": "Dear "
+  },
+  "ConfirmPopup": {
+    "areYouSure": "Are you sure ?",
+    "youCannot": "You cannot return to this page.",
+    "blank": "",
+    "cancel": "Cancel",
+    "next": "Next"
+  },
+  "DownloadImageAlert": {
+    "success": "Download success",
+    "theImage": "The image has been saved to your camera roll."
+  },
   "4-1": {
     "whatIsThat": "\"What is that?\""
   },
@@ -33,15 +85,10 @@
     "comment": "Anything else you want to tell us?",
     "commentPlaceholder": "Please enter your comment here",
     "error": "Please try again",
-    "next": "Next",
     "submit": "Send"
   },
   "SubmittedPage": {
-    "received": "We have received your feedback!",
-    "next": "Next"
-  },
-  "NextButton": {
-    "next": "Next"
+    "received": "We have received your feedback!"
   },
   "1-1": {
     "about": "About the website",
@@ -69,5 +116,27 @@
     "safeAndSound": "“safe and sound”",
     "toWander": "To wander in your heart",
     "whereATreasure": "where a treasure will be found"
+  },
+  "5-6": {
+    "meetAgain": "Hope we can meet again soon.\nGoodbye for now, but rather,\nuntil we meet again."
+  },
+  "2-1": {
+    "today": "Today, just like every other day,"
+  },
+  "2-2": {
+    "youAre": "you're swept up in a chaotic,",
+    "fastPaced": "fast-paced world,"
+  },
+  "2-3": {
+    "feeling": "feeling the constant need",
+    "keepUp": "to keep up"
+  },
+  "2-4": {
+    "manyThing": "Many things happened,",
+    "theDay": "and now, the day finally concludes"
+  },
+  "2-5": {
+    "youAre": "You are heading back home",
+    "onThe": "on the familiar path"
   }
 }

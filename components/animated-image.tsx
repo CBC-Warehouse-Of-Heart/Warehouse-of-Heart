@@ -1,6 +1,7 @@
 "use client";
 
 import { backgroundMapConfig } from "@/lib/bg-config";
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useEffect, useState } from "react";
@@ -28,12 +29,13 @@ const AnimatedImage = ({
       {attachPreload && (
         <Image
           src={src}
-          alt={alt}
+          alt={`attached-preload-${alt}`}
           priority={true}
           onLoad={() => {
             setCurrentSrc(src);
           }}
           {...props}
+          className={cn(props.className, "-z-[100]")}
         />
       )}
       <AnimatePresence mode="wait">
@@ -43,17 +45,19 @@ const AnimatedImage = ({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           onAnimationComplete={() => {
-            setAttachPreload(false);
+            setTimeout(() => {
+              setAttachPreload(false);
+            }, 500);
           }}
         >
           <Image src={currentSrc} alt={alt} {...props} />
         </motion.div>
       </AnimatePresence>
-      {preloadSrcs.map((src, index) => (
+      {preloadSrcs.map((src) => (
         <Image
-          key={`preload-${index}`}
+          key={`preload-${src}`}
           src={src}
-          alt={alt}
+          alt={`preload-${alt}`}
           loading="eager"
           priority={true}
           {...props}
