@@ -12,7 +12,7 @@ export default function Page() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
-        className="mb-[325px] mt-[275px] bg-center bg-no-repeat px-10 max-[380px]:mb-[310px]"
+        className="mb-[325px] mt-[33vh] bg-center bg-no-repeat px-10 max-[380px]:mb-[310px]"
       >
         <p className="text-center leading-7 text-woh-white">{t("youAre")}</p>
         <p className="text-center leading-7 text-woh-white">{t("fastPaced")}</p>
