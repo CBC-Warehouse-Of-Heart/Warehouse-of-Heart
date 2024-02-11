@@ -1,7 +1,7 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
-import { useNameStrokeStore } from "@/stores/NameStroke.store";
+import { useNameStrokeStore } from "@/store/nameStroke";
 import { motion } from "framer-motion";
 import { getStroke } from "perfect-freehand";
 type Props = {};
@@ -36,7 +36,7 @@ const Page = (props: Props) => {
         size: 8,
         thinning: 0.5,
         smoothing: 0.5,
-        streamline: 0.5,
+        streamline: 0.5,  
       }),
     );
     return <path key={index} d={pathData} />;
@@ -46,24 +46,23 @@ const Page = (props: Props) => {
     <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
       <svg
         id="svg"
-        className="absolute left-[20%] top-[27%] scale-[0.2] touch-none object-contain"
+        className="normal:top-[28%] absolute left-[20%] top-[27%] scale-[0.15] touch-none object-contain tall:top-[29.5%]"
       >
         {renderedStrokes}
       </svg>
-      <div className="absolute bottom-[25%]">
+      <motion.div
+        initial={{ opacity: 0, z: -20 }}
+        animate={{
+          opacity: 1,
+          z: 0,
+          transition: { duration: 1, delay: 1 },
+        }}
+        className="absolute top-[80%]"
+      >
         <Link href="/4-9">
-          <motion.div
-            initial={{ opacity: 0, z: -20 }}
-            animate={{
-              opacity: 1,
-              z: 0,
-              transition: { duration: 1, delay: 1 },
-            }}
-          >
-            <NextButton />
-          </motion.div>
+          <NextButton />
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };

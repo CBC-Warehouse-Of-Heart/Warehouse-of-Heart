@@ -1,4 +1,4 @@
-import { useNameStrokeStore } from "@/stores/NameStroke.store";
+import { useNameStrokeStore } from "@/store/nameStroke";
 import getStroke from "perfect-freehand";
 
 export const getSvgPathFromStroke = (stroke: number[][], divisor: number) => {

@@ -1,12 +1,12 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
-import { useNameStrokeStore } from "@/stores/NameStroke.store";
+import { useNameStrokeStore } from "@/store/nameStroke";
 import { getSvgPathFromStroke, useRenderedStrokes } from "@/utils/svg";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { getStroke } from "perfect-freehand";
 import React, { useRef } from "react";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -52,8 +52,8 @@ const Page = (props: Props) => {
   return (
     <>
       <div className="mx-auto flex h-[100dvh] flex-col items-center text-white">
-        <div className="absolute inset-x-0 top-[22%] flex flex-col items-center text-center">
-          <p className="text-white">{t("theOwnerIs")}</p>
+        <div className="absolute inset-x-0 top-[23%] flex flex-col items-center text-center">
+          <p className=" text-white">{t("theOwnerIs")}</p>
           <div className="relative mt-16">
             <svg
               id="svg"
