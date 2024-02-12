@@ -1,23 +1,22 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
+import { Link } from "@/lib/navigation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 type Props = {};
 
 const Page = (props: Props) => {
   const t = useTranslations("1-4");
   return (
-    <div className="absolute h-full w-full bg-1-4 bg-cover bg-no-repeat">
+    <div className="absolute h-full w-full">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          duration: 1,
-          delay: 2,
+          duration: 1.5,
         }}
-        className="flex flex-col items-center text-center text-base leading-8 text-woh-black"
+        className="text-woh-black flex flex-col items-center text-center text-base leading-8"
       >
         <p className="mt-[30vh]">
           {t("blank")}

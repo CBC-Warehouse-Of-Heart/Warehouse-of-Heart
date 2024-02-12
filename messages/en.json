@@ -8,7 +8,88 @@
     "warehouseOfHeart": "\"Warehouse of Heart\"",
     "thankYouForVisiting": "Thank you for visiting us today :)"
   },
+  "1-5": {
+    "areYouReady": "Are you ready",
+    "forTheJourney": "for the journey to begin?",
+    "ready": "Yes",
+    "maybeNotNow": "Maybe not now"
+  },
+  "1-6": {
+    "welcomeTo": "Welcome to",
+    "warehouseOfHeart": "Warehouse of Heart.",
+    "journeyBegin": "Let your journey begin."
+  },
+  "1-6a": {
+    "itsOkay": "It's okay to say so.",
+    "weAre": "We are truly proud of you that you choose to admit the unreadiness.",
+    "takeRest": "Now, take a good rest.",
+    "seeYou": "See you whenever you'd like :-)"
+  },
   "NextButton": {
+    "next": "Next"
+  },
+  "StartButton": {
+    "start": "Begin"
+  },
+  "4-15": {
+    "afterAll": "After all, what tender words",
+    "doYou": "do you wish to share with yourself?",
+    "typeAnswer": "Please type your answer."
+  },
+  "4-16": {
+    "dear": "Dear ",
+    "click": "Click",
+    "toSelect": "to select",
+    "sticker": "Sticker",
+    "choose": "Choose"
+  },
+  "StickerSelector": {
+    "sticker": "Sticker"
+  },
+  "4-17": {
+    "dear": "Dear "
+  },
+  "ConfirmPopup": {
+    "areYouSure": "Are you sure ?",
+    "youCannot": "You cannot return to this page.",
+    "blank": "",
+    "cancel": "Cancel",
+    "next": "Next"
+  },
+  "DownloadImageAlert": {
+    "success": "Download success",
+    "theImage": "The image has been saved to your camera roll."
+  },
+  "4-1": {
+    "whatIsThat": "\"What is that?\""
+  },
+  "4-2": {
+    "asYouWalk": "As you walk toward the table,",
+    "youSawANotebook": "you see a notebook lying there."
+  },
+  "4-3": {
+    "myDiary": "\"Oh..It is my diary\""
+  },
+  "4-4": {
+    "whyHere": "\"Why is it here?",
+    "haveNotSeen": "I haven't seen it in such a long time\""
+  },
+  "4-6": {
+    "theOwnerIs": "The owner of this book is...",
+    "drawToSign": "Draw here to sign"
+  },
+  "Feedback": {
+    "rating": "Tell us how you feel about the website",
+    "worst": "Not happy at all",
+    "best": "So happy!",
+    "comment": "Anything else you want to tell us?",
+    "commentPlaceholder": "Please enter your comment here",
+    "error": "Please try again",
+    "next": "Next",
+    "submit": "Send"
+  },
+  "SubmittedPage": {
+    "received": "We have received your feedback!",
     "next": "Next"
   },
   "1-1": {
