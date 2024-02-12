@@ -45,7 +45,7 @@ dependencies:
     specifier: 14.1.0
     version: 14.1.0(react-dom@18.0.0)(react@18.0.0)
   next-intl:
-    specifier: ^3.4.5
+    specifier: ^3.5.4
     version: 3.5.4(next@14.1.0)(react@18.0.0)
   next-videos:
     specifier: ^1.4.1

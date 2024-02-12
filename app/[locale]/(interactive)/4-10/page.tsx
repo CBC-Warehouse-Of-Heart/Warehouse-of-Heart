@@ -9,16 +9,14 @@ import React, { useState } from "react";
 const DivStyles = "w-[360px] flex flex-col items-center top-0";
 
 const Scene4Page10: React.FC = () => {
-  {
-    /* Word count */
-  }
+
   const [char, setChar] = useState<string>("");
 
   const t = useTranslations("4-10");
   const ta = useTranslations("TextArea");
 
   return (
-    <div className="relative flex h-[844px] w-[390px] flex-col items-center">
+    <div className="bg-4-10 h-full w-full bg-cover bg-no-repeat relative flex flex-col items-center">
       {/* First Block */}
       <motion.div
         className={cn("h-[350px] justify-end pb-[30px]", DivStyles)}
@@ -29,14 +27,12 @@ const Scene4Page10: React.FC = () => {
       >
         {/* Screen text */}
         <div
-          className="flex h-[120px] w-[360px] flex-col items-center justify-center"
-          style={{
-            background:
-              "radial-gradient(46.01% 42.5% at 50% 50%, #FFF 0%, rgba(255, 255, 255, 0.98) 36.4%, rgba(255, 255, 255, 0.84) 59.9%, rgba(255, 255, 255, 0.56) 76.9%, rgba(255, 255, 255, 0.00) 100%)",
-          }}
+          className="bg-white-radial bg-center bg-no-repeat p-10 flex h-[120px] w-[360px] flex-col items-center justify-center"
         >
           <div className="text-center text-base font-normal text-zinc-900 ">
-            <p className="text-center">{t("howIsLife")}</p>
+            <p className="text-center z-1 absolute text-base text-woh-white">
+              {t("howIsLife")}
+            </p>
           </div>
         </div>
       </motion.div>

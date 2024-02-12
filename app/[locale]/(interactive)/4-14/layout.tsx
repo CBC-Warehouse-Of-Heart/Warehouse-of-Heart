@@ -1,4 +1,4 @@
-import { pick } from "lodash";
+import pick from "lodash/pick";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { PropsWithChildren } from "react";
@@ -15,7 +15,7 @@ const Layout = ({
   const messages = useMessages();
 
   return (
-    <NextIntlClientProvider messages={pick(messages, ["4-10", "TextArea", "NextButton"])}>
+    <NextIntlClientProvider messages={pick(messages, ["4-14", "NextButton"])}>
       {children}
     </NextIntlClientProvider>
   );
