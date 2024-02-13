@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-export default function page() {
-  return (
-    <div className="relative flex h-screen flex-col items-center justify-center"></div>
-  );
-}
-=======
 "use client";
 
 import { backgroundMapConfig } from "@/lib/bg-config";
@@ -23,4 +16,3 @@ const Page = () => {
 };
 
 export default Page;
->>>>>>> feat/4-10_to_4-14
