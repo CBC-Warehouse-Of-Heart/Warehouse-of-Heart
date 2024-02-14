@@ -63,6 +63,21 @@ export default function RootLayout({
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
         break;
+      case "4-13":
+        const animationDuration_4_13 =
+          backgroundMapConfig[page].stopMotionDuration *
+          backgroundMapConfig[page].image.length;
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                router.push("4-14");
+              }, animationDuration_4_13);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
       case "2-7":
         const animationDuration_2_7 =
           backgroundMapConfig[page].stopMotionDuration *
