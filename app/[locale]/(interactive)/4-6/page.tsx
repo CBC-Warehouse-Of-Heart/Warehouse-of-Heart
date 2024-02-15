@@ -3,6 +3,7 @@ import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
 import { useNameStrokeStore } from "@/store/nameStroke";
 import { getSvgPathFromStroke, useRenderedStrokes } from "@/utils/svg";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { getStroke } from "perfect-freehand";
 import React, { useRef } from "react";
@@ -51,8 +52,8 @@ const Page = (props: Props) => {
   return (
     <>
       <div className="mx-auto flex h-[100dvh] flex-col items-center text-white">
-        <div className="mb-[140px] mt-[231px] flex flex-col items-center text-center max-[380px]:mb-[50px]">
-          <p className="mb-4 text-white">{t("theOwnerIs")}</p>
+        <div className="absolute inset-x-0 top-[23%] flex flex-col items-center text-center">
+          <p className=" text-white">{t("theOwnerIs")}</p>
           <div className="relative mt-16">
             <svg
               id="svg"
@@ -106,9 +107,19 @@ const Page = (props: Props) => {
           <br />
         </div>
 
-        <Link href="/4-7">
-          <NextButton />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            z: 10,
+            transition: { duration: 1, delay: 2.5 },
+          }}
+          className="absolute top-[80%]"
+        >
+          <Link href="4-7">
+            <NextButton />
+          </Link>
+        </motion.div>
       </div>
     </>
   );

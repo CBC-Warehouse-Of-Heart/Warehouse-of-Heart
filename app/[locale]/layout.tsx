@@ -52,7 +52,7 @@ export default function RootLayout({
             [ibmPlexSansThaiLooped.className]: locale === "th",
           },
           nothingYouCouldDo.variable,
-          "min-h-[100dvh] w-full",
+          "min-h-screen w-full",
         )}
       >
         <GoogleAnalytics />

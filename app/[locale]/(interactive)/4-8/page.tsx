@@ -36,34 +36,33 @@ const Page = (props: Props) => {
         size: 8,
         thinning: 0.5,
         smoothing: 0.5,
-        streamline: 0.5,
+        streamline: 0.5,  
       }),
     );
     return <path key={index} d={pathData} />;
   });
 
   return (
-    <div className="relative mx-auto flex h-[100dvh] flex-col items-center text-white">
+    <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
       <svg
         id="svg"
-        className="absolute left-[22%] top-[31%] scale-[0.15] touch-none object-contain"
+        className="normal:top-[28%] absolute left-[20%] top-[27%] scale-[0.15] touch-none object-contain tall:top-[29.5%]"
       >
         {renderedStrokes}
       </svg>
-      <div className="absolute bottom-[25%]">
+      <motion.div
+        initial={{ opacity: 0, z: -20 }}
+        animate={{
+          opacity: 1,
+          z: 0,
+          transition: { duration: 1, delay: 1 },
+        }}
+        className="absolute top-[80%]"
+      >
         <Link href="/4-9">
-          <motion.div
-            initial={{ opacity: 0, z: -20 }}
-            animate={{
-              opacity: 1,
-              z: 0,
-              transition: { duration: 1, delay: 1 },
-            }}
-          >
-            <NextButton />
-          </motion.div>
+          <NextButton />
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };

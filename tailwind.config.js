@@ -85,6 +85,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      screens: {
+        normal: { raw: "(min-height: 800px)" },
+        tall: { raw: "(min-height: 820px)" },
+      },
       backgroundImage: {
         "1-6": "url('/img/1-6.gif')",
         "1-5": "url('/img/1-5.png')",
