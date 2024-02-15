@@ -14,7 +14,6 @@ export default function Page() {
         animate={{ opacity: 0.85, transition: { duration: 1, delay: 1 } }}
         className="absolute flex h-[100dvh] w-full flex-col items-center justify-center bg-[#E7DAC0]"
       >
-        {/* <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center"> */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 1, delay: 2.5 } }}
@@ -24,8 +23,6 @@ export default function Page() {
           <p className="text-center">{t("theTable")}</p>
           <p className="text-center">{t("yourAttention")}</p>
         </motion.div>
-
-        {/* </div> */}
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
