@@ -42,21 +42,21 @@ const InteractiveBackground = () => {
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
         break;
-      case "2-7":
-        const animationDuration_2_7 =
-          backgroundMapConfig[page].stopMotionDuration *
-          backgroundMapConfig[page].image.length;
-        backgroundMapConfig[page].image.forEach((image, index) => {
-          setTimeout(() => {
-            setBgImgSrc(image);
-            if (index === backgroundMapConfig[page].image.length - 1) {
-              setTimeout(() => {
-                router.push("2-8");
-              }, animationDuration_2_7);
-            }
-          }, index * backgroundMapConfig[page].stopMotionDuration);
-        });
-        break;
+        case "2-7":
+          const animationDuration =
+            backgroundMapConfig[page].stopMotionDuration *
+            backgroundMapConfig[page].image.length;
+          backgroundMapConfig[page].image.forEach((image, index) => {
+            setTimeout(() => {
+              setBgImgSrc(image);
+              if (index === backgroundMapConfig[page].image.length - 1) {
+                setTimeout(() => {
+                  router.push("2-8");
+                }, 500);
+              }
+            }, index * backgroundMapConfig[page].stopMotionDuration);
+          });
+          break;
       default:
         setBgImgSrc(backgroundMapConfig[page].image);
         break;
