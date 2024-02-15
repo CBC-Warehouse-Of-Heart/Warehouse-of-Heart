@@ -192,5 +192,17 @@
   "2-5": {
     "youAre": "You are heading back home",
     "onThe": "on the familiar path"
+  },
+  "0": {
+    "inOrder": "In order for everyone to completely enjoy",
+    "the": "the ",
+    "Warehouse": "Warehouse of Heart Website",
+    "comma": ",",
+    "weSuggest": "we suggest:",
+    "forIOS": "For IOS users,",
+    "open": "1. Open WOH Website in Safari ",
+    "fullStop": ".",
+    "click": "2. Click at this icon.",
+    "choose": "3. Choose "
   }
 }

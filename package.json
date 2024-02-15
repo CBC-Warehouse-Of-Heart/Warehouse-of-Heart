@@ -29,6 +29,7 @@
     "next-videos": "^1.4.1",
     "perfect-freehand": "^1.2.0",
     "react": "^18",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18",
     "react-howler": "^5.2.0",
     "react-icons": "^5.0.1",

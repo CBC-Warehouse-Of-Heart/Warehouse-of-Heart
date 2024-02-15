@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { redirect } from "@/lib/navigation";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { isIOS } from "react-device-detect";
 
 type Props = {
   params: {
@@ -10,7 +11,11 @@ type Props = {
 
 export default function Home({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
-  redirect("/1-1");
+  if (isIOS) {
+    redirect("/0");
+  } else {
+    redirect("/1-1");
+  }
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-10 sm:flex-row">
       <Button variant="secondary">ยังไม่แน่ใจ</Button>
