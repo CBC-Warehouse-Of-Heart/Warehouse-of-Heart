@@ -1,62 +1,44 @@
-'use client'
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import NextButton from '@/components/ui/nextButton';
+"use client";
+import NextButton from "@/components/ui/nextButton";
+import { Link } from "@/lib/navigation";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { cn } from '@/lib/utils'
 
-const DivStyles = 'w-[360px] flex flex-col items-center top-0';
+export default function Page() {
+  const t = useTranslations("3-5");
 
-const Scene3Page5: React.FC = () => {
+  return (
+    <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0.85, transition: { duration: 1, delay: 1 } }}
+        className="absolute flex h-[100dvh] w-full flex-col items-center justify-center bg-[#E7DAC0]"
+      >
+        {/* <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center"> */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1, delay: 2.5 } }}
+          className="absolute inset-x-0 top-[20%] bg-white-radial bg-center bg-no-repeat p-10"
+        >
+          <p className="text-center">{t("uponEntering")}</p>
+          <p className="text-center">{t("theTable")}</p>
+          <p className="text-center">{t("yourAttention")}</p>
+        </motion.div>
 
-    const t = useTranslations("3-5");
-
-    return (
-        <div className="w-[390px] h-[844px] flex flex-col justify-between items-center relative">
-
-            {/* First Block */}
-            <motion.div className={cn('h-[350px] justify-end pb-[30px]', DivStyles)}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ delay: 0.5, duration: 2 }}
-            >
-                {/* Screen text */}
-                <div
-                    className="w-[360px] h-[120px] flex flex-col items-center justify-center"
-                    style={{
-                        background:
-                            "radial-gradient(46.01% 42.5% at 50% 50%, #FFF 0%, rgba(255, 255, 255, 0.98) 47.17%, rgba(255, 255, 255, 0.84) 67.17%, rgba(255, 255, 255, 0.56) 86.17%, rgba(255, 255, 255, 0.00) 100%)",
-                    }}>
-                    <div className="text-center text-zinc-900 text-base font-normal ">
-                        <p className="text-center">{t("uponEntering")}</p>
-                        <p className="text-center">{t("theTable")}</p>
-                        <p className="text-center">{t("yourAttention")}</p>
-                    </div>
-                </div>
-            </motion.div>
-
-            {/* Secound Block */}
-            <motion.div className={cn('h-[94px] justify-start pr-[10px]', DivStyles)}
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 5 }}
-                transition={{ delay: 3.5, duration: 1.5 }}
-            >
-                {/* Next button */}
-                <div className="w-[100px] h-8 absolute bg-stone-50 rounded-[100px] shadow border border-gray-100 items-center inline-flex">
-                    <div className="justify-start items-start flex">
-                        <Link rel="stylesheet" href="/3-3">
-                            {/* Pass the trigger prop to NextButton */}
-                            <NextButton trigger={true} />
-                        </Link>
-                    </div>
-                </div>
-            </motion.div>
-
-        </div>
-    );
-};
-
-export default Scene3Page5;
+        {/* </div> */}
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: { duration: 1, delay: 4 },
+        }}
+        className="absolute top-[80%]"
+      >
+        <Link href="4-1">
+          <NextButton />
+        </Link>
+      </motion.div>
+    </div>
+  );
+}
