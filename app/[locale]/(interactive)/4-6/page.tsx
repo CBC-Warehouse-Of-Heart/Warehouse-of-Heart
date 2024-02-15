@@ -52,7 +52,7 @@ const Page = (props: Props) => {
   return (
     <>
       <div className="mx-auto flex h-[100dvh] flex-col items-center text-white">
-        <div className="absolute inset-x-0 top-[23%] flex flex-col items-center text-center">
+        <div className="absolute inset-x-0 top-[22%] flex flex-col items-center text-center">
           <p className=" text-white">{t("theOwnerIs")}</p>
           <div className="relative mt-16">
             <svg

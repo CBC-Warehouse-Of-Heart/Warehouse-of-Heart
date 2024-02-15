@@ -49,20 +49,20 @@ export default function RootLayout({
     // page handlers
     switch (page) {
       case "4-9":
-        const animationDuration_4_9 =
-          backgroundMapConfig[page].stopMotionDuration *
-          backgroundMapConfig[page].image.length;
-        backgroundMapConfig[page].image.forEach((image, index) => {
-          setTimeout(() => {
-            setBgImgSrc(image);
-            if (index === backgroundMapConfig[page].image.length - 1) {
-              setTimeout(() => {
-                router.push("4-10");
-              }, animationDuration_4_9);
-            }
-          }, index * backgroundMapConfig[page].stopMotionDuration);
-        });
-        break;
+        const backgrounds = backgroundMapConfig[page].image.filter(path => !path.includes(locale === "th" ? "en" : "th"))
+        backgroundMapConfig[page].stopMotionDuration *
+        backgrounds.length;
+        backgrounds.forEach((image, index) => {
+        setTimeout(() => {
+          setBgImgSrc(image);
+          if (index === backgroundMapConfig[page].image.length - 1) {
+            setTimeout(() => {
+              router.push("4-10");
+            }, 500);
+          }
+        }, index * backgroundMapConfig[page].stopMotionDuration);
+      });
+      break;
       case "2-7":
         const animationDuration_2_7 =
           backgroundMapConfig[page].stopMotionDuration *
@@ -73,7 +73,7 @@ export default function RootLayout({
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("2-8");
-              }, animationDuration_2_7);
+              }, 500);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
