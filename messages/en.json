@@ -65,8 +65,8 @@
   "1-5": {
     "areYouReady": "Are you ready",
     "forTheJourney": "for the journey to begin?",
-    "ready": "Yes",
-    "maybeNotNow": "Maybe not now"
+    "ready": "Ready",
+    "maybeNotNow": "Not yet"
   },
   "1-6": {
     "welcomeTo": "Welcome to",
@@ -83,7 +83,7 @@
     "next": "Next"
   },
   "StartButton": {
-    "start": "Begin"
+    "start": "Start"
   },
   "4-15": {
     "afterAll": "After all, what tender words",
@@ -215,5 +215,18 @@
   },
   "footer": {
     "contact": "Contact us"
+  },
+  "2-6": {
+    "ifIWere": "If I were to rate today from 10 (Best)",
+    "to1": "to 1 (Worst), today would be.."
+  },
+  "2-8": {
+    "whenWas": "When was the last time I let myself",
+    "walkOn": "walk on my own pace like this.."
+  },
+  "2-9": {
+    "onTheWay": "On the way home,",
+    "youReflect": "you reflect on the day",
+    "andLookForward": "and look forward to some rest."
   }
 }
