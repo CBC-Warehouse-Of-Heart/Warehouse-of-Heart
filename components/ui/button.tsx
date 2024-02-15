@@ -20,7 +20,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         ready: "bg-[#272018] text-[#FFFFFF]",
         notSure: "border-[2px] border-[#272018] text-[#272018]",
-        next: "bg-woh-white text-[#6C1F1F] text-base font-semibold disabled:text-[#B8BFCB]",
+        next: "bg-woh-white text-maroon text-base font-semibold disabled:text-[#B8BFCB]",
+        register: "bg-woh-white text-maroon text-base font-medium rounded-none"
       },
       size: {
         default: "h-auto text-xl px-6 py-3",
@@ -28,6 +29,7 @@ const buttonVariants = cva(
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         xl: "h-12 rounded-md w-28",
+        register: "h-12 rounded-none w-full",
         icon: "h-10 w-10",
       },
     },
