@@ -25,7 +25,7 @@ const End = ({ params: { locale } }: Props) => {
               height={0}
               alt="WOH logo"
               style={{ width: "30%", height: "auto" }}
-              className="mt-14"
+              className="mt-7"
             />
             <Image
               src="/img/Banner_WOH.webp"
