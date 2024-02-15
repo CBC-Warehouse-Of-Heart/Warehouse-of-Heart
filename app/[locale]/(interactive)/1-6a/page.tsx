@@ -11,7 +11,7 @@ const Page = () => {
       <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
-      className="absolute top-[40%] text-center text-[#F8F8F7]">
+      className="absolute top-[38%] text-center text-[#F8F8F7] pl-3 pr-3">
         <p className="mb-1">{t("itsOkay")}</p>
         <p className="mb-1">{t("weAre")}</p>
         <p className="mb-1">{t("takeRest")}</p>
