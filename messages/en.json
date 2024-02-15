@@ -65,8 +65,8 @@
   "1-5": {
     "areYouReady": "Are you ready",
     "forTheJourney": "for the journey to begin?",
-    "ready": "Yes",
-    "maybeNotNow": "Maybe not now"
+    "ready": "Ready",
+    "maybeNotNow": "Not yet"
   },
   "1-6": {
     "welcomeTo": "Welcome to",
@@ -83,7 +83,7 @@
     "next": "Next"
   },
   "StartButton": {
-    "start": "Begin"
+    "start": "Start"
   },
   "4-15": {
     "afterAll": "After all, what tender words",

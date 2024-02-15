@@ -1,28 +1,30 @@
+'use client'
 import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { motion } from "framer-motion";
 
-type Props = {
-  params: {
-    locale: string;
-  };
-};
-
-const Page = ({ params: { locale } }: Props) => {
-  unstable_setRequestLocale(locale);
+const Page = () => {
   const t = useTranslations("1-6a");
   return (
     <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
-      <div className="mb-0 ml-10 mr-10 text-center text-[#F8F8F7]">
+      <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
+      className="absolute top-[38%] text-center text-[#F8F8F7] pl-3 pr-3">
         <p className="mb-1">{t("itsOkay")}</p>
         <p className="mb-1">{t("weAre")}</p>
         <p className="mb-1">{t("takeRest")}</p>
         <p className="mb-1">{t("seeYou")}</p>
-      </div>
-      <Link href="/end" className="mt-9">
-        <NextButton />
-      </Link>
+      </motion.div>
+      <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{opacity: 1, z: 10, transition: { duration: 1, delay: 2.5 }}}
+      className="absolute top-[57%]">
+        <Link href="/end">
+          <NextButton />
+        </Link>
+      </motion.div>
     </div>
   );
 };
