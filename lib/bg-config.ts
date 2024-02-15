@@ -1,5 +1,4 @@
 export const backgroundMapConfig = {
-export const backgroundMapConfig = {
   "1-1": {
     image: "/img/1-1.webp",
     imagePreload: ["/img/1-2.webp"],
