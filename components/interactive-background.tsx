@@ -1,0 +1,85 @@
+"use client";
+
+import { backgroundMapConfig } from "@/lib/bg-config";
+import { usePathname, useRouter } from "@/lib/navigation";
+import { useEffect, useMemo, useState } from "react";
+import AnimatedImage from "./animated-image";
+
+const InteractiveBackground = () => {
+  const path = usePathname();
+  const router = useRouter();
+  const page = path.split("/")[1] as keyof typeof backgroundMapConfig;
+  const [bgImgSrc, setBgImgSrc] = useState<string>();
+  useEffect(() => {
+    switch (page) {
+      case "4-9":
+        const animationDuration_4_9 =
+          backgroundMapConfig[page].stopMotionDuration *
+          backgroundMapConfig[page].image.length;
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                router.push("4-10");
+              }, animationDuration_4_9);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
+      case "4-13":
+        const animationDuration_4_13 =
+          backgroundMapConfig[page].stopMotionDuration *
+          backgroundMapConfig[page].image.length;
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                router.push("4-14");
+              }, animationDuration_4_13);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
+      case "2-7":
+        const animationDuration_2_7 =
+          backgroundMapConfig[page].stopMotionDuration *
+          backgroundMapConfig[page].image.length;
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                router.push("2-8");
+              }, animationDuration_2_7);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
+      default:
+        setBgImgSrc(backgroundMapConfig[page].image);
+        break;
+    }
+  }, [page]);
+
+  const imagePreloadSrc = useMemo(() => {
+    const imagePreloadSrc = backgroundMapConfig[page].imagePreload;
+    return imagePreloadSrc;
+  }, [page]);
+  return (
+    <>
+      {bgImgSrc && (
+        <AnimatedImage
+          src={bgImgSrc}
+          preloadSrcs={imagePreloadSrc}
+          alt="background-image"
+          fill
+          className="relative -z-50 object-cover"
+        />
+      )}
+    </>
+  );
+};
+
+export default InteractiveBackground;

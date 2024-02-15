@@ -12,7 +12,7 @@ export default function Page() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
-        className="mb-[353px] mt-[275px] bg-center bg-no-repeat px-10 max-[380px]:mb-[310px]"
+        className="max-[380px]:mb-[310px] mb-[353px] mt-[275px] bg-center bg-no-repeat px-10"
       >
         <p className="text-center text-woh-white">{t("today")}</p>
       </motion.div>
