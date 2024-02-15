@@ -3,14 +3,18 @@ import ConfirmPopup from "@/components/ui/confirmPopup";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import DownloadImageAlert from "@/components/ui/downloadImageAlert";
 import NextButton from "@/components/ui/nextButton";
+import { useRenderedStrokes } from "@/utils/svg";
 import { AnimatePresence, motion } from "framer-motion";
 import { toJpeg } from "html-to-image";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Page() {
   const [postcardNo, setPostcardNo] = useState<string | null>(null);
   const [downloadAlert, setDownloadAlert] = useState(false);
+  const locale = useLocale();
+  const allStrokes = useRenderedStrokes(5);
 
   const convertImage = async (element: HTMLElement) => {
     let dataUrl = "";
@@ -75,28 +79,28 @@ export default function Page() {
 
     switch (score) {
       case 1:
-        setPostcardNo("01");
+        setPostcardNo("1");
         break;
       case 2:
       case 3:
-        setPostcardNo("02");
+        setPostcardNo("2");
         break;
       case 4:
       case 5:
-        setPostcardNo("03");
+        setPostcardNo("3");
         break;
       case 6:
-        setPostcardNo("04");
+        setPostcardNo("4");
         break;
       case 7:
-        setPostcardNo("05");
+        setPostcardNo("5");
         break;
       case 8:
       case 9:
-        setPostcardNo("06");
+        setPostcardNo("6");
         break;
       case 10:
-        setPostcardNo("07");
+        setPostcardNo("7");
     }
   }, []);
 
@@ -116,15 +120,18 @@ export default function Page() {
             className="absolute inset-0 h-full w-full overflow-hidden"
           >
             <Image
-              src={"/postcards/postcard-" + "th" + "-" + postcardNo + ".webp"}
+              src={"/postcards/postcard-" + locale + "-" + postcardNo + ".webp"}
               alt="Warehouse of Heart Postcard"
               objectFit="contain"
               fill
               className="h-full w-full"
             />
-            <p className="absolute left-[58%] top-[68%] z-10 -translate-x-1/2 -translate-y-1/2 transform font-postcard text-xs">
-              #WarehouseofHeart
-            </p>
+            <svg
+              id="svg"
+              className="absolute left-[48%] top-[37%] z-10 h-[30px] w-[63px] -translate-x-1/2 -translate-y-1/2 transform touch-none"
+            >
+              {allStrokes}
+            </svg>
           </motion.div>
         )}
       </div>
