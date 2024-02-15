@@ -65,7 +65,7 @@ export default function RootLayout({
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("2-8");
-              }, animationDuration);
+              }, 500);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
