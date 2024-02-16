@@ -4,8 +4,10 @@ import { backgroundMapConfig } from "@/lib/bg-config";
 import { usePathname, useRouter } from "@/lib/navigation";
 import { useEffect, useMemo, useState } from "react";
 import AnimatedImage from "./animated-image";
+import { useLocale } from "next-intl";
 
 const InteractiveBackground = () => {
+  const locale = useLocale();
   const path = usePathname();
   const router = useRouter();
   const page = path.split("/")[1] as keyof typeof backgroundMapConfig;
@@ -13,16 +15,17 @@ const InteractiveBackground = () => {
   useEffect(() => {
     switch (page) {
       case "4-9":
-        const animationDuration_4_9 =
-          backgroundMapConfig[page].stopMotionDuration *
-          backgroundMapConfig[page].image.length;
-        backgroundMapConfig[page].image.forEach((image, index) => {
+        const backgrounds = backgroundMapConfig[page].image.filter(
+          (path) => !path.includes(locale === "th" ? "en" : "th"),
+        );
+        backgroundMapConfig[page].stopMotionDuration * backgrounds.length;
+        backgrounds.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("4-10");
-              }, animationDuration_4_9);
+              }, 500);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
