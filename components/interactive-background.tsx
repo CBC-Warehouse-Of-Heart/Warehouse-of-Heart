@@ -14,6 +14,13 @@ const InteractiveBackground = () => {
   const [bgImgSrc, setBgImgSrc] = useState<string>();
   useEffect(() => {
     switch (page) {
+      case "3-1":
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
       case "4-9":
         const backgrounds = backgroundMapConfig[page].image.filter(
           (path) => !path.includes(locale === "th" ? "en" : "th"),

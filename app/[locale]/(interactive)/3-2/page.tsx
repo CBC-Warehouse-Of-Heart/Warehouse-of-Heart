@@ -1,54 +1,43 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import React from "react";
 
-const DivStyles = "w-[360px] flex flex-col items-center top-0";
-
-const Scene3Page2: React.FC = () => {
+export default function Page() {
   const t = useTranslations("3-2");
 
   return (
-    <div className="relative flex h-[844px] w-[390px] flex-col items-center justify-between">
-      {/* First Block */}
+    <div className="mx-auto overflow-hidden">
       <motion.div
-        className={cn("h-[350px] justify-end pb-[30px]", DivStyles)}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
-        transition={{ delay: 0.5, duration: 2 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
+        className="max-[380px]:mb-[310px] absolute inset-x-0 top-[18.5%] m-auto"
       >
-        {/* Screen text */}
-        <div className="flex h-[120px] w-[360px] flex-col items-center justify-center">
-          <div className="text-center text-base font-normal text-zinc-900 ">
-            <p className="text-center">{t("finallyArrived")}</p>
-          </div>
-        </div>
+        <p className="text-center leading-7 text-woh-white">
+          {t("waveOfRelaxation")}
+        </p>
+        <p className="text-center leading-7 text-woh-white">
+          {t("washOverYou")}
+        </p>
+        <p className="text-center leading-7 text-woh-white">
+          {t("hasDecided")}
+        </p>
       </motion.div>
 
-      {/* Secound Block */}
-      <motion.div
-        className={cn("h-[94px] justify-start pr-[10px]", DivStyles)}
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 5 }}
-        transition={{ delay: 3.5, duration: 1.5 }}
-      >
-        {/* Next button */}
-        <div className="border-gray-100 absolute inline-flex h-8 w-[100px] items-center rounded-[100px] border bg-stone-50 shadow">
-          <div className="flex items-start justify-start">
-            <Link rel="stylesheet" href="/3-3">
-              {/* Pass the trigger prop to NextButton */}
-              <NextButton trigger={true} />
-            </Link>
-          </div>
-        </div>
-      </motion.div>
+      <Link href="3-3">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            z: 10,
+            transition: { duration: 1, delay: 2.5 },
+          }}
+          className="absolute inset-x-0 top-[86%] m-auto flex justify-center"
+        >
+          <NextButton label={t("enter")} />
+        </motion.div>
+      </Link>
     </div>
   );
-};
-
-export default Scene3Page2;
+}
