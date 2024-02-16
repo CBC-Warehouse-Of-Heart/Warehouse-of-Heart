@@ -64,6 +64,23 @@ export const backgroundMapConfig = {
     image: "/img/2-5.webp",
     imagePreload: [],
   },
+  // TODO: 3-1, 3-2, 3-3, 3-5
+  "3-1": {
+    image: "/img/1-1.webp",
+    imagePreload: [],
+  },
+  "3-2": {
+    image: "/img/1-1.webp",
+    imagePreload: [],
+  },
+  "3-3": {
+    image: "/img/1-1.webp",
+    imagePreload: [],
+  },
+  "3-5": {
+    image: "/img/4-1.webp",
+    imagePreload: [],
+  },
   "4-1": {
     image: "/img/4-1.webp",
     imagePreload: ["/img/4-2.webp"],
@@ -123,6 +140,16 @@ export const backgroundMapConfig = {
     image: "/img/4-10.webp",
     imagePreload: [],
   },
+  "4-13": {
+    image: [
+      "/img/4-9-1.webp",
+      "/img/4-9-2.webp",
+      "/img/4-9-3.webp",
+      "/img/4-9-4.webp",
+    ],
+    stopMotionDuration: 1500,
+    imagePreload: ["/img/4-14.webp"],
+  },
   "4-14": {
     image: "/img/4-14.webp",
     imagePreload: ["/img/4-15.webp"],
@@ -140,6 +167,18 @@ export const backgroundMapConfig = {
     imagePreload: [],
   },
   "5-1": {
+    image: "/img/5-1.webp",
+    imagePreload: [],
+  },
+  "5-2": {
+    image: "/img/5-1.webp",
+    imagePreload: [],
+  },
+  "5-3": {
+    image: "/img/5-1.webp",
+    imagePreload: [],
+  },
+  "5-4": {
     image: "/img/5-1.webp",
     imagePreload: [],
   },
