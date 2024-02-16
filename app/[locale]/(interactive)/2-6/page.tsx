@@ -5,7 +5,7 @@ import { Link } from "@/lib/navigation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-export default function page() {
+export default function Page() {
   const t = useTranslations("2-6");
   return (
     <div className="relative flex h-screen flex-col items-center justify-center">
@@ -17,7 +17,7 @@ export default function page() {
         <p>{t("ifIWere")}</p>
         <p>{t("to1")}</p>
         <Slider
-          onValueChange={(newValue: { toString: () => string; }) => {
+          onValueChange={(newValue: { toString: () => string }) => {
             console.log(newValue);
             localStorage.setItem("slider", newValue.toString());
           }}
