@@ -10,7 +10,7 @@ const Page = (props: Props) => {
   return (
     <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
       <div className="absolute inset-x-0 left-[15%] top-[29%] normal:top-[31.5%]">
-        <svg id="svg" className="scale-[0.4] touch-none object-contain">
+        <svg id="svg" className="scale-[0.3] touch-none object-contain">
           {allStrokes}
         </svg>
       </div>

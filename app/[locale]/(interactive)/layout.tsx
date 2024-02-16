@@ -49,20 +49,21 @@ export default function RootLayout({
     // page handlers
     switch (page) {
       case "4-9":
-        const backgrounds = backgroundMapConfig[page].image.filter(path => !path.includes(locale === "th" ? "en" : "th"))
-        backgroundMapConfig[page].stopMotionDuration *
-        backgrounds.length;
+        const backgrounds = backgroundMapConfig[page].image.filter(
+          (path) => !path.includes(locale === "th" ? "en" : "th"),
+        );
+        backgroundMapConfig[page].stopMotionDuration * backgrounds.length;
         backgrounds.forEach((image, index) => {
-        setTimeout(() => {
-          setBgImgSrc(image);
-          if (index === backgroundMapConfig[page].image.length - 1) {
-            setTimeout(() => {
-              router.push("4-10");
-            }, 500);
-          }
-        }, index * backgroundMapConfig[page].stopMotionDuration);
-      });
-      break;
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                router.push("4-10");
+              }, 500);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
       case "2-7":
         const animationDuration_2_7 =
           backgroundMapConfig[page].stopMotionDuration *
