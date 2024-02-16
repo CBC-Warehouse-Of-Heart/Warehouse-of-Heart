@@ -193,5 +193,41 @@
   "2-5": {
     "youAre": "You are heading back home",
     "onThe": "on the familiar path"
+  },
+  "end": {
+    "register": "Register",
+    "youMay": "You may uncover hidden treasures",
+    "within": "within the storeroom of your mind...",
+    "likeAny": "Like any other storage room, there is an often overlooked space called Warehouse of Heart. If you haven't taken the time to explore and organize it for a long time, it naturally accumulates various elements, increasing the risk of misplacing cherished items or inadvertently amassing unwanted baggage.",
+    "amidst": "Amidst a world in turmoil, we extend a warm invitation for you to embark on a journey of self-organization. Take the time to compose your thoughts, revisit life stories, and venture into a deeper understanding of yourself. Together, we may uncover hidden treasures within the storeroom of your mind, waiting to be discovered.",
+    "youCan": "You can meet us at TCDC Bangkok, 1st floor Gallery, March 19 - April 21, 2024, 10:30 a.m. - 7:00 p.m. (closed every Monday).",
+    "freeEntry": "Free entry.",
+    "toJoin": " to join the exhibition here.",
+    "exceptTo": "Except to the exhibition there are covered with 4 special workshops",
+    "makeAZine": "Make A Zine in Hua Lamphong & Bang Rak",
+    "capture": "Capture the stories you want to tell and engage in communication while traveling and exploring the art of zine.",
+    "yepandhandicraft": "Workshop 2: Yepandhandicraft - Create an Accordion Book",
+    "buildMemories": "Build memories through \"bookbinding\" that resembles a tiny room storing life stories.",
+    "discover": "Discover the \"advantages of yourself\" through the sound of music and the 8 angels that will help you see yourself from various perspectives.",
+    "createArtwork": "Create artwork from memories using the Transfer photo technique, copying patterns from photographs onto materials.",
+    "forMore": "For more information, please follow",
+    "spon1Desc": "Playing with pleasure",
+    "spon2Desc": "เพื่อให้คุณมีชีวิตดีๆที่เลือกเองได้"
+  },
+  "footer": {
+    "contact": "Contact us"
+  },
+  "2-6": {
+    "ifIWere": "If I were to rate today from 10 (Best)",
+    "to1": "to 1 (Worst), today would be.."
+  },
+  "2-8": {
+    "whenWas": "When was the last time I let myself",
+    "walkOn": "walk on my own pace like this.."
+  },
+  "2-9": {
+    "onTheWay": "On the way home,",
+    "youReflect": "you reflect on the day",
+    "andLookForward": "and look forward to some rest."
   }
 }
