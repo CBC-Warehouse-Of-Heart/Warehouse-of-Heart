@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function EndContent() {
   const t = useTranslations("end");
   return (
-    <div className="text-footer-brown flex w-full flex-col items-start gap-6 bg-white px-7 py-14 text-start text-sm">
+    <div className="flex w-full flex-col items-start gap-6 bg-white px-7 py-14 text-start text-sm text-footer-brown">
       <p className="mb-4 text-lg font-semibold">
         {t("youMay")}
         <br />
@@ -204,7 +204,7 @@ export default function EndContent() {
               SPACE INNOVATIONS & DESIGN
             </p>
             <p className="text-xs text-woh-black">
-              เพื่อให้คุณมีชีวิตดี ๆ ที่เลือกเองได้{" "}
+              หากคุณเชื่อว่าชีวิตยังดีได้อีก คลิกฟังเลย
             </p>
           </div>
         </Link>
