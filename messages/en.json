@@ -2,13 +2,14 @@
   "TextArea": {
     "answerInput": "Please type your answer."
   },
-  "3-2": {
+  "3-1": {
     "finallyArrived": "You finally arrived."
   },
-  "3-3": {
+  "3-2": {
     "waveOfRelaxation": "A wave of relaxation started ",
     "washOverYou": "to wash over you. It's as if time itself",
-    "hasDecided": "has decided to slow down."
+    "hasDecided": "has decided to slow down.",
+    "enter": "Enter"
   },
   "3-5": {
     "uponEntering": "Upon entering, your eyes drift over",
@@ -34,7 +35,7 @@
     "canCreate": "you can create whatever",
     "yourWisher": "day of your wisher",
     "yourWisher2": " ",
-    "warehouseOfHeart" : "- Warehouse of Heart -"
+    "warehouseOfHeart": "- Warehouse of Heart -"
   },
   "5-1": {
     "dailyGrind": "With all the daily grind, you might",

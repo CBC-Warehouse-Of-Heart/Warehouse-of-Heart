@@ -2,13 +2,14 @@
   "TextArea": {
     "answerInput": "โปรดพิมพ์คำตอบของคุณ"
   },
-  "3-2": {
-    "finallyArrived": "ในที่สุดก็ถึงบ้านเเล้ว"
+  "3-1": {
+    "finallyArrived": "\"ในที่สุดก็ถึงบ้านเเล้ว\""
   },
-  "3-3": {
-    "waveOfRelaxation": "คุณเริ่มรู้สึกผ่อนคลาย",
-    "washOverYou": "คล้ายกับว่าเวลาเริ่มเดินช้าลง",
-    "hasDecided": " "
+  "3-2": {
+    "waveOfRelaxation": "\"คุณเริ่มรู้สึกผ่อนคลาย",
+    "washOverYou": "คล้ายกับว่าเวลาเริ่มเดินช้าลง\"",
+    "hasDecided": " ",
+    "enter": "เปิดประตู"
   },
   "3-5": {
     "uponEntering": "เมื่อเข้ามาข้างในแล้ว",
@@ -34,7 +35,7 @@
     "canCreate": "และพรุ่งนี้จะเป็นอย่างไร",
     "yourWisher": "ขอให้คุณสรรสร้างได้",
     "yourWisher2": "ตามแต่ใจปรารถนา",
-    "warehouseOfHeart" : "- Warehouse of Heart -"
+    "warehouseOfHeart": "- Warehouse of Heart -"
   },
   "5-1": {
     "dailyGrind": "ความวุ่นวายที่ผ่านไปในแต่ละวัน",

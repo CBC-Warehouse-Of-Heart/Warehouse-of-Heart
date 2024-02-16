@@ -66,11 +66,17 @@ export const backgroundMapConfig = {
   },
   // TODO: 3-1, 3-2, 3-3, 3-5
   "3-1": {
-    image: "/img/1-1.webp",
-    imagePreload: [],
+    image: [
+      "/img/3-1-1.webp",
+      "/img/3-1-2.webp",
+      "/img/3-1-3.webp",
+      "/img/3-1-4.webp",
+    ],
+    stopMotionDuration: 1500,
+    imagePreload: ["/img/3-1-4.webp"],
   },
   "3-2": {
-    image: "/img/1-1.webp",
+    image: "/img/3-1-4.webp",
     imagePreload: [],
   },
   "3-3": {
