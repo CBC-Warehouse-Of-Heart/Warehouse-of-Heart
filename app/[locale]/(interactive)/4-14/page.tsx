@@ -23,11 +23,15 @@ const Scene4Page14: React.FC = () => {
                 transition={{ delay: 1, duration: 1 }}
             >
                 {/* Screen text */}
-                <div
-                    className="flex h-[120px] w-[360px] flex-col items-center justify-center"
-                >
-                    <div className="text-center absolute mt-[22vh] text-base text-woh-white">
-                        <p> {t("badDay")}
+                <div className="absolute bottom-[42%] -rotate-[4deg] pl-[0%]" >
+                    <motion.div
+                        initial={{ opacity: 0, y: 0 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5, duration: 1 }}
+                    >
+                        <p className="text-sm text-woh-white text-center">
+                            {t("badDay")}
                             <br />
                             {t("goodDay")}
                             <br />
@@ -41,18 +45,27 @@ const Scene4Page14: React.FC = () => {
                             <br />
                             {t("yourWisher2")}
                             <br />
-                            {t("warehouseOfHeart")}</p>
-                    </div>
+                            <br />
+                            {t("warehouseOfHeart")}
+                        </p>
+                    </motion.div>
                 </div>
 
                 {/* Next button */}
-                <div className="border-gray-100 absolute inline-flex h-8 w-[108px] items-center rounded-[100px] border bg-stone-50 shadow">
-                    <div className="flex items-start justify-start">
+                <motion.div
+                    className="absolute top-[80%]"
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}
+                    transition={{ delay: 3, duration: 1.5 }}
+                >
+                    <div >
                         <Link href="/4-15">
                             <NextButton trigger={true} />
                         </Link>
                     </div>
-                </div>
+
+                </motion.div>
             </motion.div>
         </div>
     );

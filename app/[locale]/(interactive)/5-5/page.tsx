@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import React from "react";
 
-const Scene5Page4: React.FC = () => {
+const Scene5Page5: React.FC = () => {
 
-    const t = useTranslations("5-4");
+    const t = useTranslations("5-5");
 
     return (
-        <div className="bg-5-1 h-full w-full bg-cover bg-no-repeat flex flex-col items-center">
+        <div className="bg-5-5 h-full w-full bg-cover bg-no-repeat flex flex-col items-center">
 
             <div className="flex flex-col items-center justify-center">
 
@@ -26,9 +26,13 @@ const Scene5Page4: React.FC = () => {
                     <div className="bg-white-radial bg-center bg-no-repeat flex h-[135px] w-[400px]">
                         <div className="w-full h-full flex flex-col justify-center items-cemter">
                             <p className="text-base text-woh-black text-center">
-                                {t("howNice")}
+                                {t("beforeYou")}
                                 <br />
-                                {t("inWarehouse")}
+                                {t("thisLetter")}
+                                <br />
+                                {t("aboutYou")}
+                                <br />
+                                {t("soFar")}
                             </p>
                         </div>
                     </div>
@@ -43,7 +47,7 @@ const Scene5Page4: React.FC = () => {
                     transition={{ delay: 2, duration: 1.5 }}
                 >
                     <div >
-                        <Link href="/5-4-2">
+                        <Link href="/5-6">
                             <NextButton />
                         </Link>
                     </div>
@@ -53,4 +57,4 @@ const Scene5Page4: React.FC = () => {
     );
 };
 
-export default Scene5Page4;
+export default Scene5Page5;
