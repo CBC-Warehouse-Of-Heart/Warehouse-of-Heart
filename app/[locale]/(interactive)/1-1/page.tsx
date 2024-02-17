@@ -27,9 +27,8 @@ const Page = (props: Props) => {
           duration: 1,
           delay: 1,
         }}
-        className="flex flex-col items-center text-center text-base text-woh-black"
+        className="absolute flex h-full w-full items-center justify-center bg-[#E0D9C7]"
       >
-        <div className="absolute flex h-full w-full items-center justify-center bg-[#E0D9C7]">
           <Image
             src="/img/Logo_WOH.webp"
             width={0}
@@ -37,7 +36,6 @@ const Page = (props: Props) => {
             alt="WOH logo"
             style={{ width: "40%", height: "auto" }}
           />
-        </div>
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
