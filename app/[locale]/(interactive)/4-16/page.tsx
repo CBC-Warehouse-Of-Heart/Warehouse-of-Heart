@@ -29,7 +29,7 @@ const Page = (props: Props) => {
             {allStrokes}
           </svg>
         </div>
-        <div className="mt-1 overflow-hidden break-words text-base text-woh-black">
+        <div className="mt-1 max-w-full overflow-hidden break-words text-base text-woh-black">
           <p>{words}</p>
         </div>
         <div className="mt-auto flex w-full justify-end">
