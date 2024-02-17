@@ -1,4 +1,5 @@
 export const scenePageMap = {
+  "0": "/sound/track/branding.mp3",
   "1": "/sound/track/branding.mp3",
   "2": "/sound/track/room-1.mp3",
   "3": "/sound/track/room-1.mp3",
@@ -45,12 +46,12 @@ export const soundPageMap: Record<
       sound: "/sound/sound-effect/scene-4-pencil-writing.mp3",
     },
   },
-  "4-13": {
-    soundEffect: {
-      sound: "/sound/sound-effect/scene-4-sliding-paper.mp3",
-      loop: true,
-    },
-  },
+  // "4-13": {
+  //   soundEffect: {
+  //     sound: "/sound/sound-effect/scene-4-sliding-paper.mp3",
+  //     loop: true,
+  //   },
+  // },
   "4-17": {
     soundEffect: {
       sound: "/sound/sound-effect/scene-4-pasting-sticker.mp3",
