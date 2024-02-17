@@ -229,5 +229,11 @@
     "onTheWay": "On the way home,",
     "youReflect": "you reflect on the day",
     "andLookForward": "and look forward to some rest."
+  },
+  "0": {
+    "forIOS": "For iOS Users",
+    "toEnjoy": "To enjoy the full experience",
+    "openThis": "Open this website in safari",
+    "andHide": "and hide the toolbar"
   }
 }

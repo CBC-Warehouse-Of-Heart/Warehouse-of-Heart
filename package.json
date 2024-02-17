@@ -29,6 +29,7 @@
     "next-videos": "^1.4.1",
     "perfect-freehand": "^1.2.0",
     "react": "^18",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18",
     "react-howler": "^5.2.0",
     "react-icons": "^5.0.1",
@@ -38,6 +39,7 @@
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
+    "ua-parser-js": "^1.0.37",
     "use-sound": "^4.0.1",
     "web-audio-api": "^0.2.2",
     "zustand": "^4.5.0"
@@ -49,6 +51,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-howler": "^5.2.3",
+    "@types/ua-parser-js": "^0.7.39",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
