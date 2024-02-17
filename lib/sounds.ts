@@ -35,4 +35,25 @@ export const soundPageMap: Record<
   "4-1": {
     backgroundVolume: 0.5,
   },
+  "4-2": {
+    soundEffect: {
+      sound: "/sound/sound-effect/scene-4-foot-steps.mp3",
+    },
+  },
+  "4-8": {
+    soundEffect: {
+      sound: "/sound/sound-effect/scene-4-pencil-writing.mp3",
+    },
+  },
+  "4-13": {
+    soundEffect: {
+      sound: "/sound/sound-effect/scene-4-sliding-paper.mp3",
+      loop: true,
+    },
+  },
+  "4-17": {
+    soundEffect: {
+      sound: "/sound/sound-effect/scene-4-pasting-sticker.mp3",
+    },
+  },
 };
