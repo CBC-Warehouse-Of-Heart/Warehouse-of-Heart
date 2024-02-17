@@ -38,10 +38,33 @@ export const backgroundMapConfig = {
   },
   "2-8": {
     image: "/img/2-6.webp",
-    imagePreload: [],
+    imagePreload: [
+      "/img/2-9-1.webp",
+      "/img/2-9-2.webp",
+      "/img/2-9-3.webp",
+      "/img/2-9-4.webp",
+      "/img/2-9-5.webp",
+      "/img/2-9-6.webp",
+      "/img/2-9-7.webp",
+      "/img/2-9-8.webp",
+    ],
   },
   "2-9": {
-    image: "/img/2-9.webp",
+    image: [
+      "/img/2-9-1.webp",
+      "/img/2-9-2.webp",
+      "/img/2-9-3.webp",
+      "/img/2-9-4.webp",
+      "/img/2-9-5.webp",
+      "/img/2-9-6.webp",
+      "/img/2-9-7.webp",
+      "/img/2-9-8.webp",
+    ],
+    stopMotionDuration: 1500,
+    imagePreload: [],
+  },
+  "2-10": {
+    image: "/img/2-9-8.webp",
     imagePreload: [],
   },
   "2-1": {

@@ -32,7 +32,7 @@ const InteractiveBackground = () => {
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("4-10");
-              }, 500);
+              }, 1000);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
@@ -53,7 +53,7 @@ const InteractiveBackground = () => {
         });
         break;
         case "2-7":
-          const animationDuration =
+          const animationDuration_2_7 =
             backgroundMapConfig[page].stopMotionDuration *
             backgroundMapConfig[page].image.length;
           backgroundMapConfig[page].image.forEach((image, index) => {
@@ -62,7 +62,22 @@ const InteractiveBackground = () => {
               if (index === backgroundMapConfig[page].image.length - 1) {
                 setTimeout(() => {
                   router.push("2-8");
-                }, 500);
+                }, 1000);
+              }
+            }, index * backgroundMapConfig[page].stopMotionDuration);
+          });
+          break;
+          case "2-9":
+          const animationDuration =
+            backgroundMapConfig[page].stopMotionDuration *
+            backgroundMapConfig[page].image.length;
+          backgroundMapConfig[page].image.forEach((image, index) => {
+            setTimeout(() => {
+              setBgImgSrc(image);
+              if (index === backgroundMapConfig[page].image.length - 1) {
+                setTimeout(() => {
+                  router.push("2-10");
+                }, 1500);
               }
             }, index * backgroundMapConfig[page].stopMotionDuration);
           });
