@@ -2,9 +2,9 @@
 
 import { backgroundMapConfig } from "@/lib/bg-config";
 import { usePathname, useRouter } from "@/lib/navigation";
+import { useLocale } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import AnimatedImage from "./animated-image";
-import { useLocale } from "next-intl";
 
 const InteractiveBackground = () => {
   const locale = useLocale();
@@ -21,67 +21,69 @@ const InteractiveBackground = () => {
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
         break;
+      case "3-3":
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                router.push("3-4");
+              }, backgroundMapConfig[page].stopMotionDuration);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
       case "4-9":
         const backgrounds = backgroundMapConfig[page].image.filter(
           (path) => !path.includes(locale === "th" ? "en" : "th"),
         );
-        backgroundMapConfig[page].stopMotionDuration * backgrounds.length;
         backgrounds.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("4-10");
-              }, 1000);
+              }, backgroundMapConfig[page].stopMotionDuration);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
         break;
       case "4-13":
-        const animationDuration_4_13 =
-          backgroundMapConfig[page].stopMotionDuration *
-          backgroundMapConfig[page].image.length;
         backgroundMapConfig[page].image.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("4-14");
-              }, animationDuration_4_13);
+              }, backgroundMapConfig[page].stopMotionDuration);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
         break;
-        case "2-7":
-          const animationDuration_2_7 =
-            backgroundMapConfig[page].stopMotionDuration *
-            backgroundMapConfig[page].image.length;
-          backgroundMapConfig[page].image.forEach((image, index) => {
-            setTimeout(() => {
-              setBgImgSrc(image);
-              if (index === backgroundMapConfig[page].image.length - 1) {
-                setTimeout(() => {
-                  router.push("2-8");
-                }, 1000);
-              }
-            }, index * backgroundMapConfig[page].stopMotionDuration);
-          });
-          break;
-          case "2-9":
-          const animationDuration =
-            backgroundMapConfig[page].stopMotionDuration *
-            backgroundMapConfig[page].image.length;
-          backgroundMapConfig[page].image.forEach((image, index) => {
-            setTimeout(() => {
-              setBgImgSrc(image);
-              if (index === backgroundMapConfig[page].image.length - 1) {
-                setTimeout(() => {
-                  router.push("2-10");
-                }, 1500);
-              }
-            }, index * backgroundMapConfig[page].stopMotionDuration);
-          });
-          break;
+      case "2-7":
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                backgroundMapConfig[page].stopMotionDuration;
+              }, 1000);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
+      case "2-9":
+        backgroundMapConfig[page].image.forEach((image, index) => {
+          setTimeout(() => {
+            setBgImgSrc(image);
+            if (index === backgroundMapConfig[page].image.length - 1) {
+              setTimeout(() => {
+                router.push("2-10");
+              }, backgroundMapConfig[page].stopMotionDuration);
+            }
+          }, index * backgroundMapConfig[page].stopMotionDuration);
+        });
+        break;
       default:
         setBgImgSrc(backgroundMapConfig[page].image);
         break;

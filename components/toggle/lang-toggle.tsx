@@ -20,7 +20,7 @@ const LangToggle = () => {
         variant="ghost"
         className={cn(
           interFont.className,
-          "h-auto w-auto rounded-sm p-2 text-sm font-semibold text-accent",
+          "h-auto w-auto rounded-[8px] p-2 text-sm font-semibold text-accent",
         )}
       >
         {locale === "en" ? "EN" : "TH"}

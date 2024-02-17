@@ -12,7 +12,7 @@ const SoundToggle = (props: Props) => {
     <Button
       variant="ghost"
       onClick={toggle}
-      className="h-auto w-auto p-2 text-accent"
+      className="h-auto w-auto rounded-[8px] p-2 text-accent"
     >
       {isPlaying ? (
         <Volume2 className="h-5 w-5" />

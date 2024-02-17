@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 export default function Page() {
-  const t = useTranslations("3-5");
+  const t = useTranslations("3-4");
 
   return (
     <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">

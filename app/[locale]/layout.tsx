@@ -1,4 +1,8 @@
 import GoogleAnalytics from "@/components/google-analytics";
+import Sounds from "@/components/sounds";
+import LangToggle from "@/components/toggle/lang-toggle";
+import SoundToggle from "@/components/toggle/sound-toggle";
+import { Separator } from "@/components/ui/separator";
 import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -52,10 +56,16 @@ export default function RootLayout({
             [ibmPlexSansThaiLooped.className]: locale === "th",
           },
           nothingYouCouldDo.variable,
-          "min-h-screen w-full",
+          "relative mx-auto min-h-screen w-full max-w-md ",
         )}
       >
+        <Sounds />
         <GoogleAnalytics />
+        <div className="absolute right-5 top-10 z-50 flex w-full items-center justify-end">
+          <LangToggle />
+          <Separator orientation="vertical" className="h-7" />
+          <SoundToggle />
+        </div>
         {children}
       </body>
     </html>
