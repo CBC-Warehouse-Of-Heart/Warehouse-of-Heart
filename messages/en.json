@@ -231,15 +231,9 @@
     "andLookForward": "and look forward to some rest."
   },
   "0": {
-    "inOrder": "In order for everyone to completely enjoy",
-    "the": "the ",
-    "Warehouse": "Warehouse of Heart Website",
-    "comma": ",",
-    "weSuggest": "we suggest:",
-    "forIOS": "For IOS users,",
-    "open": "1. Open WOH Website in Safari ",
-    "fullStop": ".",
-    "click": "2. Click at this icon.",
-    "choose": "3. Choose "
+    "forIOS": "For iOS Users",
+    "toEnjoy": "To enjoy the full experience",
+    "openThis": "Open this website in safari",
+    "andHide": "and hide the toolbar"
   }
 }

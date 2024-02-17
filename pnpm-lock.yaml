@@ -89,6 +89,9 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.4.1)
+  ua-parser-js:
+    specifier: ^1.0.37
+    version: 1.0.37
   use-sound:
     specifier: ^4.0.1
     version: 4.0.1(react@18.2.0)
@@ -118,6 +121,9 @@ devDependencies:
   '@types/react-howler':
     specifier: ^5.2.3
     version: 5.2.3
+  '@types/ua-parser-js':
+    specifier: ^0.7.39
+    version: 0.7.39
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.17(postcss@8.4.35)
@@ -1624,6 +1630,10 @@ packages:
 
   /@types/scheduler@0.16.8:
     resolution: {integrity: sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==}
+
+  /@types/ua-parser-js@0.7.39:
+    resolution: {integrity: sha512-P/oDfpofrdtF5xw433SPALpdSchtJmY7nsJItf8h3KXqOslkbySh8zq4dSWXH2oTjRvJ5PczVEoCZPow6GicLg==}
+    dev: true
 
   /@typescript-eslint/parser@6.21.0(eslint@8.56.0)(typescript@5.3.3):
     resolution: {integrity: sha512-tbsV1jPne5CkFQCgPBcDOt30ItF7aJoZL997JSF7MhGQqOeT3svWRYxiqlfA5RUdlHN6Fi+EI9bxqbdyAUZjYQ==}

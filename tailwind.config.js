@@ -111,6 +111,7 @@ module.exports = {
         "white-radial": "url('/img/white-radial.webp')",
         end: "url('/img/end.webp')",
         "value-box": "url('/img/value-box.webp')",
+        "0": "url('/img/scene0.webp')",
       },
     },
   },
