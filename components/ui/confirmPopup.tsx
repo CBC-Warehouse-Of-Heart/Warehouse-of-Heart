@@ -1,6 +1,6 @@
 import { DialogClose, DialogContent } from "@/components/ui/dialog";
+import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 type Props = {
   href?: string;

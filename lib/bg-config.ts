@@ -57,7 +57,7 @@ export const backgroundMapConfig = {
   },
   "2-7": {
     image: ["/img/2-1.webp", "/img/2-2.webp", "/img/2-3.webp"],
-    stopMotionDuration: 1500,
+    stopMotionDuration: 1200,
     imagePreload: [],
   },
   "2-8": {
@@ -84,7 +84,7 @@ export const backgroundMapConfig = {
       "/img/2-9-7.webp",
       "/img/2-9-8.webp",
     ],
-    stopMotionDuration: 1500,
+    stopMotionDuration: 1200,
     imagePreload: [],
   },
   "2-10": {
@@ -103,7 +103,7 @@ export const backgroundMapConfig = {
       "/img/3-1-3.webp",
       "/img/3-1-4.webp",
     ],
-    stopMotionDuration: 1500,
+    stopMotionDuration: 1200,
     imagePreload: [],
   },
   "3-2": {
@@ -124,7 +124,7 @@ export const backgroundMapConfig = {
       "/img/3-3-11.webp",
       "/img/3-3-12.webp",
     ],
-    stopMotionDuration: 1125,
+    stopMotionDuration: 1200,
     imagePreload: [],
   },
   "3-4": {
@@ -145,7 +145,7 @@ export const backgroundMapConfig = {
   },
   "4-4": {
     image: "/img/4-3.webp",
-    imagePreload: ["4-5"],
+    imagePreload: ["/img/4-5.webp"],
   },
   "4-5": {
     image: "/img/4-5.webp",
@@ -185,16 +185,16 @@ export const backgroundMapConfig = {
       "/img/4-9-4-en.webp",
       "/img/4-9-5.webp",
     ],
-    stopMotionDuration: 1500,
+    stopMotionDuration: 1200,
     imagePreload: ["/img/4-10.webp"],
   },
   "4-10": {
     image: "/img/4-10.webp",
-    imagePreload: ["/img/4-10.webp"],
+    imagePreload: [],
   },
   "4-11": {
     image: "/img/4-10.webp",
-    imagePreload: ["/img/4-10.webp"],
+    imagePreload: [],
   },
   "4-12": {
     image: "/img/4-10.webp",
@@ -207,7 +207,7 @@ export const backgroundMapConfig = {
       "/img/4-9-3.webp",
       "/img/4-9-4.webp",
     ],
-    stopMotionDuration: 1500,
+    stopMotionDuration: 1200,
     imagePreload: ["/img/4-14.webp"],
   },
   "4-14": {
@@ -224,7 +224,7 @@ export const backgroundMapConfig = {
   },
   "4-17": {
     image: "/img/4-16.webp",
-    imagePreload: [],
+    imagePreload: ["/img/5-1.webp"],
   },
   "5-1": {
     image: "/img/5-1.webp",
