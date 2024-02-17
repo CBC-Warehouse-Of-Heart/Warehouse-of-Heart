@@ -66,8 +66,8 @@ const InteractiveBackground = () => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
-                backgroundMapConfig[page].stopMotionDuration;
-              }, 1000);
+                router.push("2-8");
+              }, backgroundMapConfig[page].stopMotionDuration);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
