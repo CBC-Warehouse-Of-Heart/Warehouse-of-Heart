@@ -230,11 +230,20 @@ export default function EndContent() {
         </div>
         <div className="mt-4 flex items-center justify-between">
           <Image
-            src="/img/Logo_koncept.webp"
+            src="/img/Logo_Major.webp"
             width={0}
             height={0}
-            alt="Koncept Play logo"
-            style={{ width: "41%", height: "auto" }}
+            alt="Major Cineplex logo"
+            style={{ width: "10%", height: "auto" }}
+            className="ml-[5px]"
+          />
+          <Image
+            src="/img/Logo_Papaya.webp"
+            width={0}
+            height={0}
+            alt="Papaya logo"
+            style={{ width: "24%", height: "auto" }}
+            className="ml-[5px]"
           />
           <div className="flex w-[47%] items-center justify-between gap-2">
             <Image
@@ -252,6 +261,24 @@ export default function EndContent() {
               style={{ width: "66%", height: "auto" }}
             />
           </div>
+        </div>
+        <div className="mt-4 flex items-end justify-between">
+          <Image
+            src="/img/Logo_koncept.webp"
+            width={0}
+            height={0}
+            alt="Koncept Play logo"
+            style={{ width: "41%", height: "auto" }}
+            className="ml-[9px]"
+          />
+          <Image
+            src="/img/Logo_acer.webp"
+            width={0}
+            height={0}
+            alt="acer logo"
+            style={{ width: "35%", height: "auto" }}
+          />
+          <div className="w-[10%]"></div>
         </div>
       </div>
       <div className="h-px w-full bg-brown" />
@@ -275,7 +302,7 @@ export default function EndContent() {
             width={0}
             height={0}
             alt="whosehiddenplace logo"
-            style={{ width: "42%", height: "auto" }}
+            style={{ width: "27%", height: "auto" }}
           />
           <p>IG: whosehiddenplace</p>
         </div>
