@@ -4,19 +4,20 @@ import { Link } from "@/lib/navigation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-export default function Page() {
-  const t = useTranslations("2-1");
-
+export default function Page2_1a() {
+  const t = useTranslations("2-8");
   return (
-    <div className="mx-auto overflow-hidden">
+    <div className="flex h-screen flex-col items-center justify-center relative">
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
-        className="max-[380px]:mb-[310px] absolute inset-x-0 top-[32%] m-auto"
+        className="text-center text-base text-white absolute top-1/4"
+        initial={{ opacity: 0, z: -20 }}
+        animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
       >
-        <p className="text-center leading-7 text-woh-white">{t("today")}</p>
+        <p>{t("whenWas")}</p>
+        <p>{t("walkOn")}</p>
       </motion.div>
-      <Link href="2-2">
+      
+      <Link href="2-9">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -24,7 +25,7 @@ export default function Page() {
             z: 10,
             transition: { duration: 1, delay: 2.5 },
           }}
-          className="absolute inset-x-0 top-[75%] m-auto flex justify-center"
+          className="flex justify-center absolute top-[75%] inset-x-0"
         >
           <NextButton />
         </motion.div>
@@ -32,3 +33,4 @@ export default function Page() {
     </div>
   );
 }
+

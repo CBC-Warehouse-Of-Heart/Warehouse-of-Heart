@@ -52,7 +52,7 @@ export default function Page() {
             z: 10,
             transition: { duration: 1, delay: 4 },
           }}
-          className="mt-[89vh] flex justify-center"
+          className="absolute inset-x-0 top-[75%] m-auto flex justify-center"
         >
           <NextButton />
         </motion.div>

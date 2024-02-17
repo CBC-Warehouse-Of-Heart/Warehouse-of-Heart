@@ -2,13 +2,14 @@
   "TextArea": {
     "answerInput": "Please type your answer."
   },
-  "3-2": {
+  "3-1": {
     "finallyArrived": "You finally arrived."
   },
-  "3-3": {
+  "3-2": {
     "waveOfRelaxation": "A wave of relaxation started ",
     "washOverYou": "to wash over you. It's as if time itself",
-    "hasDecided": "has decided to slow down."
+    "hasDecided": "has decided to slow down.",
+    "enter": "Enter"
   },
   "3-5": {
     "uponEntering": "Upon entering, your eyes drift over",
@@ -34,7 +35,7 @@
     "canCreate": "you can create whatever",
     "yourWisher": "day of your wisher",
     "yourWisher2": " ",
-    "warehouseOfHeart" : "- Warehouse of Heart -"
+    "warehouseOfHeart": "- Warehouse of Heart -"
   },
   "5-1": {
     "dailyGrind": "With all the daily grind, you might",
@@ -65,8 +66,8 @@
   "1-5": {
     "areYouReady": "Are you ready",
     "forTheJourney": "for the journey to begin?",
-    "ready": "Yes",
-    "maybeNotNow": "Maybe not now"
+    "ready": "Ready",
+    "maybeNotNow": "Not yet"
   },
   "1-6": {
     "welcomeTo": "Welcome to",
@@ -83,7 +84,7 @@
     "next": "Next"
   },
   "StartButton": {
-    "start": "Begin"
+    "start": "Start"
   },
   "4-15": {
     "afterAll": "After all, what tender words",
@@ -172,7 +173,7 @@
     "whereATreasure": "where a treasure will be found"
   },
   "5-6": {
-    "meetAgain": "Hope we can meet again soon.\nGoodbye for now, but rather,\nuntil we meet again."
+    "meetAgain": "Hope we can meet again soon. Goodbye for now, but rather, until we meet again."
   },
   "2-1": {
     "today": "Today, just like every other day,"
@@ -192,6 +193,42 @@
   "2-5": {
     "youAre": "You are heading back home",
     "onThe": "on the familiar path"
+  },
+  "end": {
+    "register": "Register",
+    "youMay": "You may uncover hidden treasures",
+    "within": "within the storeroom of your mind...",
+    "likeAny": "Like any other storage room, there is an often overlooked space called Warehouse of Heart. If you haven't taken the time to explore and organize it for a long time, it naturally accumulates various elements, increasing the risk of misplacing cherished items or inadvertently amassing unwanted baggage.",
+    "amidst": "Amidst a world in turmoil, we extend a warm invitation for you to embark on a journey of self-organization. Take the time to compose your thoughts, revisit life stories, and venture into a deeper understanding of yourself. Together, we may uncover hidden treasures within the storeroom of your mind, waiting to be discovered.",
+    "youCan": "You can meet us at TCDC Bangkok, 1st floor Gallery, March 19 - April 21, 2024, 10:30 a.m. - 7:00 p.m. (closed every Monday).",
+    "freeEntry": "Free entry.",
+    "toJoin": " to join the exhibition here.",
+    "exceptTo": "Except to the exhibition there are covered with 4 special workshops",
+    "makeAZine": "Make A Zine in Hua Lamphong & Bang Rak",
+    "capture": "Capture the stories you want to tell and engage in communication while traveling and exploring the art of zine.",
+    "yepandhandicraft": "Workshop 2: Yepandhandicraft - Create an Accordion Book",
+    "buildMemories": "Build memories through \"bookbinding\" that resembles a tiny room storing life stories.",
+    "discover": "Discover the \"advantages of yourself\" through the sound of music and the 8 angels that will help you see yourself from various perspectives.",
+    "createArtwork": "Create artwork from memories using the Transfer photo technique, copying patterns from photographs onto materials.",
+    "forMore": "For more information, please follow",
+    "spon1Desc": "Playing with pleasure",
+    "spon2Desc": "เพื่อให้คุณมีชีวิตดีๆที่เลือกเองได้"
+  },
+  "footer": {
+    "contact": "Contact us"
+  },
+  "2-6": {
+    "ifIWere": "If I were to rate today from 10 (Best)",
+    "to1": "to 1 (Worst), today would be.."
+  },
+  "2-8": {
+    "whenWas": "When was the last time I let myself",
+    "walkOn": "walk on my own pace like this.."
+  },
+  "2-10": {
+    "onTheWay": "On the way home,",
+    "youReflect": "you reflect on the day",
+    "andLookForward": "and look forward to some rest."
   },
   "0": {
     "inOrder": "In order for everyone to completely enjoy",

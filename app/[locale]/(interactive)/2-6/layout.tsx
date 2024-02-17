@@ -15,7 +15,7 @@ const Layout = ({
   const messages = useMessages();
 
   return (
-    <NextIntlClientProvider messages={pick(messages, ["1-6", "StartButton"])}>
+    <NextIntlClientProvider messages={pick(messages, ["2-6", "NextButton"])}>
       {children}
     </NextIntlClientProvider>
   );
