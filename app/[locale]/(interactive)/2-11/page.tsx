@@ -19,7 +19,7 @@ export default function Page() {
         </p>
       </motion.div>
 
-      <Link href="2-12">
+      <Link href="/2-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{

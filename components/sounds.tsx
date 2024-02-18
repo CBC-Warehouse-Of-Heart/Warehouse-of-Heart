@@ -31,11 +31,7 @@ const Sounds = () => {
     const nextSound = scenePageMap[scene];
 
     if (nextSound !== backingTrackSound) {
-      backingTrackRef.current?.howler.fade(
-        backingTrackRef.current?.howler.volume() ?? backingTrackVolume,
-        0,
-        fadeDuration,
-      );
+      backingTrackRef.current?.howler.fade(backingTrackVolume, 0, fadeDuration);
       setTimeout(() => {
         setBackingTrackSound(nextSound);
       }, fadeDuration);

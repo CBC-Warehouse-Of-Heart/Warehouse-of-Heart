@@ -18,7 +18,7 @@ export default function Page2_1a() {
         <p>{t("andLookForward")}</p>
       </motion.div>
 
-      <Link href="2-11">
+      <Link href="/2-11">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
