@@ -45,10 +45,12 @@ const Slider = React.forwardRef<
             }}
           >
             <div
-              className="background-size-110-110 absolute -top-[45px] left-[60%] m-auto w-[55px] 
-              -translate-x-1/2 bg-[url('/img/value-box.webp')] bg-cover bg-no-repeat text-lg text-white"
+              className="background-size-110-110 absolute -top-[50px] left-[50%] m-auto w-[55px] -translate-x-1/2
+              bg-[url('/img/value-box.webp')] bg-cover bg-no-repeat text-lg text-white"
             >
-              <p className="mb-4 mt-0 font-serif">{value}</p>
+              <p className="relative right-[1px] top-2 mb-6 mt-0 font-serif text-sm">
+                {value}
+              </p>
             </div>
           </SliderPrimitive.Thumb>
         </SliderPrimitive.Root>

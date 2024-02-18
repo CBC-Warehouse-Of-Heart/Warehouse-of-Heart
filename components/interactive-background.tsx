@@ -14,21 +14,21 @@ const InteractiveBackground = () => {
   const [bgImgSrc, setBgImgSrc] = useState<string>();
   useEffect(() => {
     switch (page) {
-      case "3-1":
+      case "2-11":
         backgroundMapConfig[page].image.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
         break;
-      case "3-3":
+      case "2-13":
         backgroundMapConfig[page].image.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("3-4");
-              }, backgroundMapConfig[page].stopMotionDuration);
+              }, backgroundMapConfig[page].stopMotionDuration / 2);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
@@ -43,7 +43,7 @@ const InteractiveBackground = () => {
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("4-10");
-              }, backgroundMapConfig[page].stopMotionDuration);
+              }, backgroundMapConfig[page].stopMotionDuration / 2);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
@@ -55,7 +55,7 @@ const InteractiveBackground = () => {
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("4-14");
-              }, backgroundMapConfig[page].stopMotionDuration);
+              }, backgroundMapConfig[page].stopMotionDuration / 2);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
@@ -67,7 +67,7 @@ const InteractiveBackground = () => {
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("2-8");
-              }, backgroundMapConfig[page].stopMotionDuration);
+              }, backgroundMapConfig[page].stopMotionDuration / 2);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
@@ -79,7 +79,7 @@ const InteractiveBackground = () => {
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("2-10");
-              }, backgroundMapConfig[page].stopMotionDuration);
+              }, backgroundMapConfig[page].stopMotionDuration / 2);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
@@ -91,7 +91,7 @@ const InteractiveBackground = () => {
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
                 router.push("6-1");
-              }, backgroundMapConfig[page].stopMotionDuration);
+              }, backgroundMapConfig[page].stopMotionDuration / 2);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });

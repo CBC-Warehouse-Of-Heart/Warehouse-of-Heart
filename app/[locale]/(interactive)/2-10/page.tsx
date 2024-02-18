@@ -7,9 +7,9 @@ import { useTranslations } from "next-intl";
 export default function Page2_1a() {
   const t = useTranslations("2-10");
   return (
-    <div className="flex h-screen flex-col items-center justify-center relative">
+    <div className="relative flex h-screen flex-col items-center justify-center">
       <motion.div
-        className="text-center text-base text-white absolute top-1/4"
+        className="absolute top-1/4 text-center text-base text-white"
         initial={{ opacity: 0, z: -20 }}
         animate={{ opacity: 1, z: 0, transition: { duration: 1, delay: 1 } }}
       >
@@ -17,8 +17,8 @@ export default function Page2_1a() {
         <p>{t("youReflect")}</p>
         <p>{t("andLookForward")}</p>
       </motion.div>
-      
-      <Link href="3-1">
+
+      <Link href="2-11">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -26,7 +26,7 @@ export default function Page2_1a() {
             z: 10,
             transition: { duration: 1, delay: 2.5 },
           }}
-          className="flex justify-center absolute top-[75%] inset-x-0"
+          className="absolute inset-x-0 top-[75%] flex justify-center"
         >
           <NextButton />
         </motion.div>
@@ -34,4 +34,3 @@ export default function Page2_1a() {
     </div>
   );
 }
-
