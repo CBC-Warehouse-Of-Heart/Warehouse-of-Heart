@@ -84,13 +84,13 @@ const InteractiveBackground = () => {
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
         break;
-        case "5-5":
+      case "5-5":
         backgroundMapConfig[page].image.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
               setTimeout(() => {
-                router.push("5-6");
+                router.push("6-1");
               }, backgroundMapConfig[page].stopMotionDuration);
             }
           }, index * backgroundMapConfig[page].stopMotionDuration);

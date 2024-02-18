@@ -30,7 +30,7 @@ export default function Page() {
           alt="animated-image"
           fill
           className={`object-cover ${blurred ? " blur-[2px]" : " filter-none"}`}
-        ></Image>
+        />
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
@@ -42,9 +42,9 @@ export default function Page() {
           alt="key"
           fill
           className="object-contain"
-        ></Image>
+        />
       </motion.div>
-      <Link href="5-8">
+      <Link href="6-3">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{

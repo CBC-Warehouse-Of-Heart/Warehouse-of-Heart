@@ -8,7 +8,6 @@ import { useLocale, useTranslations } from "next-intl";
 export default function Page() {
   const t = useTranslations("5-6");
   const locale = useLocale();
-  console.log(locale);
 
   return (
     <div className="mx-auto overflow-hidden">
@@ -29,7 +28,7 @@ export default function Page() {
         </p>
       </motion.div>
 
-      <Link href="5-7">
+      <Link href="6-2">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{

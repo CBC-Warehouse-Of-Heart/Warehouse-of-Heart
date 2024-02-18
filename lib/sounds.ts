@@ -7,6 +7,7 @@ export const scenePageMap = {
   "5": "/sound/track/room-2.mp3",
   "6": "/sound/track/room-5.mp3",
   end: "/sound/track/branding.mp3",
+  feedback: "/sound/track/branding.mp3",
 } as const;
 
 export const soundPageMap: Record<
@@ -65,7 +66,16 @@ export const soundPageMap: Record<
   "5-5": {
     soundEffect: {
       sound: "/sound/sound-effect/scene-5-book-page-flip.mp3",
+      volume: 1,
     },
+    backgroundVolume: 0.3,
+  },
+  "6-2": {
+    soundEffect: {
+      sound: "/sound/sound-effect/scene-6-open-envelope.mp3",
+      volume: 1,
+    },
+    backgroundVolume: 0.3,
   },
   // "4-17": {
   //   soundEffect: {
