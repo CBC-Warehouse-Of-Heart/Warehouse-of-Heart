@@ -56,7 +56,7 @@ const Scene4Page10: React.FC = () => {
                 </motion.div>
                 {/* Third Block */}
                 <motion.div
-                    className="absolute top-[75%]"
+                    className="absolute bottom-[17%]"
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}

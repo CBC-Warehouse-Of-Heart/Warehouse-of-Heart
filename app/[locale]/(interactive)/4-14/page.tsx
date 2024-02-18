@@ -15,14 +15,14 @@ const Scene4Page14: React.FC = () => {
             <div className="flex flex-col items-center justify-center">
 
                 {/* Screen text */}
-                <div className="absolute top-[37%] -rotate-[4deg] pl-[2%]" >
+                <div className="absolute top-[35%] -rotate-[4deg]" >
                     <motion.div
                         initial={{ opacity: 0, y: 0 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 1 }}
                     >
-                        <p className="text-base text-woh-white text-center">
+                        <p className="text-sm text-woh-white text-center">
                             {t("badDay")}
                             <br />
                             {t("goodDay")}
