@@ -6,14 +6,12 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 
-const DivStyles = "w-[360px] flex flex-col items-center top-0";
-
 const Scene4Page12: React.FC = () => {
 
-    const [char, setChar] = useState<string>("");
+  const [char, setChar] = useState<string>("");
 
-    const t = useTranslations("4-12");
-    const ta = useTranslations("TextArea");
+  const t = useTranslations("4-12");
+  const ta = useTranslations("TextArea");
 
     return (
         <div className="bg-4-10 h-full w-full bg-cover bg-no-repeat flex flex-col items-cente">
@@ -58,7 +56,6 @@ const Scene4Page12: React.FC = () => {
                         className="h-[152px] w-[342px] rounded-xl bg-stone-50 p-3 "
                     />
                 </motion.div>
-
                 {/* Third Block */}
                 <motion.div
                     className="absolute top-[75%]"
@@ -71,12 +68,12 @@ const Scene4Page12: React.FC = () => {
                     {/* Next button */}
                     <Link href="/4-13">
                         {/* Pass the trigger prop to NextButton */}
-                        <NextButton trigger={char.length > 0} />
+                        <NextButton trigger={char.length > 1} />
                     </Link>
                 </motion.div>
             </div>
         </div>
-    );
+  );
 };
 
 export default Scene4Page12;

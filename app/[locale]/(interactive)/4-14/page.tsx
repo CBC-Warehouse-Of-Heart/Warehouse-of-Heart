@@ -15,7 +15,7 @@ const Scene4Page14: React.FC = () => {
             <div className="flex flex-col items-center justify-center">
 
                 {/* Screen text */}
-                <div className="absolute top-[36%] -rotate-[4deg] pl-[2%]" >
+                <div className="absolute top-[37%] -rotate-[4deg] pl-[2%]" >
                     <motion.div
                         initial={{ opacity: 0, y: 0 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -37,6 +37,8 @@ const Scene4Page14: React.FC = () => {
                             <br />
                             {t("yourWisher2")}
                             <br />
+                            {t("blank")}
+                            <br />
                             {t("warehouseOfHeart")}
                         </p>
                     </motion.div>
@@ -44,7 +46,7 @@ const Scene4Page14: React.FC = () => {
 
                 {/* Next button */}
                 <motion.div
-                    className="absolute top-[80%]"
+                    className="absolute bottom-[20%]"
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}
