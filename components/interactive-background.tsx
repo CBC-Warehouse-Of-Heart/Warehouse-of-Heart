@@ -113,6 +113,7 @@ const InteractiveBackground = () => {
           src={bgImgSrc}
           preloadSrcs={imagePreloadSrc}
           alt="background-image"
+          loading="eager"
           fill
           className="relative -z-50 object-cover"
         />
