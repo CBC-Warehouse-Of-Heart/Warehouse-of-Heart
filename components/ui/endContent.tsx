@@ -218,34 +218,18 @@ export default function EndContent() {
             width={0}
             height={0}
             alt="zip event logo"
-            style={{ width: "67%", height: "auto" }}
+            style={{ width: "52%", height: "auto" }}
           />
           <Image
-            src="/img/Logo_converse.webp"
+            src="/img/Logo_koncept.webp"
             width={0}
             height={0}
-            alt="Converse logo"
-            style={{ width: "22%", height: "auto" }}
+            alt="Koncept Play logo"
+            style={{ width: "35%", height: "auto" }}
           />
         </div>
         <div className="mt-4 flex items-center justify-between">
-          <Image
-            src="/img/Logo_Major.webp"
-            width={0}
-            height={0}
-            alt="Major Cineplex logo"
-            style={{ width: "10%", height: "auto" }}
-            className="ml-[5px]"
-          />
-          <Image
-            src="/img/Logo_Papaya.webp"
-            width={0}
-            height={0}
-            alt="Papaya logo"
-            style={{ width: "24%", height: "auto" }}
-            className="ml-[5px]"
-          />
-          <div className="flex w-[47%] items-center justify-between gap-2">
+          <div className="flex w-[52%] items-center justify-between gap-2">
             <Image
               src="/img/Logo_haus64_graphic.webp"
               width={0}
@@ -261,15 +245,22 @@ export default function EndContent() {
               style={{ width: "66%", height: "auto" }}
             />
           </div>
-        </div>
-        <div className="mt-4 flex items-end justify-between">
           <Image
-            src="/img/Logo_koncept.webp"
+            src="/img/Logo_Papaya.webp"
             width={0}
             height={0}
-            alt="Koncept Play logo"
-            style={{ width: "41%", height: "auto" }}
-            className="ml-[9px]"
+            alt="Papaya logo"
+            style={{ width: "35%", height: "auto" }}
+          />
+        </div>
+        <div className="mt-4 flex items-center justify-between">
+          <Image
+            src="/img/Logo_converse.webp"
+            width={0}
+            height={0}
+            alt="converse logo"
+            style={{ width: "22%", height: "auto" }}
+            className="ml-2"
           />
           <Image
             src="/img/Logo_acer.webp"
@@ -278,7 +269,14 @@ export default function EndContent() {
             alt="acer logo"
             style={{ width: "35%", height: "auto" }}
           />
-          <div className="w-[10%]"></div>
+          <Image
+            src="/img/Logo_Major.webp"
+            width={0}
+            height={0}
+            alt="Major Cineplex logo"
+            style={{ width: "15%", height: "auto" }}
+            className="mr-2"
+          />
         </div>
       </div>
       <div className="h-px w-full bg-brown" />
