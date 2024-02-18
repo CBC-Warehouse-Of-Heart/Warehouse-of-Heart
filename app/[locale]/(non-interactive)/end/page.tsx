@@ -37,7 +37,7 @@ const End = ({ params: { locale } }: Props) => {
               className="mt-7"
               priority={true}
             />
-            <Link href="https://www.zipeventapp.com/" className="w-full">
+            <Link href="https://www.zipeventapp.com/e/Warehouse-of-Heart" className="w-full">
               <Button variant="register" size="register" className="mt-6">
                 {t("register")}
               </Button>

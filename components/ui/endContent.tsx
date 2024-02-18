@@ -18,7 +18,7 @@ export default function EndContent() {
         {t("freeEntry")}
         <br />
         <Link
-          href="https://www.zipeventapp.com/"
+          href="https://www.zipeventapp.com/e/Warehouse-of-Heart"
           className="text-[#0031FC] underline"
         >
           {t("register")}
