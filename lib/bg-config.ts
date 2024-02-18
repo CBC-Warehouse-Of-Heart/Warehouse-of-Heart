@@ -167,6 +167,7 @@ export const backgroundMapConfig = {
       "/img/4-9-3.webp",
       "/img/4-9-4.webp",
       "/img/4-9-5.webp",
+      "/img/4-9-6.webp",
     ],
   },
   "4-9": {
@@ -178,6 +179,7 @@ export const backgroundMapConfig = {
       "/img/4-9-4.webp",
       "/img/4-9-4.webp",
       "/img/4-9-5.webp",
+      "/img/4-9-6.webp",
     ],
     stopMotionDuration: 1200,
     imagePreload: ["/img/4-10.webp"],
