@@ -270,7 +270,7 @@ export const backgroundMapConfig = {
       "/img/5-5-11.webp",
       "/img/5-5-12.webp",
     ],
-    stopMotionDuration: 1200,
+    stopMotionDuration: 1300,
     imagePreload: ["/img/4-14.webp"]
   },
   "5-6": {
