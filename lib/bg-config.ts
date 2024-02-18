@@ -109,20 +109,26 @@ export const backgroundMapConfig = {
   "3-2": {
     image: "/img/3-1-4.webp",
     imagePreload: [
+      "/img/3-3-5.webp",
       "/img/3-3-6.webp",
-      "/img/3-3-8.webp",
+      "/img/3-3-7.webp",
+      "/img/3-3-9.webp",
       "/img/3-3-10.webp",
       "/img/3-3-11.webp",
       "/img/3-3-12.webp",
+      "/img/3-3-13.webp",
     ],
   },
   "3-3": {
     image: [
+      "/img/3-3-5.webp",
       "/img/3-3-6.webp",
-      "/img/3-3-8.webp",
+      "/img/3-3-7.webp",
+      "/img/3-3-9.webp",
       "/img/3-3-10.webp",
       "/img/3-3-11.webp",
       "/img/3-3-12.webp",
+      "/img/3-3-13.webp",
     ],
     stopMotionDuration: 1200,
     imagePreload: [],
@@ -160,7 +166,7 @@ export const backgroundMapConfig = {
     imagePreload: [],
   },
   "4-8": {
-    image: "/img/4-3.webp",
+    image: "/img/4-8.webp",
     imagePreload: [
       "/img/4-9-1.webp",
       "/img/4-9-2.webp",

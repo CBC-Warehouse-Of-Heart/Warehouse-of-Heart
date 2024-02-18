@@ -84,7 +84,7 @@ const InteractiveBackground = () => {
           }, index * backgroundMapConfig[page].stopMotionDuration);
         });
         break;
-      case "5-5":
+        case "5-5":
         backgroundMapConfig[page].image.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);

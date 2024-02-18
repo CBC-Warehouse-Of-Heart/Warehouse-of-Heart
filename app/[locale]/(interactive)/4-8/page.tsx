@@ -46,7 +46,7 @@ const Page = (props: Props) => {
     <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
       <svg
         id="svg"
-        className="normal:top-[28%] absolute left-[20%] top-[27%] scale-[0.15] touch-none object-contain tall:top-[29.5%]"
+        className="absolute left-[17%] top-[22%] scale-[0.2] touch-none object-contain normal:top-[23%] tall:top-[25%]"
       >
         {renderedStrokes}
       </svg>

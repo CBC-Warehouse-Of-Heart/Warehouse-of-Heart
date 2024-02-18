@@ -1,9 +1,9 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
+import { Link } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import React from "react";
 
 const DivStyles = "w-[360px] flex flex-col items-center top-0";
@@ -11,30 +11,46 @@ const DivStyles = "w-[360px] flex flex-col items-center top-0";
 const Scene5Page4: React.FC = () => {
   const t = useTranslations("5-4");
 
+  const t = useTranslations("5-4");
+
   return (
-    <div className="relative flex h-[844px] w-full flex-col items-center justify-between">
-      {/* First Block */}
-      <motion.div
-        className={cn("h-[350px] justify-end pb-[30px]", DivStyles)}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
-        transition={{ delay: 0.5, duration: 2 }}
-      >
+    <div className="bg-5-1 flex h-full w-full flex-col items-center bg-cover bg-no-repeat">
+      <div className="flex flex-col items-center justify-center">
         {/* Screen text */}
-        <div
-          className="flex h-[120px] w-[360px] flex-col items-center justify-center"
-          style={{
-            background:
-              "radial-gradient(46.01% 42.5% at 50% 50%, #FFF 0%, rgba(255, 255, 255, 0.98) 47.17%, rgba(255, 255, 255, 0.84) 67.17%, rgba(255, 255, 255, 0.56) 86.17%, rgba(255, 255, 255, 0.00) 100%)",
-          }}
+
+        <motion.div
+          className="absolute bottom-[62%]"
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1 }}
         >
-          <div className="text-center text-base font-normal text-zinc-900 ">
-            <p className="text-center">{t("howNice")}</p>
-            <p className="text-center">{t("inWarehouse")}</p>
+          <div className="flex h-[135px] w-[400px] bg-white-radial bg-center bg-no-repeat">
+            <div className="items-cemter flex h-full w-full flex-col justify-center">
+              <p className="text-center text-base text-woh-black">
+                {t("howNice")}
+                <br />
+                {t("inWarehouse")}
+              </p>
+            </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+
+        {/* Next button */}
+        <motion.div
+          className="absolute bottom-[18%]"
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 5 }}
+          transition={{ delay: 2, duration: 1.5 }}
+        >
+          <div>
+            <Link href="/5-5">
+              <NextButton />
+            </Link>
+          </div>
+        </motion.div>
+      </div>
 
       {/* Secound Block */}
       <motion.div
