@@ -25,7 +25,7 @@ const AudioPlayer = forwardRef<Ref, PropTypes>((props, ref) => {
       ref={internalRef}
       onPlay={(soundId) => {
         if (props.onPlay) props.onPlay(soundId);
-        internalRef.current?.howler.fade(0, props.volume ?? 0.75, 500);
+        internalRef.current?.howler.fade(0, props.volume ?? 0.75, 1000);
       }}
     />
   );

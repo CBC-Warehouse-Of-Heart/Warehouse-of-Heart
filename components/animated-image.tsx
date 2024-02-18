@@ -38,7 +38,7 @@ const AnimatedImage = ({
           className={cn(props.className, "-z-[100]")}
         />
       )}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         <motion.div
           key={currentSrc}
           initial={{ opacity: 1 }}

@@ -23,7 +23,7 @@ const Page = (props: Props) => {
         }}
         className="absolute top-[80%]"
       >
-        <Link href="4-8">
+        <Link href="4-9">
           <NextButton />
         </Link>
       </motion.div>

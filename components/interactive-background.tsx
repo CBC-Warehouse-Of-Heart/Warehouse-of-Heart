@@ -12,6 +12,7 @@ const InteractiveBackground = () => {
   const router = useRouter();
   const page = path.split("/")[1] as keyof typeof backgroundMapConfig;
   const [bgImgSrc, setBgImgSrc] = useState<string>();
+
   useEffect(() => {
     switch (page) {
       case "2-11":
@@ -34,10 +35,7 @@ const InteractiveBackground = () => {
         });
         break;
       case "4-9":
-        const backgrounds = backgroundMapConfig[page].image.filter(
-          (path) => !path.includes(locale === "th" ? "en" : "th"),
-        );
-        backgrounds.forEach((image, index) => {
+        backgroundMapConfig[page].image.forEach((image, index) => {
           setTimeout(() => {
             setBgImgSrc(image);
             if (index === backgroundMapConfig[page].image.length - 1) {
@@ -100,7 +98,7 @@ const InteractiveBackground = () => {
         setBgImgSrc(backgroundMapConfig[page].image);
         break;
     }
-  }, [page]);
+  }, [page, router]);
 
   const imagePreloadSrc = useMemo(() => {
     const imagePreloadSrc = backgroundMapConfig[page].imagePreload;

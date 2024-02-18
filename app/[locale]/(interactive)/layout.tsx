@@ -7,7 +7,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative min-h-[100dvh] overscroll-none">
+    // change dvh to vh
+    <div className="relative min-h-screen overscroll-none">
       <InteractiveBackground />
       {children}
     </div>
