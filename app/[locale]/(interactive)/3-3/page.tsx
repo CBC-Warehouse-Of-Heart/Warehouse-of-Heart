@@ -7,7 +7,7 @@ const Page = () => {
   const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
-      router.push("3-5");
+      router.push("3-4");
     }, backgroundMapConfig["3-3"].stopMotionDuration * backgroundMapConfig["3-3"].image.length);
   });
 
