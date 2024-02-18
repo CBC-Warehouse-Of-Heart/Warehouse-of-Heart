@@ -4,7 +4,8 @@ export const scenePageMap = {
   "2": "/sound/track/room-1.mp3",
   "3": "/sound/track/room-1.mp3",
   "4": "/sound/track/room-2.mp3",
-  "5": "/sound/track/room-5.mp3",
+  "5": "/sound/track/room-2.mp3",
+  "6": "/sound/track/room-5.mp3",
   end: "/sound/track/branding.mp3",
 } as const;
 
@@ -52,10 +53,23 @@ export const soundPageMap: Record<
       sound: "/sound/sound-effect/scene-4-sliding-paper-seq.mp3",
       volume: 1,
     },
+    backgroundVolume: 0.2,
   },
-  "4-17": {
+  "4-13": {
     soundEffect: {
-      sound: "/sound/sound-effect/scene-4-pasting-sticker.mp3",
+      sound: "/sound/sound-effect/scene-4-sticker-peel-seq.mp3",
+      volume: 1,
+    },
+    backgroundVolume: 0.2,
+  },
+  "5-5": {
+    soundEffect: {
+      sound: "/sound/sound-effect/scene-5-book-page-flip.mp3",
     },
   },
+  // "4-17": {
+  //   soundEffect: {
+  //     sound: "/sound/sound-effect/scene-4-pasting-sticker.mp3",
+  //   },
+  // },
 };
