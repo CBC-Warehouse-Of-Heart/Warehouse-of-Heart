@@ -18,7 +18,7 @@ const Page = () => {
 
     setTimeout(() => {
       setVisibleText("MAYBE_ITS_TIME");
-    }, backgroundMapConfig["4-9"].stopMotionDuration * 4);
+    }, backgroundMapConfig["4-9"].stopMotionDuration * 4.2);
 
     setTimeout(() => {
       setVisibleText(null);

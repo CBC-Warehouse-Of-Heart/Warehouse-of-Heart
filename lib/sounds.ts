@@ -14,6 +14,7 @@ export const soundPageMap: Record<
     soundEffect?: {
       sound: string;
       loop?: boolean;
+      volume?: number;
     };
     backgroundVolume?: number;
   }
@@ -46,12 +47,12 @@ export const soundPageMap: Record<
       sound: "/sound/sound-effect/scene-4-pencil-writing.mp3",
     },
   },
-  // "4-13": {
-  //   soundEffect: {
-  //     sound: "/sound/sound-effect/scene-4-sliding-paper.mp3",
-  //     loop: true,
-  //   },
-  // },
+  "4-9": {
+    soundEffect: {
+      sound: "/sound/sound-effect/scene-4-sliding-paper-seq.mp3",
+      volume: 1,
+    },
+  },
   "4-17": {
     soundEffect: {
       sound: "/sound/sound-effect/scene-4-pasting-sticker.mp3",

@@ -22,6 +22,7 @@ const Sounds = () => {
   const [soundEffect, setSoundEffect] = useState<{
     sound: string;
     loop?: boolean;
+    volume?: number;
   }>();
 
   const fadeDuration = 500;
@@ -97,7 +98,7 @@ const Sounds = () => {
           key={soundEffect.sound}
           src={soundEffect.sound}
           loop={soundEffect.loop}
-          volume={defaultSoundEffectVolume}
+          volume={soundEffect.volume ?? defaultSoundEffectVolume}
           ref={soundEffectRef}
         />
       )}
