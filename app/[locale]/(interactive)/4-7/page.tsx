@@ -7,31 +7,26 @@ type Props = {};
 
 const Page = (props: Props) => {
   const allStrokes = useRenderedStrokes(1);
-
   return (
-    <div className="mx-auto flex h-[100dvh] flex-col items-center text-white">
-      <div className="mt-[320px] flex justify-center">
-        <svg
-          id="svg"
-          className="relative scale-[0.4] touch-none object-contain"
-        >
+    <div className="absolute flex h-[100dvh] w-full flex-col items-center justify-center">
+      <div className="absolute inset-x-0 left-[15%] top-[29%] normal:top-[31.5%]">
+        <svg id="svg" className="scale-[0.3] touch-none object-contain">
           {allStrokes}
         </svg>
       </div>
-      <div className="mt-[200px] max-[380px]:mt-[110px]">
-        <Link href="/4-8">
-          <motion.div
-            initial={{ opacity: 0, z: -20 }}
-            animate={{
-              opacity: 1,
-              z: 0,
-              transition: { duration: 1, delay: 1 },
-            }}
-          >
-            <NextButton />
-          </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          z: 10,
+          transition: { duration: 1, delay: 2.5 },
+        }}
+        className="absolute top-[80%]"
+      >
+        <Link href="4-8">
+          <NextButton />
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };

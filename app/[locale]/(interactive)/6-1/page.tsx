@@ -8,15 +8,14 @@ import { useLocale, useTranslations } from "next-intl";
 export default function Page() {
   const t = useTranslations("5-6");
   const locale = useLocale();
-  console.log(locale);
 
   return (
-    <div className="relative mx-auto overflow-hidden">
+    <div className="mx-auto overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
         className={
-          "mt-[216px] bg-white-radial bg-center bg-no-repeat p-10 max-[380px]:mb-[310px]"
+          "max-[380px]:mb-[310px] absolute inset-x-0 top-[25%] m-auto bg-white-radial bg-center bg-no-repeat p-10"
         }
       >
         <p
@@ -29,7 +28,7 @@ export default function Page() {
         </p>
       </motion.div>
 
-      <Link href="5-7">
+      <Link href="6-2">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -37,7 +36,7 @@ export default function Page() {
             z: 10,
             transition: { duration: 1, delay: 2.5 },
           }}
-          className="mt-[calc(89vh-344px)] flex justify-center"
+          className="absolute inset-x-0 top-[75%] m-auto flex justify-center"
         >
           <NextButton />
         </motion.div>

@@ -30,7 +30,7 @@ export default function Page() {
           alt="animated-image"
           fill
           className={`object-cover ${blurred ? " blur-[2px]" : " filter-none"}`}
-        ></Image>
+        />
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
@@ -42,9 +42,9 @@ export default function Page() {
           alt="key"
           fill
           className="object-contain"
-        ></Image>
+        />
       </motion.div>
-      <Link href="5-8">
+      <Link href="6-3">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -52,7 +52,7 @@ export default function Page() {
             z: 10,
             transition: { duration: 1, delay: 4 },
           }}
-          className="mt-[89vh] flex justify-center"
+          className="absolute inset-x-0 top-[75%] m-auto flex justify-center"
         >
           <NextButton />
         </motion.div>

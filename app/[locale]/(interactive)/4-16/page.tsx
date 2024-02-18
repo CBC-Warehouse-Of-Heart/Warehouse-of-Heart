@@ -1,13 +1,13 @@
 "use client";
 import NextButton from "@/components/ui/nextButton";
 import StickerSelector from "@/components/ui/stickerSelector";
+import { Link } from "@/lib/navigation";
 import { useShareYourselfWordsStore } from "@/store/shareYourselfWords";
 import { useStickerStore } from "@/store/sticker";
 import { useRenderedStrokes } from "@/utils/svg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 type Props = {};
@@ -29,7 +29,7 @@ const Page = (props: Props) => {
             {allStrokes}
           </svg>
         </div>
-        <div className="mt-1 overflow-hidden break-words text-base text-woh-black">
+        <div className="mt-1 max-w-full overflow-hidden break-words text-base text-woh-black">
           <p>{words}</p>
         </div>
         <div className="mt-auto flex w-full justify-end">

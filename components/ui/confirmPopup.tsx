@@ -1,12 +1,12 @@
 import { DialogClose, DialogContent } from "@/components/ui/dialog";
+import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 type Props = {
   href?: string;
 };
 
-const ConfirmPopup = ({ href = "/4-18" }: Props) => {
+const ConfirmPopup = ({ href = "/5-1" }: Props) => {
   const t = useTranslations("ConfirmPopup");
   return (
     <DialogContent className="border-none">
