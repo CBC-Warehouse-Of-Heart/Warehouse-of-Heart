@@ -47,7 +47,7 @@ const AnimatedImage = ({
           onAnimationComplete={() => {
             setTimeout(() => {
               setAttachPreload(false);
-            }, 500);
+            }, 1500);
           }}
         >
           <Image src={currentSrc} alt={alt} {...props} />
