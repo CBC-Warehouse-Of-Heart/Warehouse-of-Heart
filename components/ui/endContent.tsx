@@ -142,7 +142,7 @@ export default function EndContent() {
       </div>
       <div className="h-px w-full bg-brown" />
       <div>
-        <p className="font-serif font-bold text-woh-black">ORGANIZE BY</p>
+        <p className="font-serif font-bold text-woh-black">ORGANIZED BY</p>
         <div className="mt-3 flex items-center justify-between">
           <Image
             src="/img/Logo_CBC.webp"
@@ -211,7 +211,7 @@ export default function EndContent() {
       </div>
       <div className="h-px w-full bg-brown" />
       <div>
-        <p className="font-serif font-bold text-woh-black">SUPPORTER</p>
+        <p className="font-serif font-bold text-woh-black">SUPPORTERS</p>
         <div className="mt-5 flex items-center justify-between">
           <Image
             src="/img/Logo_zip.webp"
