@@ -253,7 +253,8 @@ export const backgroundMapConfig = {
       "/img/5-5-9.webp",
       "/img/5-5-10.webp",
       "/img/5-5-11.webp",
-      "/img/5-5-12.webp",],
+      "/img/5-5-12.webp",
+    ],
   },
   "5-5": {
     image: [
@@ -270,8 +271,8 @@ export const backgroundMapConfig = {
       "/img/5-5-11.webp",
       "/img/5-5-12.webp",
     ],
-    stopMotionDuration: 1300,
-    imagePreload: ["/img/4-14.webp"]
+    stopMotionDuration: 1200,
+    imagePreload: ["/img/5-6.webp"],
   },
   "5-6": {
     image: "/img/5-6.webp",
