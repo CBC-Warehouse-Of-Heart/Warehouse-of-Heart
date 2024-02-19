@@ -2,12 +2,10 @@
 
 import { backgroundMapConfig } from "@/lib/bg-config";
 import { usePathname, useRouter } from "@/lib/navigation";
-import { useLocale } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import AnimatedImage from "./animated-image";
 
 const InteractiveBackground = () => {
-  const locale = useLocale();
   const path = usePathname();
   const router = useRouter();
   const page = path.split("/")[1] as keyof typeof backgroundMapConfig;
