@@ -214,18 +214,18 @@ export default function EndContent() {
         <p className="font-serif font-bold text-woh-black">SUPPORTERS</p>
         <div className="mt-5 flex items-center justify-between">
           <Image
-            src="/img/Logo_zip.webp"
-            width={0}
-            height={0}
-            alt="zip event logo"
-            style={{ width: "52%", height: "auto" }}
-          />
-          <Image
             src="/img/Logo_koncept.webp"
             width={0}
             height={0}
             alt="Koncept Play logo"
             style={{ width: "35%", height: "auto" }}
+          />
+          <Image
+            src="/img/Logo_zip.webp"
+            width={0}
+            height={0}
+            alt="zip event logo"
+            style={{ width: "52%", height: "auto" }}
           />
         </div>
         <div className="mt-4 flex items-center justify-between">
