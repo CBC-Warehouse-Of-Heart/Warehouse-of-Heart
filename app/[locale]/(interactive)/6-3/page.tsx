@@ -9,10 +9,12 @@ import { toJpeg } from "html-to-image";
 import { useLocale } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import UAParser from "ua-parser-js";
 
 export default function Page() {
   const [postcardNo, setPostcardNo] = useState<string | null>(null);
   const [downloadAlert, setDownloadAlert] = useState(false);
+  const [userAgentData, setUserAgentData] = useState<string>();
   const locale = useLocale();
   const allStrokes = useRenderedStrokes(5);
 
@@ -72,6 +74,9 @@ export default function Page() {
   };
 
   useEffect(() => {
+    const parser = new UAParser(navigator.userAgent);
+    setUserAgentData(parser.getDevice().model);
+
     const slider = localStorage.getItem("slider");
     const score = slider
       ? Math.max(1, Math.min(10, parseInt(slider)))
@@ -139,7 +144,7 @@ export default function Page() {
         <div className="mb-4 flex justify-center space-x-3">
           <Dialog>
             <DialogTrigger asChild>
-              <button onClick={downloadImage}>
+              <button onClick={userAgentData === "iPhone" ? shareImage : downloadImage}>
                 <svg
                   width="44"
                   height="44"
