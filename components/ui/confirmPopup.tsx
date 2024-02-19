@@ -9,8 +9,8 @@ type Props = {
 const ConfirmPopup = ({ href = "/5-1" }: Props) => {
   const t = useTranslations("ConfirmPopup");
   return (
-    <DialogContent className="border-none">
-      <div className="z-2 fixed left-1/2 top-1/2 flex w-[280px] -translate-x-1/2 -translate-y-1/2 transform flex-col items-center rounded-[30px] bg-[#FFFFFF] text-center shadow-[0px_4px_9px_0px_#0000000A]">
+    <DialogContent className="flex items-center justify-center border-none shadow-none">
+      <div className="z-2 flex w-[280px] flex-col items-center rounded-[30px] bg-[#FFFFFF] text-center shadow-[0px_4px_9px_0px_#0000000A]">
         <p className="mt-9 text-lg font-medium text-[#6C1F1F]">
           {t("areYouSure")}
         </p>
