@@ -5,7 +5,6 @@ import SoundToggle from "@/components/toggle/sound-toggle";
 import { Separator } from "@/components/ui/separator";
 import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { unstable_setRequestLocale } from "next-intl/server";
 import {
@@ -61,7 +60,6 @@ export default function RootLayout({
         )}
       >
         <Sounds />
-        <VercelAnalytics />
         <GoogleAnalytics />
         <div className="absolute right-5 top-10 z-50 flex w-full items-center justify-end">
           <LangToggle />
