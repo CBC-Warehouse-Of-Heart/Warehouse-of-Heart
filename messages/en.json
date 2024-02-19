@@ -33,14 +33,15 @@
     "haveHappened": "that have happened?"
   },
   "4-14": {
-    "badDay": "Bad days shall pass",
-    "goodDay": "good days won't last forever",
-    "butThere": "but there are always",
-    "moreDays": "more days coming and",
-    "canCreate": "you can create whatever",
-    "yourWisher": "day of your wisher",
-    "yourWisher2": " ",
-    "blank" : " ",
+    "badDay": "Days of sorrow will eventually pass,",
+    "goodDay": "just as days of joy",
+    "butThere": "that cannot be endured forever.",
+    "moreDays": "Yet, life always holds",
+    "canCreate": "a tomorrow in store",
+    "yourWisher": "And what tomorrow brings",
+    "yourWisher2": "you have the power to shape",
+    "blank": "as your heart desires",
+    "blank2": "",
     "warehouseOfHeart": "- Warehouse of Heart -"
   },
   "5-1": {

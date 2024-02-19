@@ -36,6 +36,8 @@ const Scene4Page14: React.FC = () => {
               <br />
               {t("blank")}
               <br />
+              {t("blank2")}
+              <br />
               {t("warehouseOfHeart")}
             </p>
           </motion.div>
