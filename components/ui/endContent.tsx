@@ -220,13 +220,15 @@ export default function EndContent() {
             alt="Koncept Play logo"
             style={{ width: "35%", height: "auto" }}
           />
-          <Image
-            src="/img/Logo_zip.webp"
-            width={0}
-            height={0}
-            alt="zip event logo"
-            style={{ width: "52%", height: "auto" }}
-          />
+          <Link href="http://zipeventapp.com/" className="w-[52%]">
+            <Image
+              src="/img/Logo_zip.webp"
+              width={0}
+              height={0}
+              alt="zip event logo"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Link>
         </div>
         <div className="mt-4 flex items-center justify-between">
           <div className="flex w-[52%] items-center justify-between gap-2">
