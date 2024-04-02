@@ -1,4 +1,5 @@
 "use client";
+import FirstPageFooter from "@/components/ui/firstPageFooter";
 import NextButton from "@/components/ui/nextButton";
 import { Link } from "@/lib/navigation";
 import { motion } from "framer-motion";
@@ -51,7 +52,7 @@ const Page = (props: Props) => {
         <p className="mt-10 font-bold text-[#A65554]">{t("warningHeading")}</p>
         <p className="mt-2 w-72 text-[#A65554]">{t("warning")}</p>
 
-        <div className="absolute bottom-[10vh]">
+        <div className="absolute bottom-[30vh]">
           {userAgentData === "iPhone" ? (
             <Link href="/0">
               <NextButton />
@@ -62,6 +63,7 @@ const Page = (props: Props) => {
             </Link>
           )}
         </div>
+        <FirstPageFooter />
       </motion.div>
     </div>
   );
