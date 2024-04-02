@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function FirstPageFooter() {
   return (
     <div className="absolute bottom-0 left-0 right-0 flex h-1/4 flex-col bg-white px-6 py-3 font-serif">
-      <p className="text-left">SUPPORTER</p>
+      <p className="text-left font-bold">SUPPORTER</p>
       <div className="flex items-center justify-between px-6 py-1">
         <Image
           src="/img/Logo_zip.webp"
