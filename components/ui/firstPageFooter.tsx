@@ -65,7 +65,8 @@ export default function FirstPageFooter() {
           width={0}
           height={0}
           alt="Koncept Play logo"
-          style={{ width: "30%", height: "auto" }}
+          style={{ width: "32%", height: "auto" }}
+          className="pl-4"
         />
         <div className="w-[45%] pt-2">
           <Image
